@@ -1,0 +1,1363 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Entech EV Catalog</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a showroom catalog — dark field cut by Entech's green diagonals, products shown on pale "stage" plates; bottom tabs on phone, top bar on iPad */
+:root{
+  --bg:#070a09; --panel:#0f1513; --panel-2:#151d1a; --line:#24322c;
+  --fg:#eef3f0; --muted:#93a59d; --dim:#62736b;
+  --green:#75c188; --green-2:#4fa766; --green-ink:#06140c; --green-soft:rgba(117,193,136,.14);
+  --blue:#3aa6ea; --ci-blue:#0089d1; --ci-green:#75c188; --grad:linear-gradient(105deg,#0089d1 0%,#2b9fb0 55%,#75c188 100%);
+  --stage:#e9eeeb; --stage-2:#d7dfdb; --stage-ink:#0b120f;
+  --sc:#f26a1b; --sg:#3d93ff; --warn:#f3b23a; --best:#75c188;
+  --shadow:0 18px 40px -18px rgba(0,0,0,.7);
+  --f-disp:"Chakra Petch","Segoe UI",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Thai","Leelawadee UI","Noto Sans Thai",Tahoma,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --tabh:64px;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f3f6f4; --panel:#ffffff; --panel-2:#eaf0ed; --line:#d4ddd8;
+  --fg:#0c1512; --muted:#53645c; --dim:#7d8c85;
+  --green:#2f8a4c; --green-2:#256f3c; --green-ink:#ffffff; --green-soft:rgba(117,193,136,.16); --blue:#0079ba;
+  --stage:#eef2f0; --stage-2:#dfe6e2; --stage-ink:#0b120f;
+  --sc:#d9560c; --sg:#1f74e0; --warn:#b77900; --best:#2f8a4c;
+  --shadow:0 16px 34px -20px rgba(10,30,20,.35); color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f3f6f4; --panel:#ffffff; --panel-2:#eaf0ed; --line:#d4ddd8;
+  --fg:#0c1512; --muted:#53645c; --dim:#7d8c85;
+  --green:#2f8a4c; --green-2:#256f3c; --green-ink:#ffffff; --green-soft:rgba(117,193,136,.16); --blue:#0079ba;
+  --stage:#eef2f0; --stage-2:#dfe6e2; --stage-ink:#0b120f;
+  --sc:#d9560c; --sg:#1f74e0; --warn:#b77900; --best:#2f8a4c;
+  --shadow:0 16px 34px -20px rgba(10,30,20,.35); color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;
+  padding-bottom:calc(var(--tabh) + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.num{font-family:var(--f-disp);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.mono{font-family:var(--f-mono)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-disp);text-wrap:balance;margin:0;line-height:1.08}
+h2{font-size:clamp(26px,4.4vw,40px);font-weight:700}
+h3{font-size:19px;font-weight:600}
+.eyebrow{font-family:var(--f-disp);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* ---------- top bar / tabs ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-disp);font-weight:700;letter-spacing:.06em;font-size:15px;white-space:nowrap;text-decoration:none;color:var(--fg)}
+.logo img{height:30px;width:auto;display:block}
+.logo span{border-left:1px solid var(--line);padding-left:10px}
+.logo span{color:var(--muted);font-weight:500;letter-spacing:.04em}
+.topnav{display:none;gap:4px;margin-left:auto}
+.topnav a{white-space:nowrap;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-weight:500;font-size:14px;position:relative}
+.topnav a[aria-current="page"]{color:var(--fg);background:var(--panel-2)}
+.top-tools{display:flex;gap:6px;margin-left:auto}
+.topnav + .top-tools{margin-left:8px}
+.icon-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;position:relative}
+.icon-btn svg{width:19px;height:19px}
+.badge{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:var(--green);color:var(--green-ink);font:700 11px/19px var(--f-disp);text-align:center}
+.badge:empty,.badge[data-n="0"]{display:none}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:55;background:color-mix(in srgb,var(--panel) 94%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(5,1fr);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+.tabs a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border-radius:12px;color:var(--dim);text-decoration:none;font-size:11px;font-weight:500;position:relative;min-height:52px}
+.tabs a svg{width:22px;height:22px}
+.tabs a[aria-current="page"]{color:var(--green)}
+.tabs a[aria-current="page"]::before{content:"";position:absolute;top:-6px;left:30%;right:30%;height:3px;border-radius:0 0 3px 3px;background:var(--green)}
+.tabs .badge{top:2px;right:calc(50% - 22px)}
+@media (min-width:760px){
+  :root{--tabh:0px}
+  .tabs{display:none}
+  .topnav{display:flex}
+  .top .wrap{height:66px}
+}
+
+/* ---------- views ---------- */
+.view{display:none;padding-block:22px 48px}
+.view.on{display:block;animation:viewIn .35s ease both}
+@keyframes viewIn{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}
+.vhead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-bottom:18px}
+.vhead p{margin:6px 0 0;color:var(--muted);max-width:52ch}
+
+/* ---------- hero (home) ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .slab{position:absolute;inset:0 0 auto;height:470px;pointer-events:none}
+@media (min-width:900px){.hero .slab{height:auto;bottom:0}}
+@media (max-width:1000px){.logo span{display:none}}
+.hero .slab i{position:absolute;top:-20%;height:140%;transform:skewX(-18deg);background:var(--grad)}
+.hero .slab i:nth-child(1){right:-8%;width:34%;opacity:.95}
+.hero .slab i:nth-child(2){right:29%;width:5%;opacity:.55}
+.hero .slab i:nth-child(3){right:37%;width:1.4%;opacity:.35}
+.hero-in{position:relative;display:grid;gap:8px;padding-block:28px 26px}
+.hero-type{position:relative;font-family:var(--f-disp);font-weight:700;line-height:.86;letter-spacing:-.03em;margin:4px 0 0}
+.hero-type .ol{display:block;font-size:clamp(92px,23vw,240px);color:transparent;-webkit-text-stroke:2px var(--fg);opacity:.9}
+.hero-type .so{display:block;font-size:clamp(44px,10.5vw,112px);margin-top:-.2em}
+.hero-type .so b{color:var(--green)}
+.hero-art{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:2%;min-height:220px;margin-top:-30px}
+.hero-art::before{content:"";position:absolute;left:4%;right:4%;bottom:4%;height:26%;border:2px solid var(--fg);border-radius:50%;opacity:.55}
+.hero-art img{position:relative;height:clamp(200px,44vw,380px);width:auto;object-fit:contain;filter:drop-shadow(0 26px 24px rgba(0,0,0,.45))}
+.hero-art img.s{height:clamp(170px,37vw,320px)}
+.hero-art .tag{position:absolute;left:50%;bottom:0;transform:translate(-50%,40%);background:var(--bg);padding:2px 10px;font:600 12px var(--f-disp);letter-spacing:.08em;border-radius:99px}
+.hero-copy{display:grid;gap:14px;max-width:560px}
+.hero-copy p{margin:0;color:var(--muted);font-size:16px}
+.statrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:6px}
+.stat small{display:block;color:var(--muted);font-size:12px}
+.stat b{display:block;font:700 clamp(22px,4vw,30px)/1.1 var(--f-disp)}
+.stat .bar{height:3px;background:var(--line);margin-top:8px;border-radius:2px;overflow:hidden}
+.stat .bar i{display:block;height:100%;background:var(--fg)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:4px;font-weight:600;text-decoration:none;border:1.5px solid transparent;white-space:nowrap}
+.btn.solid{background:var(--fg);color:var(--bg)}
+.btn.green{background:var(--green);color:var(--green-ink)}
+.btn.ghost{border-color:var(--fg);color:var(--fg);background:transparent}
+.btn.line{border-color:var(--line);background:var(--panel);color:var(--fg)}
+.btn.sm{min-height:38px;padding:0 14px;font-size:14px}
+.btn svg{width:18px;height:18px}
+@media (min-width:900px){
+  .hero-in{grid-template-columns:1.05fr 1fr;align-items:center;padding-block:40px 44px}
+  .hero-type{grid-column:1;grid-row:1}
+  .hero-art{grid-column:2;grid-row:1 / span 2;margin-top:0;min-height:420px}
+  .hero-copy{grid-column:1}
+}
+.section{padding-block:34px 10px}
+.archs{display:grid;gap:14px;margin-top:18px}
+@media (min-width:760px){.archs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.arch{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:10px;align-content:start}
+.arch svg{width:100%;height:auto;display:block;background:var(--panel-2);border-radius:10px}
+.arch .who{font-size:13px;color:var(--green);font-weight:500}
+.arch ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:14px}
+.arch li{padding-left:20px;position:relative}
+.arch li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:9px;background:var(--green);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
+.arch li.minus{color:var(--muted)}
+.arch li.minus::before{background:var(--dim);clip-path:none;height:2px;top:.75em}
+.svg-box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}
+.svg-t{fill:var(--fg);font:600 14px var(--f-body)}
+.svg-s{fill:var(--muted);font:500 12px var(--f-body)}
+.svg-acc{fill:var(--green)}
+.svg-sg{fill:var(--sg)}
+.flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-dasharray:6 7;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-26}}
+.tierlad{display:grid;gap:8px;margin-top:16px}
+.rung{display:grid;grid-template-columns:92px 1fr auto;align-items:center;gap:12px;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg)}
+.rung .kw{font:700 26px/1 var(--f-disp)}
+.rung .kw small{font-size:13px;color:var(--muted);margin-left:2px}
+.rung .meta{font-size:13px;color:var(--muted);min-width:0}
+.rung .meta b{color:var(--fg);font-weight:600}
+.rung .from{text-align:right;font-size:12px;color:var(--muted)}
+.rung .from b{display:block;color:var(--fg);font:700 16px var(--f-disp)}
+
+/* ---------- toolbar / filters ---------- */
+.seg{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;margin-inline:-2px}
+.seg::-webkit-scrollbar{display:none}
+.seg button{flex:none;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:14px;font-weight:500;white-space:nowrap}
+.seg button small{color:var(--muted);font-size:12px;margin-left:4px}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.seg button[aria-pressed="true"] small{color:inherit;opacity:.7}
+.toolbar{display:grid;gap:10px;margin-bottom:18px;position:relative;top:calc(env(safe-area-inset-top,0px) + 58px);z-index:20;background:var(--bg);padding-block:10px;margin-top:-10px}
+@media (min-width:760px){.toolbar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 66px)}}
+.tb-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tb-row .grow{flex:1 1 auto}
+.sel{min-height:40px;border-radius:10px;border:1px solid var(--line);background:var(--panel);padding:0 12px;font-size:14px}
+.count{font-size:13px;color:var(--muted)}
+.chipf{min-height:36px;padding:0 12px;border-radius:999px;border:1px dashed var(--line);background:transparent;font-size:13px}
+.chipf[aria-pressed="true"]{border-style:solid;border-color:var(--green);background:var(--green-soft);color:var(--fg)}
+
+/* ---------- pack cards ---------- */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.pcard-h{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--panel-2);border-bottom:1px solid var(--line)}
+.pno{font:700 26px/1 var(--f-disp);letter-spacing:-.02em}
+.pno small{display:block;font:600 10px var(--f-disp);letter-spacing:.14em;color:var(--muted);margin-bottom:2px}
+.pcard-h .arch-n{font-size:12px;color:var(--muted);line-height:1.3;min-width:0}
+.pcard-h .arch-n b{display:block;color:var(--fg);font-weight:600;font-size:13px}
+.bchip{margin-left:auto;flex:none;font:600 11px var(--f-disp);letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:99px;border:1px solid currentColor}
+.bchip.sc{color:var(--sc)} .bchip.sg{color:var(--sg)}
+.stage{position:relative;background:linear-gradient(180deg,var(--stage),var(--stage-2));display:flex;align-items:flex-end;justify-content:center;gap:4%;padding:16px 12px 10px;height:190px}
+.stage::after{content:"";position:absolute;left:12%;right:12%;bottom:12px;height:16px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.22),transparent)}
+.stage figure{margin:0;position:relative;height:100%;display:flex;align-items:flex-end;z-index:1}
+.stage img{height:100%;width:auto;max-width:100%;object-fit:contain}
+.stage figure.minor{height:78%}
+.stage .x{position:absolute;right:-6px;top:4px;background:var(--stage-ink);color:#fff;font:700 13px/1 var(--f-disp);padding:5px 7px;border-radius:6px}
+.stage .ill{position:absolute;left:8px;bottom:8px;font-size:10px;color:#4c5a53;background:rgba(255,255,255,.75);padding:2px 6px;border-radius:4px;z-index:2}
+.pcard-b{padding:14px;display:grid;gap:12px;flex:1;align-content:start}
+.cfg{font-weight:600;font-size:15px;line-height:1.35}
+.kv3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kv3 div{background:var(--panel-2);border-radius:10px;padding:8px 10px}
+.kv3 small{display:block;font-size:11px;color:var(--muted)}
+.kv3 b{font:700 18px/1.15 var(--f-disp)}
+.kv3 b em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500;margin-left:2px}
+.price{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+.price .p{font:700 26px/1 var(--f-disp)}
+.price .p small{display:block;font:500 11px var(--f-body);color:var(--muted);margin-bottom:4px}
+.price .pu{text-align:right;font-size:12px;color:var(--muted);line-height:1.5}
+.price .pu b{color:var(--fg);font-family:var(--f-disp)}
+.pcard-f{display:grid;grid-template-columns:1fr auto auto;gap:8px;padding:0 14px 14px}
+.tbtn{min-height:42px;min-width:42px;border-radius:4px;border:1.5px solid var(--line);background:transparent;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:14px;font-weight:600;padding:0 10px}
+.tbtn svg{width:18px;height:18px}
+.tbtn[aria-pressed="true"]{border-color:var(--green);color:var(--green);background:var(--green-soft)}
+.tbtn.star[aria-pressed="true"] svg{fill:currentColor}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+
+/* ---------- models ---------- */
+.mgroup{margin-bottom:28px}
+.mgroup header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.mgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,160px),1fr))}
+@media (min-width:600px){.mgrid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}}
+.mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-align:left;padding:0;display:flex;flex-direction:column}
+.mcard .stage{height:170px;padding:12px 10px 8px}
+.mcard .bd{padding:12px;display:grid;gap:4px}
+.mcard .nm{font:600 15px/1.25 var(--f-disp)}
+.mcard .ty{font-size:12px;color:var(--muted)}
+.mcard .pw{display:flex;justify-content:space-between;align-items:baseline;gap:6px;margin-top:4px}
+.mcard .pw b{font:700 20px var(--f-disp)}
+.mcard .pw span{font-size:12px;color:var(--muted);font-family:var(--f-disp)}
+
+/* ---------- sheet (detail) ---------- */
+.scrim{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;z-index:81;left:0;right:0;bottom:0;max-height:calc(100% - env(safe-area-inset-top,0px) - 24px);background:var(--bg);border-radius:20px 20px 0 0;border:1px solid var(--line);border-bottom:0;
+  transform:translateY(105%);transition:transform .38s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.sheet.on{transform:none}
+@media (min-width:760px){
+  .sheet{left:auto;top:0;bottom:0;right:0;width:min(720px,92vw);max-height:none;border-radius:0;border:0;border-left:1px solid var(--line);transform:translateX(105%);
+    padding-top:env(safe-area-inset-top,0px)}
+}
+.sh-top{display:flex;align-items:center;gap:10px;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);flex:none}
+.grab{position:absolute;top:6px;left:50%;width:40px;height:4px;border-radius:3px;background:var(--line);transform:translateX(-50%)}
+@media (min-width:760px){.grab{display:none}}
+.sh-top h3{font-size:16px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sh-top .icon-btn{margin-left:auto;flex:none}
+.sh-body{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:0 0 calc(24px + env(safe-area-inset-bottom,0px))}
+.sh-pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;background:linear-gradient(180deg,var(--stage),var(--stage-2))}
+.gallery::-webkit-scrollbar{display:none}
+.gallery .stage{flex:0 0 100%;scroll-snap-align:center;height:300px;background:none}
+@media (min-width:760px){.gallery .stage{height:360px}}
+.dots{display:flex;justify-content:center;gap:6px;padding:8px 0 0}
+.dots i{width:6px;height:6px;border-radius:3px;background:var(--line);transition:width .2s}
+.dots i.on{width:18px;background:var(--green)}
+.dhead{display:grid;gap:6px;padding-block:18px 6px}
+.dhead .big{font:700 clamp(30px,7vw,44px)/1 var(--f-disp);letter-spacing:-.02em}
+.dhead .big .ol{color:transparent;-webkit-text-stroke:1.5px var(--fg)}
+.dstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-block:14px}
+.dprice{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.dprice .p{font:700 32px/1 var(--f-disp)}
+.dprice .p small{display:block;font:500 12px var(--f-body);color:var(--muted);margin-bottom:6px}
+.dprice .pu{font-size:13px;color:var(--muted);display:grid;gap:2px;text-align:right}
+.dprice .pu b{color:var(--fg);font-family:var(--f-disp)}
+.note{font-size:12px;color:var(--dim);margin-top:8px}
+.dsec{padding-block:18px 0;display:grid;gap:10px}
+.dsec h4{margin:0;font:600 13px var(--f-disp);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.hl li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px 10px 38px;position:relative;font-size:14px}
+.hl li::before{content:"";position:absolute;left:14px;top:15px;width:12px;height:12px;background:var(--green);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
+.fit{background:var(--green-soft);border:1px solid color-mix(in srgb,var(--green) 40%,transparent);border-radius:12px;padding:12px 14px;font-size:14px}
+.fit b{color:var(--green)}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td,tr:last-child th{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+thead th{font-size:12px;color:var(--muted);font-weight:500}
+tfoot td{font-weight:700;font-family:var(--f-disp);font-size:16px}
+.spec th{width:38%;color:var(--muted);font-weight:500}
+.sib{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.sib button{flex:none;text-align:left;border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:10px 12px;min-width:170px}
+.sib button[aria-current="true"]{border-color:var(--green)}
+.sib b{display:block;font:700 15px var(--f-disp)}
+.sib span{font-size:12px;color:var(--muted)}
+.dact{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding-block:20px 0}
+.dact .btn{width:100%}
+
+/* ---------- compare ---------- */
+.ctabs{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px}
+.ctabs button{min-height:36px;padding:0 16px;border-radius:999px;border:0;background:transparent;font-weight:600;font-size:14px;color:var(--muted)}
+.ctabs button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.cmp{min-width:100%;table-layout:fixed}
+.cmp col.lab{width:118px}
+@media (min-width:600px){.cmp col.lab{width:190px}}
+.cmp col.it{width:170px}
+.cmp th.lab,.cmp td.lab{position:sticky;left:0;background:var(--panel);z-index:2;color:var(--muted);font-weight:500;font-size:13px;border-right:1px solid var(--line)}
+.cmp thead th{vertical-align:bottom;background:var(--panel);padding:10px}
+.cmp thead .stage{height:120px;border-radius:10px;padding:8px}
+.cmp .hn{display:flex;justify-content:space-between;gap:6px;align-items:flex-start;margin-top:8px}
+.cmp .hn b{font:700 15px/1.2 var(--f-disp);color:var(--fg)}
+.cmp .hn button{border:0;background:transparent;color:var(--muted);width:30px;height:30px;flex:none;border-radius:8px}
+.cmp tr.grp td{background:var(--panel-2);font:600 11px var(--f-disp);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:7px 12px}
+.cmp tr.grp td.lab{background:var(--panel-2)}
+.cmp td{font-size:14px}
+.cmp td.best{color:var(--best);font-weight:600}
+.cmp td.best::after{content:" ★";font-size:11px}
+.cmp tr.same td:not(.lab){color:var(--dim)}
+.cmp .mbar{height:6px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}
+.cmp .mbar i{display:block;height:100%;background:var(--green)}
+.cmp-empty{display:grid;gap:14px;justify-items:start;padding:22px;border:1px dashed var(--line);border-radius:14px}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick button{min-height:38px;border-radius:999px;border:1px solid var(--line);background:var(--panel);padding:0 12px;font-size:13px}
+.pick button[aria-pressed="true"]{border-color:var(--green);background:var(--green-soft)}
+.pick button b{font-family:var(--f-disp);margin-right:4px}
+.switch{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);cursor:pointer;min-height:40px}
+.switch input{appearance:none;-webkit-appearance:none;width:40px;height:24px;border-radius:12px;background:var(--line);position:relative;margin:0;transition:background .2s;flex:none}
+.switch input::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--fg);transition:transform .2s}
+.switch input:checked{background:var(--green)}
+.switch input:checked::after{transform:translateX(16px);background:var(--green-ink)}
+
+/* compare tray */
+.tray{position:fixed;z-index:56;left:50%;bottom:calc(var(--tabh) + env(safe-area-inset-bottom,0px) + 12px);transform:translate(-50%,160%);transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  display:flex;align-items:center;gap:10px;background:var(--fg);color:var(--bg);border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 14px 30px -10px rgba(0,0,0,.6);max-width:calc(100% - 32px)}
+.tray{visibility:hidden}
+.tray.on{transform:translate(-50%,0);visibility:visible}
+.tray span{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tray .btn{min-height:38px;border-radius:999px;background:var(--green);color:var(--green-ink);padding:0 16px}
+.tray .x{width:34px;height:34px;border-radius:50%;border:0;background:transparent;color:inherit;opacity:.7;flex:none}
+
+/* ---------- finder ---------- */
+.fq{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:12px;margin-bottom:12px}
+.fq h3{font-size:17px;display:flex;gap:10px;align-items:baseline}
+.fq h3 span{font:700 13px var(--f-disp);color:var(--green)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{min-height:44px;padding:0 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--panel-2);font-size:14px;font-weight:500}
+.opts button[aria-pressed="true"]{border-color:var(--green);background:var(--green-soft);color:var(--fg)}
+.opts button small{display:block;font-size:11px;color:var(--muted);font-weight:400;line-height:1.2}
+.res{display:grid;gap:12px;margin-top:20px}
+.rcard{display:grid;grid-template-columns:110px 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-align:left;padding:0}
+.rcard .stage{height:100%;min-height:130px;padding:8px}
+.rcard .bd{padding:12px 12px 12px 0;display:grid;gap:5px;align-content:start;min-width:0}
+.rcard .rk{font:700 11px var(--f-disp);letter-spacing:.14em;color:var(--green)}
+.rcard .why{font-size:13px;color:var(--muted)}
+.rcard .pp{font:700 18px var(--f-disp)}
+@media (min-width:760px){.res{grid-template-columns:repeat(3,1fr)}.rcard{grid-template-columns:1fr}.rcard .stage{height:170px}.rcard .bd{padding:0 14px 14px}}
+
+/* ---------- saved ---------- */
+.slist{display:grid;gap:10px}
+.srow{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:8px 12px 8px 8px}
+.srow .stage{height:72px;padding:4px;border-radius:10px}
+.srow .stage::after{display:none}
+.srow b{font:600 15px/1.3 var(--f-disp)}
+.srow .m{font-size:12px;color:var(--muted)}
+.srow .pp{font:700 16px var(--f-disp);text-align:right}
+.srow button{border:0;background:transparent;color:var(--muted);font-size:12px;padding:4px 0;min-height:30px}
+.sumbox{margin-top:16px;display:grid;gap:10px}
+.sumbox textarea{width:100%;min-height:180px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--fg);padding:12px;font:13px/1.5 var(--f-mono);resize:vertical}
+.contact{display:grid;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:16px}
+.contact div{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px}
+.contact span{color:var(--muted)}
+.contact b{user-select:all}
+
+/* settings popover */
+.pop{position:fixed;z-index:70;top:calc(env(safe-area-inset-top,0px) + 64px);right:max(16px,env(safe-area-inset-right,0px));width:min(320px,calc(100% - 32px));background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);display:grid;gap:10px}
+.pop h4{margin:0;font:600 12px var(--f-disp);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pop .row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px}
+.toast{position:fixed;z-index:90;left:50%;top:calc(env(safe-area-inset-top,0px) + 74px);transform:translate(-50%,-20px);opacity:0;transition:.25s;background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:500;pointer-events:none;max-width:calc(100% - 32px)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.gl-host{position:relative;width:100%;height:100%}
+.gl-host canvas{display:block;width:100%!important;height:100%!important}
+.hero-gl{position:relative;height:clamp(300px,62vw,460px);margin-top:-36px;cursor:pointer}
+.hero-gl .gl-host{position:absolute;inset:0}
+.hero-gl .fallback{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;gap:3%}
+.hero-gl .fallback img{height:80%;width:auto;object-fit:contain}
+.hero-gl.live .fallback{display:none}
+.gl-cta{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font:600 13px var(--f-body);white-space:nowrap;box-shadow:var(--shadow)}
+.gl-cta i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
+@media (min-width:900px){.hero-gl{grid-column:2;grid-row:1 / span 2;margin-top:0;height:520px}}
+.media{position:relative;background:#0a0f0d}
+.media .gl-box{height:340px;position:relative;background:radial-gradient(120% 90% at 50% 20%,#18302a 0%,#0a0f0d 70%)}
+@media (min-width:760px){.media .gl-box{height:420px}}
+.media .gimgs{background:linear-gradient(180deg,var(--stage),var(--stage-2))}
+.mtabs{position:absolute;z-index:3;top:12px;left:max(12px,env(safe-area-inset-left,0px));display:inline-flex;background:rgba(6,10,8,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:3px}
+.mtabs button{min-height:34px;padding:0 14px;border:0;border-radius:999px;background:transparent;color:#cfd9d4;font-size:13px;font-weight:600}
+.mtabs button[aria-pressed="true"]{background:#fff;color:#0b120f}
+.gl-hint{position:absolute;z-index:2;right:12px;top:16px;font-size:11px;color:#b8c7c0;background:rgba(6,10,8,.6);padding:4px 10px;border-radius:99px;pointer-events:none}
+.gl-legend{position:absolute;z-index:2;left:12px;bottom:10px;display:flex;gap:10px;font-size:11px;color:#cfd9d4;pointer-events:none;flex-wrap:wrap}
+.gl-legend span{display:inline-flex;align-items:center;gap:5px}
+.gl-legend i{width:14px;height:4px;border-radius:2px;background:#75c188}
+.pcard .stage .d3{position:absolute;right:8px;bottom:8px;z-index:2;font:700 11px var(--f-disp);letter-spacing:.08em;color:#fff;background:var(--ci-blue);padding:4px 8px;border-radius:6px}
+/* company */
+.company{margin-top:34px;border-radius:20px;overflow:hidden;background:var(--grad);color:#fff;display:grid;gap:18px;padding:26px 22px}
+.company img{width:min(260px,70%);height:auto}
+.company h3{font-family:var(--f-body);font-size:20px;font-weight:600}
+.company p{margin:0;opacity:.92}
+.company .cl{display:grid;gap:10px}
+.company .cl div{display:flex;gap:12px;align-items:center;font-size:15px}
+.company .cl svg{width:22px;height:22px;flex:none}
+.company a{color:#fff}
+.company p svg{width:22px;height:22px;flex:none;margin-top:2px}
+.company .copy{margin-left:auto;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;border-radius:99px;font-size:12px;padding:4px 10px;min-height:30px}
+@media (min-width:760px){.company{grid-template-columns:1fr 1.1fr;align-items:center;padding:34px 36px}}
+footer{padding-block:24px 30px;border-top:1px solid var(--line);color:var(--dim);font-size:12px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home"><img src="img/logo.webp" alt="Entech Energy" width="118" height="30"><span>EV CATALOG</span></a>
+    <nav class="topnav" id="topnav" aria-label="เมนูหลัก"></nav>
+    <div class="top-tools">
+      <button class="icon-btn" id="bSet" aria-label="ตั้งค่าการแสดงผล" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="view" id="v-home" aria-label="หน้าแรก"></section>
+  <section class="view" id="v-stations" aria-label="แพ็กเกจสถานี"></section>
+  <section class="view" id="v-models" aria-label="อุปกรณ์"></section>
+  <section class="view" id="v-compare" aria-label="เปรียบเทียบ"></section>
+  <section class="view" id="v-finder" aria-label="ช่วยเลือก"></section>
+  <section class="view" id="v-saved" aria-label="รายการที่สนใจ"></section>
+</main>
+
+<nav class="tabs" id="tabs" aria-label="เมนูหลัก"></nav>
+
+<div class="tray" id="tray" role="region" aria-label="รายการเปรียบเทียบ"><span id="trayTxt"></span><a class="btn" href="#compare">เปรียบเทียบ</a><button class="x" id="trayX" aria-label="ล้างรายการเปรียบเทียบ">✕</button></div>
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle">
+  <div class="grab"></div>
+  <div class="sh-top"><h3 id="shTitle"></h3><button class="icon-btn" id="shClose" aria-label="ปิด"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="sh-body" id="shBody"></div>
+</aside>
+<div class="pop" id="pop" hidden>
+  <h4>การแสดงผล</h4>
+  <label class="row switch" for="optVat">แสดงราคารวม VAT 7%<input type="checkbox" id="optVat"></label>
+  <label class="row switch" for="optPrice">แสดงราคา<input type="checkbox" id="optPrice" checked></label>
+  <h4>ธีม</h4>
+  <div class="seg" id="themeSeg"><button data-t="system">ตามเครื่อง</button><button data-t="dark">มืด</button><button data-t="light">สว่าง</button></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+"use strict";
+/* ================= CONFIG ================= */
+const CFG={
+  vatRate:0.07,
+  priceNote:"ราคาอุปกรณ์ ยังไม่รวมงานติดตั้ง หม้อแปลง และงานโยธา · อ้างอิงตารางราคา 28 ต.ค.",
+  company:{th:"บริษัท เอ็นเทค เอเนอร์จี จำกัด",en:"Entech Energy Co., Ltd.",addr:"17/121 ซอยงามวงศ์วาน 47 แยก 48 แขวงทุ่งสองห้อง เขตหลักสี่ กรุงเทพฯ 10210",email:"info@entechenergy.co.th",phones:["02-779-8877","061-498-7000"],fb:"Entech Energy - EV & Energy Solutions",line:"entechenergy"}
+};
+
+/* ================= DATA ================= */
+// specs from index.html (MACH) · unit prices from pttor_28_oct.xlsx
+const M={
+  jv5:{role:"point",name:"Jupiter V5 120",sub:"PowerLink",brand:"sc",group:"aio",kind:"All-in-one",kw:120,out:2,price:579000,imgs:["jupiter"],
+    chips:["120 kW/ตู้","2 หัว CCS2","IP55"],
+    feat:["PowerLink เชื่อมกำลังข้ามตู้ หัวเดียวรับได้ถึง 240 kW","แรงดัน 150–1000 Vdc รองรับรถ 400V และ 800V","IP55 · กันกัดกร่อน C3-M","OCPP 1.6J / 2.0.1 · อยู่ในรายชื่อ PEA"],
+    spec:[["กำลังไฟออก","120 kW สูงสุด · 300 A rated"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2"],["ประสิทธิภาพสูงสุด","95%"],["ไฟเข้า","400 V 3P+N+PE · 185 A"],["หน้าจอ","ทัชสกรีน 10.4 นิ้ว"],["ยืนยันตัวตน","RFID, App (optional)"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J / 2.0.1"],["ตัวตู้","IP55 / IK10 · กันกัดกร่อน C3-M · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","750 × 1600 × 600 mm · ~260 kg"],["มาตรฐาน","CE-RED, CB, NBTC, PTEC, PEA list"]],
+    c:{kw:"120 kW",v:"150–1000 Vdc",a:"300 A",eff:95,ip:"IP55 · C3-M",dim:"750×1600×600",wt:260,screen:"10.4 นิ้ว",comm:"OCPP 1.6J / 2.0.1",cert:"CE, CB, NBTC, PTEC, PEA"},
+    src:"Datasheet Jupiter V5 120kW PowerLink (StarCharge, 2024-09)"},
+  tv5180:{role:"point",name:"Titan V5 180",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:180,out:2,price:669000,imgs:["titan-angle","titan-front"],
+    chips:["180 kW/ตู้","2 หัว CCS2","Swing-arm"],
+    feat:["Swing-arm ยกสาย ไม่ลากพื้น","แรงดัน 150–1000 Vdc","ประสิทธิภาพสูงสุด 95%","OCPP 1.6J / 2.0.1"],
+    spec:[["กำลังไฟออก","180 kW สูงสุด · 300 A rated"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2"],["ประสิทธิภาพสูงสุด","95%"],["ไฟเข้า","400 V 3P+N+PE · 277 A"],["หน้าจอ","ทัชสกรีน 10.4 นิ้ว"],["ระบบจัดการสาย","Swing-arm (optional) · สาย 5 m ระยะใช้งาน ~3.8 m"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J / 2.0.1"],["ตัวตู้","IP55 / IK10 · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","750 × 1790 × 720 mm · ~463 kg"],["มาตรฐาน","CE, CB, NBTC, PTEC"]],
+    c:{kw:"180 kW",v:"150–1000 Vdc",a:"300 A",eff:95,ip:"IP55",dim:"750×1790×720",wt:463,screen:"10.4 นิ้ว",comm:"OCPP 1.6J / 2.0.1",cert:"CE, CB, NBTC, PTEC"},
+    src:"Datasheet Titan V5 180kW (StarCharge)"},
+  tv5240:{role:"point",name:"Titan V5 240",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:240,out:2,price:820000,imgs:["titan-angle","titan-front"],
+    chips:["240 kW/ตู้","2 หัว CCS2","Swing-arm"],
+    feat:["240 kW ต่อตู้ ตู้เดียวจบ","ชาร์จพร้อมกัน 2 หัว","Swing-arm สายไม่ลากพื้น","แรงดัน 150–1000 Vdc"],
+    spec:[["กำลังไฟออก","240 kW ต่อตู้"],["หัวชาร์จ","CCS2 + CCS2 ชาร์จพร้อมกัน"],["แรงดันออก","150–1000 Vdc (ตระกูล Titan V5)"],["ระบบจัดการสาย","Swing-arm"],["หมายเหตุ","ยังไม่มีดาต้าชีตรุ่นนี้ สเปกละเอียดอ้างอิงตระกูล Titan V5"]],
+    c:{kw:"240 kW",v:"150–1000 Vdc",a:"—",eff:null,ip:"IP55",dim:"750×1790×720",wt:null,screen:"10.4 นิ้ว",comm:"OCPP 1.6J",cert:"—"},
+    src:"ตารางราคา pttor_28_oct + ตระกูล Titan V5"},
+  tv5pro:{role:"point",name:"Titan V5 Pro 240",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:240,out:2,price:870000,imgs:["titan-front","titan-angle"],
+    chips:["240 kW/ตู้","400 A/หัว","96.5%"],
+    feat:["กระแส 400 A ต่อหัว","ประสิทธิภาพ 96.5% ที่โหลดเต็ม","RFID · QR Code · App","ได้รับรอง PEA"],
+    spec:[["กำลังไฟออก","240 kW · 400 A ต่อหัว"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2 ชาร์จพร้อมกัน"],["ประสิทธิภาพ","96.5% @ full load"],["ไฟเข้า","400 V 3P+N+PE · 361 A"],["หน้าจอ","ทัชสกรีน 10.4 นิ้ว"],["ยืนยันตัวตน","RFID card, QR code, App (optional)"],["ระบบจัดการสาย","Swing-arm · สาย 5 m ระยะใช้งาน ~3.8 m"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J"],["ตัวตู้","IP55 / IK10 · โมดูลกำลัง ~17 kg/โมดูล"],["ขนาด (W×H×D)","750 × 1790 × 720 mm · ~316 kg (ไม่รวมโมดูล)"],["มาตรฐาน","CE, CB, WPC, NBTC, PTEC, PEA, NTC"]],
+    c:{kw:"240 kW",v:"150–1000 Vdc",a:"400 A",eff:96.5,ip:"IP55",dim:"750×1790×720",wt:316,screen:"10.4 นิ้ว",comm:"OCPP 1.6J",cert:"CE, CB, NBTC, PTEC, PEA"},
+    src:"Datasheet Titan V5 240kW PRO (StarCharge)"},
+  novav5:{role:"cab",name:"Nova V5 480",sub:"Power Cabinet",brand:"sc",group:"split",kind:"ตู้ไฟกลาง",kw:480,out:0,cap:12,price:1390000,imgs:["nova-v5-left","nova-v5-front","nova-v5-right"],
+    chips:["480 kW/ตู้","1600 A","12 หัว/ตู้"],
+    feat:["Smart power pool จ่ายกำลังให้หัวที่ต้องการ","รองรับ Dispenser สูงสุด 12 หัวต่อตู้","ประสิทธิภาพสูงสุด 96.5%","ฐานตู้เล็ก วางในลานไฟได้ง่าย"],
+    spec:[["กำลังไฟออกรวม","480 kW · 1600 A max"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จที่รองรับ","สูงสุด 12 หัวต่อตู้"],["ประสิทธิภาพสูงสุด","96.5%"],["ไฟเข้า","400 Vac ±15% · 730 A"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J / 2.0.1"],["ตัวตู้","IP55 / IK10 · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","1050 × 1750 × 1150 mm · ~615 kg"],["มาตรฐาน","CE-RED, CB, NBTC (ongoing), PTEC (ongoing)"]],
+    c:{kw:"480 kW",v:"150–1000 Vdc",a:"1600 A",eff:96.5,ip:"IP55",dim:"1050×1750×1150",wt:615,screen:"—",comm:"OCPP 1.6J / 2.0.1",cert:"CE, CB"},
+    src:"Datasheet Nova V5 Power Cabinet (StarCharge)"},
+  novav4:{role:"cab",name:"Nova V4 720",sub:"Power Cabinet",brand:"sc",group:"split",kind:"ตู้ไฟกลาง",kw:720,out:0,cap:12,price:2200000,imgs:["nova-v4"],ill:true,
+    chips:["720 kW/ตู้","2400 A","97%"],
+    feat:["720 kW ในตู้เดียว","ประสิทธิภาพสูงสุด 97%","กระแสรวม 2400 A","รองรับ 12 หัวต่อตู้"],
+    spec:[["กำลังไฟออกรวม","720 kW · 2400 A max"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จที่รองรับ","สูงสุด 12 หัวต่อตู้"],["ประสิทธิภาพสูงสุด","97%"],["ไฟเข้า","400 Vac ±15% · 1100 A"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J"],["ตัวตู้","IP55 / IK10 · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","1503 × 2149 × 1220 mm · ~880 kg"],["มาตรฐาน","CE, CB, NBTC, PTEC"]],
+    c:{kw:"720 kW",v:"150–1000 Vdc",a:"2400 A",eff:97,ip:"IP55",dim:"1503×2149×1220",wt:880,screen:"—",comm:"OCPP 1.6J",cert:"CE, CB, NBTC, PTEC"},
+    src:"Datasheet Nova V4 720kW Power Cabinet (StarCharge)"},
+  hydrus:{role:"disp",name:"Hydrus Pro",sub:"Dispenser",brand:"sc",group:"split",kind:"ตู้จ่าย (Dispenser)",kw:null,kwTxt:"600 A",out:2,price:350000,imgs:["hydrus-angle","hydrus-front"],
+    chips:["400 A (600 A max)","2 หัว CCS2","หนา 25 cm"],
+    feat:["ตัวตู้หนาเพียง 25 cm","กระแสสูงสุด 600 A","ระบบจัดการสาย CMS ใช้งานง่าย","ทัชสกรีน 7 นิ้ว"],
+    spec:[["กระแสออก","400 A rated (600 A max)"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2"],["หน้าจอ","ทัชสกรีน 7 นิ้ว · LED indicator"],["ยืนยันตัวตน","RFID, QR code, App, Free charging, MAC"],["การสื่อสาร","Ethernet · DIN 70121, ISO 15118"],["ตัวตู้","IP55 / IK10 · Natural/forced air"],["ขนาด (W×H×D)","500 × 1700 × 250 mm (1842 mm รวม CMS) · ~130 kg"],["มาตรฐาน","CE-RED, CB, NBTC, PTEC"]],
+    c:{kw:"≤ 480 kW/หัว",v:"150–1000 Vdc",a:"400 A (600 max)",eff:null,ip:"IP55",dim:"500×1700×250",wt:130,screen:"7 นิ้ว",comm:"ISO 15118",cert:"CE, CB, NBTC, PTEC"},
+    src:"Datasheet Hydrus Pro Dispenser (StarCharge)"},
+  idc480:{role:"point",name:"IDC480E-C",sub:"ตู้ชาร์จ + พอร์ตต่อ Dispenser",brand:"sg",group:"hyb",kind:"ตู้ชาร์จ + ตู้ไฟ",kw:480,out:2,price:1450000,imgs:["sg-idc","sg-set"],
+    chips:["480 kW","IP65 · C5","97%"],
+    feat:["IP65 + กันกัดกร่อน C5","Isolated air-cooling ไม่ต้องเปลี่ยนแผ่นกรองฝุ่น","ประสิทธิภาพสูงสุด 97%","จัดสรรกำลังละเอียดทีละ 40 kW"],
+    spec:[["กำลังไฟออก","ตั้งค่าได้ 240 / 320 / 360 / 400 / 480 kW"],["กำลังต่อพอร์ต","สูงสุด 480 kW · แบ่งกำลังทีละ 40 kW"],["แรงดันออก","150–1000 Vdc"],["กระแสออก","2 × 400 A boost 600 A"],["จำนวนรถ","สูงสุด 4 คัน (รวม Dispenser)"],["ประสิทธิภาพสูงสุด","97%"],["ไฟเข้า","380/400 Vac · 770 A @ 480 kW · PF ≥ 0.99"],["หน้าจอ","ทัชสกรีน 10 นิ้ว · Arm CMS"],["ตัวตู้","IP65 · C5 · IK10 · −35 ถึง 55 °C"],["ขนาด (W×H×D)","850 × 2300 × 950 mm · ≤ 950 kg"],["มาตรฐาน","CE, CB, UKCA, RCM, ADQCC, MoIAT, PEA · รับประกัน 3 ปี"]],
+    c:{kw:"480 kW",v:"150–1000 Vdc",a:"2×400 A (600 boost)",eff:97,ip:"IP65 · C5",dim:"850×2300×950",wt:950,screen:"10 นิ้ว",comm:"OCPP",cert:"CE, CB, UKCA, PEA"},
+    src:"Datasheet IDC480E-C (Sungrow, V4)"},
+  idc360:{role:"point",name:"IDC360E-C",sub:"ตั้งค่า 360 kW",brand:"sg",group:"hyb",kind:"ตู้ชาร์จ + ตู้ไฟ",kw:360,out:2,price:1175000,imgs:["sg-idc","sg-set"],
+    chips:["360 kW","IP65 · C5","97%"],
+    feat:["ตัวตู้เดียวกับ IDC480E-C ตั้งค่า 360 kW","IP65 + กันกัดกร่อน C5","ประสิทธิภาพสูงสุด 97%","จัดสรรกำลังทีละ 40 kW"],
+    spec:[["กำลังไฟออก","360 kW (ตั้งค่าที่ระดับโมดูล)"],["แรงดันออก","150–1000 Vdc"],["กระแสออก","2 × 400 A boost 600 A"],["จำนวนรถ","สูงสุด 4 คัน (รวม Dispenser)"],["ประสิทธิภาพสูงสุด","97%"],["ตัวตู้","IP65 · C5 · IK10 · −35 ถึง 55 °C"],["ขนาด (W×H×D)","850 × 2300 × 950 mm"],["มาตรฐาน","CE, CB, UKCA, RCM, PEA"]],
+    c:{kw:"360 kW",v:"150–1000 Vdc",a:"2×400 A (600 boost)",eff:97,ip:"IP65 · C5",dim:"850×2300×950",wt:950,screen:"10 นิ้ว",comm:"OCPP",cert:"CE, CB, UKCA, PEA"},
+    src:"Datasheet IDC480E-C (Sungrow) — รุ่นเดียวกัน ตั้งค่า 360 kW"},
+  sgdisp:{role:"disp",name:"Sungrow Dispenser",sub:"Air-cooled",brand:"sg",group:"hyb",kind:"ตู้จ่าย (Dispenser)",kw:null,kwTxt:"600 A",out:2,price:425000,imgs:["sg-disp"],
+    chips:["400 A + 400 A","IP65 · C5","≤ 60 dB"],
+    feat:["สายคู่ 400 A + 400 A (boost 600 A)","IP65 · C5 · IK10","เงียบ ≤ 60 dB(A) ที่ 1 m","ทัชสกรีน 10 นิ้ว · รองรับ Plug & Charge"],
+    spec:[["สาย/กระแส","Dual cable 400 A + 400 A (600 A boost)"],["แรงดันออก","200–1000 Vdc"],["หัวชาร์จ","CCS2 · DIN 70121, ISO 15118"],["หน้าจอ","ทัชสกรีน 10 นิ้ว · LED display"],["ยืนยันตัวตน","RFID, Plug & play, Auto-charge, Plug & charge, Payment (optional)"],["เสียง","≤ 60 dB(A) ที่ 1 m"],["ตัวตู้","IP65 · C5 · IK10"],["ขนาด (W×H×D)","430 × 1800 × 330 mm · 140 kg · สาย 5/7 m"]],
+    c:{kw:"≤ 480 kW/หัว",v:"200–1000 Vdc",a:"400+400 A (600 boost)",eff:null,ip:"IP65 · C5",dim:"430×1800×330",wt:140,screen:"10 นิ้ว",comm:"ISO 15118",cert:"CE"},
+    src:"Datasheet IDC480E-C / IDC480E (Sungrow)"}
+};
+const GROUPS=[["aio","StarCharge","All-in-one","ตู้เดียวมีทั้งโมดูลกำลังและหัวชาร์จ"],["split","StarCharge","Split · Power Pool","ตู้ไฟกลาง + Dispenser บาง"],["hyb","Sungrow","Hybrid","ตู้ชาร์จที่ต่อ Dispenser เพิ่มได้"]];
+
+// packages from pttor_28_oct.xlsx (sheet "by Power")
+const P=[
+ [1,1250,960,24,480,[["novav5",2],["hydrus",12]],6980000],
+ [2,1250,960,16,240,[["jv5",8]],4632000],
+ [3,1250,960,16,480,[["novav5",2],["hydrus",8]],5580000],
+ [4,1250,960,12,480,[["novav5",2],["hydrus",6]],4880000],
+ [5,1250,960,8,480,[["novav5",2],["hydrus",4]],4180000],
+ [6,1250,960,8,480,[["idc480",2],["sgdisp",2]],3750000],
+ [7,1250,960,8,240,[["tv5pro",4]],3480000],
+ [8,1250,960,8,240,[["tv5240",4]],3280000],
+ [9,1000,720,12,480,[["novav4",1],["hydrus",6]],4300000],
+ [10,1000,720,12,240,[["jv5",6]],3474000],
+ [11,1000,720,8,360,[["idc360",2],["sgdisp",2]],3200000],
+ [12,750,540,6,180,[["tv5180",3]],2007000],
+ [13,630,480,8,480,[["novav5",1],["hydrus",4]],2790000],
+ [14,630,480,8,240,[["jv5",4]],2316000],
+ [15,630,480,6,480,[["novav5",1],["hydrus",3]],2440000],
+ [16,630,480,4,480,[["idc480",1],["sgdisp",1]],1875000],
+ [17,630,480,4,240,[["tv5pro",2]],1740000],
+ [18,500,360,6,240,[["jv5",3]],1737000],
+ [19,500,360,4,360,[["idc360",1],["sgdisp",1]],1600000],
+ [20,500,360,4,180,[["tv5180",2]],1338000],
+ [21,315,240,4,240,[["jv5",2]],1158000],
+ [22,315,240,2,240,[["tv5pro",1]],870000],
+ [23,315,240,2,240,[["tv5240",1]],820000]
+].map(([n,tr,st,o,max,parts,xls])=>{
+  const price=parts.reduce((s,[k,q])=>s+q*M[k].price,0);
+  if(price!==xls) console.warn("Price mismatch pack",n,price,xls);
+  const k0=parts[0][0];
+  const fam=k0==="novav5"?"pool":k0==="novav4"?"pool4":k0==="jv5"?"jup":k0==="tv5pro"?"pro":k0==="tv5240"?"t240":k0==="tv5180"?"t180":"sgc";
+  const arch=(fam==="pool"||fam==="pool4")?"split":fam==="sgc"?"hyb":"aio";
+  return {n,tr,st,o,max,parts,price,fam,arch,brand:M[k0].brand,
+    cfg:parts.map(([k,q])=>q+" × "+M[k].name).join(" + "),
+    units:parts.reduce((s,[,q])=>s+q,0)};
+});
+const ARCH={aio:"All-in-one",split:"Split · Power Pool",hyb:"Hybrid · ตู้ชาร์จ + Dispenser"};
+const TIERS=[...new Set(P.map(p=>p.st))].sort((a,b)=>b-a); // station kW is the primary grouping
+const trFor=st=>P.find(p=>p.st===st).tr;
+const pad=n=>String(n).padStart(2,"0");
+const byN=n=>P.find(p=>p.n===n);
+
+function highlights(o){
+  const q=o.parts[0][1], q2=o.parts[1]?o.parts[1][1]:0;
+  switch(o.fam){
+    case "pool":{const cap=12*q,used=q2*2;return [
+      `Smart Power Pool: ตู้ไฟ Nova V5 ${q} ตู้ รวม ${o.st} kW ส่งกำลังไปยังหัวที่ต้องการแบบไดนามิก`,
+      `หัวเดียวรับได้สูงสุด ${o.max} kW รองรับรถแพลตฟอร์ม 800V ที่ชาร์จเร็วที่สุดในตลาด`,
+      `Dispenser Hydrus Pro หนาเพียง 25 ซม. วางหัวช่องจอดได้โดยไม่กินพื้นที่`,
+      used<cap?`ตู้ไฟรองรับได้ ${cap} หัว ใช้ไป ${used} หัว เพิ่ม Dispenser ได้อีก ${(cap-used)/2} ตู้โดยไม่ต้องเพิ่มตู้ไฟ`:`ใช้ตู้ไฟเต็มศักยภาพ ${cap} หัว จำนวนหัวต่อสถานีสูงสุดในทุกแพ็กเกจ`];}
+    case "pool4":return [`Nova V4 ตู้ไฟเดียว 720 kW · กระแสรวม 2400 A ตู้เดียวดูแลง่าย`,`ประสิทธิภาพสูงสุด 97% สูงที่สุดในกลุ่มตู้ไฟ StarCharge`,`หัวเดียวรับได้สูงสุด ${o.max} kW ผ่าน Dispenser Hydrus Pro ${q2} ตู้`,`ใช้เต็ม 12 หัวต่อตู้ รับรถพร้อมกัน 12 คันบนหม้อแปลง ${o.tr} kVA`];
+    case "jup":return [`All-in-one ${q} ตู้ ไม่ต้องมีตู้ไฟแยก ติดตั้งและขยายได้ทีละตู้ตามดีมานด์`,`PowerLink เชื่อมกำลังระหว่างตู้ หัวเดียวรับได้สูงสุด ${o.max} kW`,`แรงดันกว้าง 150–1000 Vdc ชาร์จได้ทุกแพลตฟอร์ม 400V และ 800V`,`ตู้กะทัดรัด 75 × 160 × 60 ซม. · IP55 · กันกัดกร่อน C3-M · อยู่ในรายชื่อ PEA`];
+    case "pro":return [`${q} ตู้ × 240 kW ชาร์จพร้อมกัน 2 หัวต่อตู้ รวม ${o.o} หัว`,`กระแส 400 A ต่อหัว · ประสิทธิภาพ 96.5% ที่โหลดเต็ม เสียพลังงานน้อย`,`Swing-arm ยกสายไม่ให้ลากพื้น ระยะใช้งาน ~3.8 ม. ผู้ใช้หยิบง่าย`,`ยืนยันตัวตนได้ทั้ง RFID, QR Code และแอป · ได้รับรอง PEA`];
+    case "t240":return [`${q} ตู้ × 240 kW All-in-one ตู้เดียวจบ ไม่ต้องมีตู้ไฟแยก`,`ชาร์จพร้อมกัน 2 หัวต่อตู้ (CCS2 + CCS2) รวม ${o.o} หัว`,`รองรับระบบจัดการสาย Swing-arm สายไม่ลากพื้น`,`แรงดันกว้าง 150–1000 Vdc ครอบคลุมรถทุกรุ่น`];
+    case "t180":return [`${q} ตู้ × 180 kW รวม ${o.st} kW ขนาดลงตัวกับหม้อแปลง ${o.tr} kVA`,`ชาร์จพร้อมกัน 2 หัวต่อตู้ รวม ${o.o} หัว`,`ประสิทธิภาพสูงสุด 95% · กระแส 300 A rated`,`ตระกูลเดียวกับ Titan V5 รองรับ Swing-arm, OCPP 1.6J / 2.0.1`];
+    default:return [`${q} ชุด: ตู้ชาร์จ ${M[o.parts[0][0]].name} + Dispenser รวม ${o.o} หัว`,`สูงสุด ${o.max} kW ต่อพอร์ต · จัดสรรกำลังละเอียดทีละ 40 kW`,`IP65 + กันกัดกร่อน C5 · Isolated air-cooling ไม่ต้องเปลี่ยนแผ่นกรองฝุ่น`,`ประสิทธิภาพสูงสุด 97% · เตรียมพร้อมต่อ PV-ESS · รับรอง PEA`];
+  }
+}
+function fitFor(o){
+  switch(o.fam){
+    case "pool":return o.o>=12?"ลานจอดขนาดใหญ่ ห้าง หรือศูนย์ฟลีต ที่รับรถพร้อมกันได้มาก และยังเร่งคันที่รีบได้ถึง 480 kW":"สถานีที่ต้องการกำลังต่อหัวสูงสุด และอยากเผื่อที่ขยายหัวชาร์จในอนาคต";
+    case "pool4":return "สถานีขนาดใหญ่บนหม้อแปลง 1000 kVA ที่ต้องการหัวเยอะและเร็ว ด้วยตู้ไฟเพียงตู้เดียว";
+    case "jup":return "สถานีที่อยากเริ่มด้วยงบลงทุนที่ควบคุมได้ แล้วค่อยเพิ่มตู้ตามจำนวนรถที่เข้ามาจริง";
+    case "pro":case "t240":return "จุดพักรถ ปั๊มน้ำมัน ร้านกาแฟริมทาง ที่ต้องการติดตั้งเร็ว ตู้เดียวจบ รอบการชาร์จสั้น";
+    case "t180":return "สถานีขนาดกลางในเมือง บนหม้อแปลง 500–750 kVA";
+    default:return "พื้นที่กลางแจ้ง ใกล้ทะเล หรือฝุ่นเยอะ ที่ต้องการความทนทานสูงและกำลังต่อพอร์ตสูง";
+  }
+}
+const ipOf=o=>o.brand==="sg"?"IP65 · C5":"IP55";
+const effOf=o=>Math.max(...o.parts.map(([k])=>M[k].c.eff||0))||null;
+const headroom=o=>(o.fam==="pool"||o.fam==="pool4")?(o.parts[0][1]*12-o.parts[1][1]*2):0;
+
+/* ================= STATE ================= */
+const store={get(k,d){try{const v=localStorage.getItem("entech:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem("entech:"+k,JSON.stringify(v))}catch(e){}}};
+const S={
+  view:"home",tier:store.get("tierKW","all"),brand:"all",arch:"all",sort:store.get("sort","rec"),
+  cmpMode:"pack",cmp:{pack:store.get("cmpP",[]),model:store.get("cmpM",[])},diffOnly:false,
+  saved:store.get("saved",[]),vat:store.get("vat",false),showPrice:store.get("showPrice",true),
+  theme:store.get("theme","system"),
+  f:{st:null,cars:null,pri:null,bud:null}
+};
+const save=()=>{store.set("cmpP",S.cmp.pack);store.set("cmpM",S.cmp.model);store.set("saved",S.saved);store.set("tierKW",S.tier);store.set("sort",S.sort)};
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const vat=n=>S.vat?Math.round(n*(1+CFG.vatRate)):n;
+const baht=n=>"฿"+vat(n).toLocaleString("th-TH");
+const mil=n=>{const v=vat(n)/1e6;return "฿"+(v>=1?v.toFixed(2).replace(/\.?0+$/,"")+" ล้าน":Math.round(vat(n)/1000).toLocaleString("th-TH")+"K")};
+const k=n=>"฿"+Math.round(vat(n)).toLocaleString("th-TH");
+const pt=t=>S.showPrice?t:'<span class="muted">สอบถามราคา</span>';
+const vatLbl=()=>S.vat?"รวม VAT 7%":"ไม่รวม VAT";
+const img=(name)=>`img/${name}.webp`;
+let toastT;
+function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>el.classList.remove("on"),1800)}
+const ICON={
+  home:'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>',
+  stations:'<rect x="5" y="3" width="10" height="18" rx="2"/><path d="M8 7h4M15 9h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V8l-3-3"/><path d="M10 12l-1.5 3h3L10 18"/>',
+  models:'<path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/>',
+  compare:'<rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/><path d="M6.5 8v8M17.5 11v5"/>',
+  finder:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/>',
+  saved:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'
+};
+const ic=(n,sw=1.8)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round">${ICON[n]}</svg>`;
+const NAV=[["home","หน้าแรก"],["stations","แพ็กเกจ"],["models","อุปกรณ์"],["compare","เปรียบเทียบ"],["finder","ช่วยเลือก"],["saved","ที่สนใจ"]];
+
+/* visual for a package */
+function packStage(o,opts={}){
+  const [k0,q0]=o.parts[0], p1=o.parts[1];
+  if(o.brand==="sg"&&opts.set) return `<div class="stage"><figure><img src="${img("sg-set")}" alt="${esc(o.cfg)}" loading="lazy"></figure></div>`;
+  let h=`<div class="stage${opts.cls?" "+opts.cls:""}">`;
+  h+=`<figure><img src="${img(M[k0].imgs[0])}" alt="${esc(M[k0].name)}" loading="lazy"><span class="x">×${q0}</span></figure>`;
+  if(p1) h+=`<figure class="minor"><img src="${img(M[p1[0]].imgs[0])}" alt="${esc(M[p1[0]].name)}" loading="lazy"><span class="x">×${p1[1]}</span></figure>`;
+  if(M[k0].ill) h+=`<span class="ill">รูปประกอบ</span>`;
+  if(opts.d3) h+=`<span class="d3">3D</span>`;
+  return h+"</div>";
+}
+function modelStage(key,i=0,cls=""){
+  const m=M[key];return `<div class="stage ${cls}"><figure><img src="${img(m.imgs[i])}" alt="${esc(m.name)}" loading="lazy"></figure>${m.ill?'<span class="ill">รูปประกอบ</span>':""}</div>`;
+}
+const STAR='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>';
+const CMP='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></svg>';
+
+function packCard(o){
+  const inC=S.cmp.pack.includes(o.n), inS=S.saved.includes(o.n);
+  return `<article class="pcard">
+    <div class="pcard-h"><div class="pno"><small>PACK</small>${pad(o.n)}</div>
+      <div class="arch-n"><b>${o.st} kW Station · ${ARCH[o.arch]}</b>แนะนำหม้อแปลง ${o.tr} kVA</div>
+      <span class="bchip ${o.brand}">${o.brand==="sc"?"StarCharge":"Sungrow"}</span></div>
+    ${packStage(o,{d3:G.ok})}
+    <div class="pcard-b">
+      <div class="cfg">${esc(o.cfg)}</div>
+      <div class="kv3">
+        <div><small>หัวชาร์จ</small><b class="num">${o.o}<em>หัว</em></b></div>
+        <div><small>สูงสุด/หัว</small><b class="num">${o.max}<em>kW</em></b></div>
+        <div><small>เฉลี่ยเมื่อเต็ม</small><b class="num">${Math.round(o.st/o.o)}<em>kW</em></b></div>
+      </div>
+      <div class="price"><div class="p num"><small>ราคาแพ็กเกจ · ${vatLbl()}</small>${pt(mil(o.price))}</div>
+        <div class="pu">${S.showPrice?`<b>${k(o.price/o.o)}</b> / หัว<br><b>${k(o.price/o.st)}</b> / kW`:""}</div></div>
+    </div>
+    <div class="pcard-f">
+      <button class="btn solid sm" data-open="p-${pad(o.n)}">ดูรายละเอียด</button>
+      <button class="tbtn" data-cmp="${o.n}" aria-pressed="${inC}" aria-label="เพิ่มในการเปรียบเทียบ">${CMP}<span>เทียบ</span></button>
+      <button class="tbtn star" data-save="${o.n}" aria-pressed="${inS}" aria-label="บันทึกไว้ในรายการที่สนใจ">${STAR}</button>
+    </div>
+  </article>`;
+}
+
+/* ================= SVG diagrams ================= */
+function svgAIO(){return `<svg viewBox="0 0 460 210" role="img" aria-label="หม้อแปลงต่อเข้าตู้ชาร์จ All-in-one หลายตู้">
+  <rect class="svg-box" x="10" y="75" width="100" height="70" rx="10"/><text class="svg-t" x="60" y="107" text-anchor="middle">หม้อแปลง</text><text class="svg-s" x="60" y="128" text-anchor="middle">kVA</text>
+  ${[0,1,2].map(i=>`<rect class="svg-box" x="${210+i*84}" y="36" width="60" height="140" rx="8"/><rect class="svg-acc" x="${222+i*84}" y="56" width="36" height="26" rx="3" opacity=".75"/><path class="flow" d="M110 110 H${190+i*84} V156 H${210+i*84}"/>`).join("")}
+  <text class="svg-s" x="335" y="200" text-anchor="middle">ตู้ชาร์จในตัว × N</text></svg>`}
+function svgPool(){return `<svg viewBox="0 0 460 210" role="img" aria-label="หม้อแปลงต่อเข้าตู้ไฟกลาง แล้วกระจายไป Dispenser หลายตู้">
+  <rect class="svg-box" x="6" y="75" width="86" height="70" rx="10"/><text class="svg-t" x="49" y="107" text-anchor="middle">หม้อแปลง</text><text class="svg-s" x="49" y="128" text-anchor="middle">kVA</text>
+  <rect class="svg-box" x="130" y="58" width="96" height="104" rx="10"/><text class="svg-t" x="178" y="106" text-anchor="middle">ตู้ไฟกลาง</text><text class="svg-s" x="178" y="127" text-anchor="middle">power pool</text>
+  <path class="flow" d="M92 110 H130"/>
+  ${[0,1,2,3].map(i=>`<rect class="svg-box" x="${270+i*48}" y="44" width="30" height="130" rx="6"/><path class="flow" d="M226 110 H${250+i*48} V164 H${270+i*48}"/>`).join("")}
+  <text class="svg-s" x="345" y="200" text-anchor="middle">Dispenser บาง × N</text></svg>`}
+function svgHyb(){return `<svg viewBox="0 0 460 210" role="img" aria-label="หม้อแปลงต่อเข้าตู้ชาร์จ Sungrow ที่จ่ายไฟต่อให้ Dispenser">
+  <rect class="svg-box" x="10" y="75" width="100" height="70" rx="10"/><text class="svg-t" x="60" y="107" text-anchor="middle">หม้อแปลง</text><text class="svg-s" x="60" y="128" text-anchor="middle">kVA</text>
+  <rect class="svg-box" x="170" y="26" width="90" height="156" rx="10"/><rect class="svg-sg" x="190" y="62" width="50" height="18" rx="3" opacity=".85"/><text class="svg-s" x="215" y="146" text-anchor="middle">IDC-E-C</text>
+  <rect class="svg-box" x="340" y="44" width="50" height="138" rx="8"/><rect class="svg-sg" x="350" y="66" width="30" height="18" rx="3" opacity=".85"/><text class="svg-s" x="365" y="200" text-anchor="middle">Dispenser</text>
+  <path class="flow" d="M110 110 H170"/><path class="flow" d="M260 160 H340"/></svg>`}
+const ARCHSVG={aio:svgAIO,split:svgPool,hyb:svgHyb};
+
+/* ================= VIEWS ================= */
+function renderNav(){
+  const v=S.view, sc=S.saved.length;
+  $("#topnav").innerHTML=NAV.map(([id,t])=>`<a href="#${id}" ${v===id?'aria-current="page"':""}>${t}${id==="saved"&&sc?` <span class="num" style="color:var(--green)">${sc}</span>`:""}</a>`).join("");
+  $("#tabs").innerHTML=NAV.filter(([id])=>id!=="home").map(([id,t])=>`<a href="#${id}" ${v===id?'aria-current="page"':""}>${ic(id)}<span>${t}</span>${id==="saved"?`<span class="badge" data-n="${sc}">${sc||""}</span>`:id==="compare"?`<span class="badge" data-n="${S.cmp.pack.length+S.cmp.model.length}">${(S.cmp.pack.length+S.cmp.model.length)||""}</span>`:""}</a>`).join("");
+}
+
+function renderHome(){
+  const minP=Math.min(...P.map(p=>p.price));
+  $("#v-home").innerHTML=`
+  <div class="hero"><div class="slab" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap hero-in">
+      <div class="hero-type"><div class="eyebrow">DC Fast Charging · StarCharge × Sungrow</div>
+        <span class="ol num" aria-hidden="true">960</span><span class="so">kW <b>STATION</b></span></div>
+      <div class="hero-gl" id="heroGL" role="button" tabindex="0" aria-label="เปิดสถานีจำลอง 3D ของ Pack 01">
+        <div class="fallback"><img src="${img("nova-v5-left")}" alt="ตู้ไฟ Nova V5"><img src="${img("hydrus-angle")}" alt="Dispenser Hydrus Pro" style="height:66%"></div>
+        <div class="gl-host" id="heroHost"></div>
+        <span class="gl-cta"><i></i>Pack 01 · 960 kW · 24 หัว — แตะเพื่อหมุนดู 3D</span></div>
+      <div class="hero-copy">
+        <p>23 แพ็กเกจสถานีชาร์จเร็ว ขนาด 240–960 kW พร้อมขนาดหม้อแปลงที่แนะนำ ดูสถานีจำลอง 3D สเปก ราคา และเทียบแต่ละแบบได้ในที่เดียว</p>
+        <div class="statrow">
+          <div class="stat"><small>แพ็กเกจ</small><b class="num">23</b><div class="bar"><i style="width:100%"></i></div></div>
+          <div class="stat"><small>สูงสุดต่อหัว</small><b class="num">480 kW</b><div class="bar"><i style="width:80%"></i></div></div>
+          <div class="stat"><small>เริ่มต้น</small><b class="num">${S.showPrice?mil(minP):"—"}</b><div class="bar"><i style="width:35%"></i></div></div>
+        </div>
+        <div class="cta"><a class="btn solid" href="#finder">ช่วยเลือกให้</a><a class="btn ghost" href="#stations">ดูทุกแพ็กเกจ</a></div>
+      </div>
+    </div></div>
+  <div class="wrap">
+    <div class="section"><div class="eyebrow">Station kW</div><h2>เลือกขนาดสถานี</h2>
+      <div class="tierlad">${TIERS.map(t=>{const os=P.filter(p=>p.st===t);const mn=Math.min(...os.map(p=>p.price));const mo=Math.max(...os.map(p=>p.o));
+        return `<a class="rung" href="#stations" data-tier="${t}"><div class="kw num">${t}<small>kW</small></div>
+          <div class="meta">${os.length} แพ็กเกจ · สูงสุด ${mo} หัว<br>แนะนำหม้อแปลง <b>${os[0].tr} kVA</b></div>
+          <div class="from">เริ่ม<b class="num">${S.showPrice?mil(mn):"—"}</b></div></a>`}).join("")}</div></div>
+    <div class="section"><div class="eyebrow">Architecture</div><h2>ทุกแพ็กเกจอยู่ใน 3 รูปแบบ</h2>
+      <div class="archs">
+        <div class="arch">${svgAIO()}<h3>All-in-one</h3><div class="who">Jupiter V5 · Titan V5 · Titan V5 Pro</div>
+          <ul><li>ตู้เดียวมีทั้งโมดูลกำลังและหัวชาร์จ ติดตั้งเร็ว</li><li>ขยายทีละตู้ ไม่ต้องวางแผนตู้ไฟล่วงหน้า</li><li>ใช้พื้นที่ลานไฟน้อย</li><li class="minus">กำลังแบ่งกันภายในตู้เดียว</li></ul></div>
+        <div class="arch">${svgPool()}<h3>Split · Power Pool</h3><div class="who">Nova V5 / Nova V4 + Hydrus Pro</div>
+          <ul><li>ตู้ไฟกลางจ่ายกำลังให้ทุกหัวแบบไดนามิก</li><li>หัวเดียวรับได้สูงสุด 480 kW</li><li>Dispenser บาง เงียบ วางใกล้รถได้</li><li class="minus">ต้องเดินสาย DC จากตู้ไฟไปแต่ละ Dispenser</li></ul></div>
+        <div class="arch">${svgHyb()}<h3>Hybrid · Sungrow</h3><div class="who">IDC360E-C / IDC480E-C + Dispenser</div>
+          <ul><li>ตู้ชาร์จเป็นทั้งหัวชาร์จและแหล่งจ่ายให้ Dispenser</li><li>IP65 + C5 ทนสภาพแวดล้อมหนัก</li><li>ประสิทธิภาพสูงสุด 97% · แบ่งกำลังทีละ 40 kW</li><li class="minus">ตู้หลักใหญ่และหนัก (≤ 950 kg)</li></ul></div>
+      </div></div>
+    ${companyBlock()}
+  </div>
+  <footer><div class="wrap">${esc(CFG.priceNote)} · ภาพสินค้าใช้เพื่อประกอบการนำเสนอ · © ${esc(CFG.company.en)}</div></footer>`;
+  mountHero();
+}
+
+function filtered(){
+  let r=P.filter(p=>(S.tier==="all"||p.st===+S.tier)&&(S.brand==="all"||p.brand===S.brand)&&(S.arch==="all"||p.arch===S.arch));
+  const s={rec:(a,b)=>b.st-a.st||a.n-b.n,low:(a,b)=>a.price-b.price,high:(a,b)=>b.price-a.price,po:(a,b)=>a.price/a.o-b.price/b.o,pk:(a,b)=>a.price/a.st-b.price/b.st,out:(a,b)=>b.o-a.o||a.price-b.price,max:(a,b)=>b.max-a.max||a.price-b.price}[S.sort];
+  return r.sort(s);
+}
+function renderStations(){
+  const el=$("#v-stations");
+  if(!el.dataset.built){
+    el.innerHTML=`<div class="wrap">
+      <div class="vhead"><div><div class="eyebrow">Station packages</div><h2>แพ็กเกจสถานี</h2><p>เลือกขนาดสถานี (Station kW) แล้วกรองตามแบรนด์หรือรูปแบบติดตั้ง หม้อแปลงที่แสดงคือขนาดที่แนะนำสำหรับสถานีนั้น กด "เทียบ" เพื่อเปรียบเทียบได้สูงสุด 3 แพ็ก</p></div></div>
+      <div class="toolbar">
+        <div class="seg" id="tierSeg" role="group" aria-label="ขนาดสถานี"></div>
+        <div class="tb-row">
+          <button class="chipf" data-f="brand" data-v="sc">StarCharge</button>
+          <button class="chipf" data-f="brand" data-v="sg">Sungrow</button>
+          <button class="chipf" data-f="arch" data-v="aio">All-in-one</button>
+          <button class="chipf" data-f="arch" data-v="split">Power Pool</button>
+          <button class="chipf" data-f="arch" data-v="hyb">Hybrid</button>
+          <span class="grow"></span>
+          <label class="count" for="sortSel">เรียง</label>
+          <select class="sel" id="sortSel">
+            <option value="rec">Station kW มาก → น้อย</option><option value="low">ราคาต่ำ → สูง</option><option value="high">ราคาสูง → ต่ำ</option>
+            <option value="po">ราคาต่อหัวถูกสุด</option><option value="pk">ราคาต่อ kW ถูกสุด</option><option value="out">หัวชาร์จมากสุด</option><option value="max">kW ต่อหัวสูงสุด</option></select>
+        </div>
+      </div>
+      <div class="count" id="stCount" style="margin-bottom:10px"></div>
+      <div class="grid" id="stGrid"></div>
+      <p class="note">${esc(CFG.priceNote)} · Pack 7 และ 22: ตาราง Excel ระบุ max 400 kW/หัว แสดงที่ 240 kW ตามกำลังตู้ (รอยืนยัน)</p>
+    </div>`;
+    el.dataset.built=1;
+    $("#sortSel").addEventListener("change",e=>{S.sort=e.target.value;save();renderStationsList()});
+  }
+  $("#sortSel").value=S.sort;
+  $("#tierSeg").innerHTML=[["all","ทั้งหมด",P.length]].concat(TIERS.map(t=>[String(t),t+" kW",P.filter(p=>p.st===t).length])).map(([v,t,c])=>`<button data-tierv="${v}" aria-pressed="${String(S.tier)===v}">${t}<small>${c}</small></button>`).join("");
+  el.querySelectorAll(".chipf").forEach(b=>b.setAttribute("aria-pressed",S[b.dataset.f]===b.dataset.v));
+  renderStationsList();
+}
+function renderStationsList(){
+  const r=filtered();
+  $("#stCount").textContent=`${r.length} แพ็กเกจ`+(S.tier!=="all"?` · สถานี ${S.tier} kW · แนะนำหม้อแปลง ${trFor(+S.tier)} kVA`:" · เรียงตาม Station kW");
+  $("#stGrid").innerHTML=r.length?r.map(packCard).join(""):`<div class="empty">ไม่มีแพ็กเกจที่ตรงกับตัวกรองนี้ ลองเลือกขนาดสถานีอื่น หรือกดตัวกรองซ้ำเพื่อยกเลิก</div>`;
+}
+
+function renderModels(){
+  $("#v-models").innerHTML=`<div class="wrap">
+    <div class="vhead"><div><div class="eyebrow">Equipment line-up</div><h2>อุปกรณ์ทั้งหมด</h2><p>10 รุ่นจาก StarCharge และ Sungrow แตะการ์ดเพื่อดูสเปกเต็ม และดูว่ารุ่นนั้นอยู่ในแพ็กเกจไหน</p></div></div>
+    ${GROUPS.map(([g,b,t,d])=>`<div class="mgroup"><header><span class="bchip ${b==="Sungrow"?"sg":"sc"}" style="margin:0">${b}</span><div><h3>${t}</h3><div class="small muted">${d}</div></div></header>
+      <div class="mgrid">${Object.entries(M).filter(([,m])=>m.group===g).map(([key,m])=>`<button class="mcard" data-open="m-${key}">
+        ${modelStage(key)}<div class="bd"><div class="nm">${esc(m.name)}</div><div class="ty">${esc(m.kind)}${m.sub?" · "+esc(m.sub):""}</div>
+        <div class="pw"><b class="num">${m.kw?m.kw+'<small style="font-size:12px"> kW</small>':m.kwTxt}</b><span>${S.showPrice?mil(m.price):""}</span></div></div></button>`).join("")}</div></div>`).join("")}
+    <p class="note">ราคาต่อหน่วย ${vatLbl()} · ${esc(CFG.priceNote)}</p></div>`;
+}
+
+/* ---------- compare ---------- */
+function packRows(list){
+  const min=f=>Math.min(...list.map(f)), max=f=>Math.max(...list.map(f));
+  return [
+   ["g","ราคา"],
+   ["ราคาแพ็กเกจ",o=>S.showPrice?baht(o.price):"—",o=>o.price,"low"],
+   ["ราคาต่อหัว",o=>S.showPrice?k(o.price/o.o):"—",o=>o.price/o.o,"low"],
+   ["ราคาต่อ kW",o=>S.showPrice?k(o.price/o.st):"—",o=>o.price/o.st,"low"],
+   ["g","กำลังไฟ"],
+   ["Station kW",o=>o.st+" kW",o=>o.st,"high"],
+   ["หม้อแปลงที่แนะนำ",o=>o.tr+" kVA",o=>o.tr],
+   ["สูงสุดต่อหัว",o=>o.max+" kW",o=>o.max,"high"],
+   ["เฉลี่ยต่อหัวเมื่อใช้เต็ม",o=>Math.round(o.st/o.o)+" kW",o=>o.st/o.o,"high"],
+   ["ประสิทธิภาพสูงสุด",o=>effOf(o)?effOf(o)+"%":"—",o=>effOf(o)||0,"high"],
+   ["g","หัวชาร์จและการติดตั้ง"],
+   ["จำนวนหัว",o=>o.o+" หัว",o=>o.o,"high"],
+   ["รูปแบบ",o=>ARCH[o.arch],o=>o.arch],
+   ["แบรนด์",o=>o.brand==="sc"?"StarCharge":"Sungrow",o=>o.brand],
+   ["อุปกรณ์",o=>o.cfg,o=>o.cfg],
+   ["จำนวนตู้ที่ต้องวาง",o=>o.units+" ตู้",o=>o.units,"low"],
+   ["เพิ่มหัวได้อีก (ไม่เพิ่มตู้ไฟ)",o=>headroom(o)?headroom(o)+" หัว":"—",o=>headroom(o),"high"],
+   ["ระดับกันน้ำ/ฝุ่น",o=>ipOf(o),o=>o.brand==="sg"?65:55,"high"]
+  ];
+}
+function modelRows(){
+  return [
+   ["g","ราคา"],
+   ["ราคาต่อหน่วย",m=>S.showPrice?baht(m.price):"—",m=>m.price,"low"],
+   ["g","กำลังไฟ"],
+   ["ประเภท",m=>m.kind,m=>m.kind],
+   ["กำลังไฟ",m=>m.c.kw,m=>m.kw||0],
+   ["แรงดันออก",m=>m.c.v,m=>m.c.v],
+   ["กระแส",m=>m.c.a,m=>m.c.a],
+   ["ประสิทธิภาพสูงสุด",m=>m.c.eff?m.c.eff+"%":"—",m=>m.c.eff||0,"high"],
+   ["จำนวนหัว",m=>m.out?m.out+" หัว":(m.cap?"ต่อได้ "+m.cap+" หัว":"—"),m=>m.out||m.cap],
+   ["g","ตัวตู้"],
+   ["IP / กัดกร่อน",m=>m.c.ip,m=>m.c.ip.includes("65")?65:55,"high"],
+   ["ขนาด W×H×D (mm)",m=>m.c.dim,m=>m.c.dim],
+   ["น้ำหนัก",m=>m.c.wt?"~"+m.c.wt+" kg":"—",m=>m.c.wt||0],
+   ["หน้าจอ",m=>m.c.screen,m=>m.c.screen],
+   ["g","การเชื่อมต่อ"],
+   ["การสื่อสาร",m=>m.c.comm,m=>m.c.comm],
+   ["มาตรฐาน",m=>m.c.cert,m=>m.c.cert]
+  ];
+}
+function renderCompare(){
+  const mode=S.cmpMode, ids=S.cmp[mode];
+  const list=mode==="pack"?ids.map(byN).filter(Boolean):ids.map(id=>Object.assign({key:id},M[id])).filter(m=>m.name);
+  let body;
+  const picker=mode==="pack"
+    ? `<div class="pick">${P.slice().sort((a,b)=>b.st-a.st||a.n-b.n).map(o=>`<button data-cmp="${o.n}" aria-pressed="${ids.includes(o.n)}"><b>${pad(o.n)}</b>${o.st} kW · ${o.o} หัว · ${o.brand==="sc"?"SC":"SG"}</button>`).join("")}</div>`
+    : `<div class="pick">${Object.entries(M).map(([key,m])=>`<button data-cmpm="${key}" aria-pressed="${ids.includes(key)}">${esc(m.name)}</button>`).join("")}</div>`;
+  if(list.length<2){
+    body=`<div class="cmp-empty"><b>เลือกอย่างน้อย 2 ${mode==="pack"?"แพ็กเกจ":"รุ่น"} เพื่อเปรียบเทียบ</b><span class="muted small">เลือกได้สูงสุด 3 รายการ (เลือกแล้ว ${list.length})</span>${picker}</div>`;
+  }else{
+    const rows=mode==="pack"?packRows(list):modelRows();
+    let tb="";
+    rows.forEach(r=>{
+      if(r[0]==="g"){tb+=`<tr class="grp"><td class="lab">${r[1]}</td>${list.map(()=>"<td></td>").join("")}</tr>`;return}
+      const [lab,fmt,val,dir]=r; const vals=list.map(val);
+      const same=vals.every(v=>v===vals[0]);
+      if(S.diffOnly&&same) return;
+      let best=null;
+      if(dir&&!same){const nums=vals.filter(v=>typeof v==="number"&&v>0);if(nums.length){best=dir==="low"?Math.min(...nums):Math.max(...nums)}}
+      const isPrice=/ราคา/.test(lab)&&S.showPrice;
+      const mx=Math.max(...vals.map(v=>+v||0));
+      tb+=`<tr class="${same?"same":""}"><td class="lab">${lab}</td>${list.map((o,i)=>`<td class="${best!=null&&vals[i]===best?"best":""}">${esc(fmt(o))}${isPrice&&mx?`<div class="mbar"><i style="width:${Math.round(vals[i]/mx*100)}%"></i></div>`:""}</td>`).join("")}</tr>`;
+    });
+    const head=list.map(o=>mode==="pack"
+      ?`<th>${packStage(o)}<div class="hn"><b>Pack ${pad(o.n)}<br><span class="small muted" style="font-family:var(--f-body);font-weight:500">${o.st} kW · ${o.o} หัว</span></b><button data-cmp="${o.n}" aria-label="เอาออกจากการเปรียบเทียบ">✕</button></div></th>`
+      :`<th>${modelStage(o.key)}<div class="hn"><b>${esc(o.name)}</b><button data-cmpm="${o.key}" aria-label="เอาออกจากการเปรียบเทียบ">✕</button></div></th>`).join("");
+    body=`<div class="cmp-wrap"><table class="cmp"><colgroup><col class="lab">${list.map(()=>'<col class="it">').join("")}</colgroup>
+      <thead><tr><th class="lab">★ = ดีที่สุดในแถว</th>${head}</tr></thead><tbody>${tb}</tbody></table></div>
+      <details style="margin-top:14px"><summary class="small muted" style="cursor:pointer;min-height:40px;display:flex;align-items:center">เปลี่ยนรายการที่เทียบ (${list.length}/3)</summary>${picker}</details>
+      <div class="dact" style="max-width:520px">${mode==="pack"?list.map(o=>`<button class="btn line sm" data-open="p-${pad(o.n)}">รายละเอียด Pack ${pad(o.n)}</button>`).join(""):""}</div>`;
+  }
+  $("#v-compare").innerHTML=`<div class="wrap">
+    <div class="vhead"><div><div class="eyebrow">Compare</div><h2>เปรียบเทียบ</h2><p>เทียบได้ทั้งแพ็กเกจกับแพ็กเกจ และรุ่นกับรุ่น สูงสุด 3 รายการ</p></div></div>
+    <div class="tb-row" style="margin-bottom:14px">
+      <div class="ctabs" role="group" aria-label="ประเภทการเปรียบเทียบ"><button data-cmode="pack" aria-pressed="${mode==="pack"}">แพ็กเกจ ${S.cmp.pack.length?"("+S.cmp.pack.length+")":""}</button><button data-cmode="model" aria-pressed="${mode==="model"}">รุ่น ${S.cmp.model.length?"("+S.cmp.model.length+")":""}</button></div>
+      <span class="grow"></span>
+      ${list.length>=2?`<label class="switch" for="diffSw"><input type="checkbox" id="diffSw" ${S.diffOnly?"checked":""}>เฉพาะที่ต่างกัน</label>`:""}
+    </div>${body}
+    <p class="note">ราคา ${vatLbl()} · ${esc(CFG.priceNote)}</p></div>`;
+  const sw=$("#diffSw"); if(sw) sw.addEventListener("change",e=>{S.diffOnly=e.target.checked;renderCompare()});
+}
+
+/* ---------- finder ---------- */
+const FQ=[
+ ["st","ขนาดสถานีที่ต้องการ (Station kW)",TIERS.slice().reverse().map(t=>[t,t+" kW","หม้อแปลง "+trFor(t)+" kVA"]).concat([[0,"ยังไม่ทราบ","ให้ระบบแนะนำ"]])],
+ ["cars","อยากรับรถพร้อมกันกี่คัน",[[2,"2 คัน"],[4,"4 คัน"],[6,"6–8 คัน"],[12,"12 คันขึ้นไป"]]],
+ ["pri","ให้ความสำคัญกับอะไรที่สุด",[["fast","ชาร์จเร็วที่สุด","kW ต่อหัวสูง"],["cheap","งบต่ำ คุ้มค่า","ราคาต่อหัวต่ำ"],["tough","ทนสภาพหนัก","ใกล้ทะเล ฝุ่นเยอะ"],["grow","ขยายได้ภายหลัง","เพิ่มหัวทีหลัง"]]],
+ ["bud","งบประมาณอุปกรณ์",[[1500000,"ไม่เกิน 1.5 ล้าน"],[3000000,"ไม่เกิน 3 ล้าน"],[5000000,"ไม่เกิน 5 ล้าน"],[0,"ไม่จำกัด"]]]
+];
+function recommend(){
+  const f=S.f;
+  return P.map(o=>{
+    let s=0,why=[];
+    if(f.st){ if(o.st===f.st){s+=40;why.push(`สถานี ${o.st} kW · หม้อแปลง ${o.tr} kVA`)} else if(o.st<f.st){s+=12} else s-=60; }
+    if(f.cars){ const need=f.cars===6?6:f.cars; if(o.o>=need){s+=22-Math.min(12,(o.o-need));if(o.o>=need)why.push(`รับรถพร้อมกัน ${o.o} คัน`)} else s-=30; }
+    if(f.bud){ if(vat(o.price)<=f.bud){s+=18} else s-=50; }
+    const ppo=o.price/o.o;
+    if(f.pri==="fast"){s+=o.max/480*30;if(o.max>=360)why.push(`สูงสุด ${o.max} kW ต่อหัว`)}
+    if(f.pri==="cheap"){s+=(1-(ppo-280000)/280000)*30;why.push(`${k(ppo)} ต่อหัว`)}
+    if(f.pri==="tough"){if(o.brand==="sg"){s+=30;why.push("IP65 + กันกัดกร่อน C5")}}
+    if(f.pri==="grow"){const h=headroom(o);if(h>0){s+=Math.min(30,10+h*2);why.push(`เพิ่มได้อีก ${h} หัวโดยไม่เพิ่มตู้ไฟ`)}else if(o.fam==="jup"){s+=20;why.push("เพิ่มตู้ทีละตู้ได้")}}
+    return {o,s,why:why.slice(0,3)};
+  }).sort((a,b)=>b.s-a.s).slice(0,3);
+}
+function renderFinder(){
+  const f=S.f, done=Object.values(f).filter(v=>v!==null).length;
+  const res=done?recommend():[];
+  $("#v-finder").innerHTML=`<div class="wrap">
+    <div class="vhead"><div><div class="eyebrow">Station finder</div><h2>ช่วยเลือกแพ็กเกจ</h2><p>ตอบ 4 ข้อ ระบบจะแนะนำ 3 แพ็กเกจที่ตรงที่สุด ตอบไม่ครบก็ได้ ผลลัพธ์จะอัปเดตทันที</p></div>
+      ${done?`<button class="btn line sm" id="fReset">เริ่มใหม่</button>`:""}</div>
+    ${FQ.map(([key,q,opts],i)=>`<div class="fq"><h3><span>${pad(i+1)}</span>${q}</h3><div class="opts">${opts.map(([v,t,s])=>`<button data-fq="${key}" data-fv="${v}" aria-pressed="${f[key]===v}">${t}${s?`<small>${s}</small>`:""}</button>`).join("")}</div></div>`).join("")}
+    ${res.length?`<div class="vhead" style="margin:26px 0 0"><div><div class="eyebrow">Recommended</div><h2>แนะนำสำหรับคุณ</h2></div>
+      <button class="btn green sm" id="fCmp">เปรียบเทียบ 3 แพ็กนี้</button></div>
+      <div class="res">${res.map((r,i)=>`<button class="rcard" data-open="p-${pad(r.o.n)}">${packStage(r.o)}<div class="bd">
+        <div class="rk">${i===0?"ตรงที่สุด":"ทางเลือก "+(i+1)} · PACK ${pad(r.o.n)}</div><b style="font-family:var(--f-disp);font-size:16px">${esc(r.o.cfg)}</b>
+        <div class="why">${r.why.length?r.why.map(esc).join(" · "):`${r.o.st} kW · ${r.o.o} หัว`}</div><div class="pp num">${pt(mil(r.o.price))}</div></div></button>`).join("")}</div>`:""}
+  </div>`;
+  if(res.length) $("#fCmp").onclick=()=>{S.cmp.pack=res.map(r=>r.o.n);S.cmpMode="pack";save();location.hash="compare"};
+  const rs=$("#fReset"); if(rs) rs.onclick=()=>{S.f={st:null,cars:null,pri:null,bud:null};renderFinder()};
+}
+
+/* ---------- saved ---------- */
+function summaryText(list){
+  const lines=["สรุปแพ็กเกจที่สนใจ · Entech EV Station",""];
+  list.forEach(o=>{lines.push(`Pack ${pad(o.n)} · ${o.st} kW · ${o.o} หัว · หม้อแปลง ${o.tr} kVA`);lines.push(`  ${o.cfg}`);if(S.showPrice)lines.push(`  ราคา ${baht(o.price)} (${vatLbl()})`);lines.push("")});
+  lines.push(CFG.priceNote);lines.push("");lines.push(CFG.company.th+" · โทร "+CFG.company.phones.join(", ")+" · "+CFG.company.email);return lines.join("\n");
+}
+function renderSaved(){
+  const list=S.saved.map(byN).filter(Boolean);
+  const tot=list.reduce((s,o)=>s+o.price,0);
+  $("#v-saved").innerHTML=`<div class="wrap">
+    <div class="vhead"><div><div class="eyebrow">Shortlist</div><h2>รายการที่สนใจ</h2><p>กด ☆ บนการ์ดแพ็กเกจเพื่อเก็บไว้ที่นี่ แล้วคัดลอกสรุปส่งให้ Entech Energy ทาง LINE หรืออีเมลเพื่อขอใบเสนอราคา</p></div>
+      ${list.length>=2?`<button class="btn line sm" id="sCmp">เปรียบเทียบรายการนี้</button>`:""}</div>
+    ${list.length?`<div class="slist">${list.map(o=>`<div class="srow"><button data-open="p-${pad(o.n)}" style="padding:0;border:0;background:none" aria-label="ดู Pack ${pad(o.n)}">${packStage(o)}</button>
+        <div style="min-width:0"><b>Pack ${pad(o.n)} · ${o.st} kW</b><div class="m">${esc(o.cfg)} · ${o.o} หัว</div><button data-save="${o.n}">เอาออก</button></div>
+        <div class="pp num">${pt(mil(o.price))}</div></div>`).join("")}</div>
+      <div class="sumbox"><label class="small muted" for="sumTxt">ข้อความสรุป (คัดลอกไปส่งทาง LINE หรืออีเมล)</label>
+        <textarea id="sumTxt" readonly>${esc(summaryText(list))}</textarea>
+        <div class="tb-row"><button class="btn green" id="copySum">คัดลอกสรุป</button>${list.length>1&&S.showPrice?`<span class="muted small">ทั้งหมด ${list.length} แพ็ก รวม ${baht(tot)}</span>`:""}</div></div>`
+    :`<div class="empty">ยังไม่มีรายการ ไปที่ <a href="#stations" style="color:var(--green)">แพ็กเกจ</a> แล้วกด ☆ บนแพ็กที่สนใจ</div>`}
+    ${companyBlock()}
+  </div>`;
+  const c=$("#copySum"); if(c) c.onclick=()=>{const t=$("#sumTxt");const ok=()=>toast("คัดลอกสรุปแล้ว");
+    try{navigator.clipboard.writeText(t.value).then(ok,()=>{t.select();toast("เลือกข้อความแล้ว กดคัดลอกได้เลย")})}catch(e){t.select();toast("เลือกข้อความแล้ว กดคัดลอกได้เลย")}};
+  const sc=$("#sCmp"); if(sc) sc.onclick=()=>{S.cmp.pack=S.saved.slice(0,3);S.cmpMode="pack";save();location.hash="compare"};
+}
+
+/* ---------- detail sheet ---------- */
+let lastView="stations";
+function openSheet(html,title){
+  $("#shTitle").textContent=title;$("#shBody").innerHTML=html;$("#shBody").scrollTop=0;
+  $("#sheet").classList.add("on");$("#scrim").classList.add("on");document.body.style.overflow="hidden";
+  const g=$("#shBody .gallery");if(g){const d=$("#shBody .dots");g.addEventListener("scroll",()=>{const i=Math.round(g.scrollLeft/g.clientWidth);d.querySelectorAll("i").forEach((x,j)=>x.classList.toggle("on",i===j))},{passive:true})}
+}
+function closeSheet(){$("#sheet").classList.remove("on");$("#scrim").classList.remove("on");document.body.style.overflow="";
+  if(S.view==="home") mountHero(); else G.unmount();
+  if(/^#(p|m)-/.test(location.hash)) history.replaceState(null,"","#"+lastView);}
+function packDetail(n){
+  const o=byN(n); if(!o) return;
+  const sibs=P.filter(p=>p.st===o.st);
+  const gal=[packStage(o,{})].concat(o.brand==="sg"?[packStage(o,{set:1})]:[]).concat(o.parts.flatMap(([k])=>M[k].imgs.slice(0,2).map((_,i)=>modelStage(k,i))));
+  const bar=(v,m)=>`<div class="bar"><i style="width:${Math.min(100,Math.round(v/m*100))}%"></i></div>`;
+  const gimgs=`<div class="gallery">${gal.join("")}</div><div class="dots" style="padding-bottom:8px">${gal.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div>`;
+  const html=`<div class="media">${G.ok?`<div class="mtabs" role="group" aria-label="มุมมอง"><button data-media="3d" aria-pressed="true">3D สถานี</button><button data-media="img" aria-pressed="false">รูปอุปกรณ์</button></div>
+      <div class="gl-box"><div class="gl-host" id="shHost"></div><div class="gl-legend"><span><i></i>เส้นทางไฟ</span><span>หม้อแปลง ${o.tr} kVA → ${o.parts.length>1&&M[o.parts[0][0]].role==="cab"?"ตู้ไฟกลาง → ":""}หัวชาร์จ</span></div><div class="gl-hint">ลากเพื่อหมุน · บีบเพื่อซูม</div></div>
+      <div class="gimgs" hidden>${gimgs}</div>`:`<div class="gimgs">${gimgs}</div>`}</div>
+  <div class="sh-pad">
+    <div class="dhead"><div class="tb-row"><span class="bchip ${o.brand}" style="margin:0">${o.brand==="sc"?"StarCharge":"Sungrow"}</span><span class="small muted">${ARCH[o.arch]} · แนะนำหม้อแปลง ${o.tr} kVA</span></div>
+      <div class="big"><span class="ol">PACK ${pad(o.n)}</span> ${o.st} kW</div><div class="cfg">${esc(o.cfg)}</div></div>
+    <div class="dstats">
+      <div class="stat"><small>Station kW</small><b class="num">${o.st} kW</b>${bar(o.st,960)}</div>
+      <div class="stat"><small>หัวชาร์จ</small><b class="num">${o.o} หัว</b>${bar(o.o,24)}</div>
+      <div class="stat"><small>สูงสุด/หัว</small><b class="num">${o.max} kW</b>${bar(o.max,480)}</div>
+    </div>
+    <div class="dprice"><div class="p num"><small>ราคาแพ็กเกจ · ${vatLbl()}</small>${pt(baht(o.price))}</div>
+      ${S.showPrice?`<div class="pu"><span><b>${k(o.price/o.o)}</b> ต่อหัว</span><span><b>${k(o.price/o.st)}</b> ต่อ kW</span></div>`:""}</div>
+    <div class="note">${esc(CFG.priceNote)}</div>
+    <div class="dsec"><h4>จุดเด่น</h4><ul class="hl">${highlights(o).map(h=>`<li>${esc(h)}</li>`).join("")}</ul>
+      <div class="fit"><b>เหมาะกับ</b> ${esc(fitFor(o))}</div></div>
+    <div class="dsec"><h4>รายการอุปกรณ์</h4><div class="tscroll"><table><thead><tr><th>รุ่น</th><th class="r">จำนวน</th>${S.showPrice?'<th class="r">ต่อหน่วย</th><th class="r">รวม</th>':""}</tr></thead>
+      <tbody>${o.parts.map(([k2,q])=>`<tr><td><button data-open="m-${k2}" style="border:0;background:none;padding:0;color:var(--green);font-weight:600;text-align:left">${esc(M[k2].name)}</button><div class="small muted">${esc(M[k2].kind)}</div></td><td class="r">${q}</td>${S.showPrice?`<td class="r">${baht(M[k2].price)}</td><td class="r">${baht(M[k2].price*q)}</td>`:""}</tr>`).join("")}</tbody>
+      ${S.showPrice?`<tfoot><tr><td colspan="3">รวม</td><td class="r">${baht(o.price)}</td></tr></tfoot>`:""}</table></div></div>
+    <div class="dsec"><h4>การต่อไฟ · ${ARCH[o.arch]}</h4><div class="arch" style="padding:10px">${ARCHSVG[o.arch]()}</div></div>
+    <div class="dsec"><h4>แพ็กอื่นขนาด ${o.st} kW</h4><div class="sib">${sibs.map(s=>`<button data-open="p-${pad(s.n)}" aria-current="${s.n===o.n}"><b>Pack ${pad(s.n)}</b><span>${s.o} หัว · ${s.max} kW/หัว<br>${S.showPrice?mil(s.price):""}</span></button>`).join("")}</div></div>
+    <div class="dact"><button class="btn ${S.cmp.pack.includes(o.n)?"green":"line"}" data-cmp="${o.n}" data-re="p-${pad(o.n)}">${S.cmp.pack.includes(o.n)?"✓ อยู่ในการเทียบ":"+ เปรียบเทียบ"}</button>
+      <button class="btn ${S.saved.includes(o.n)?"green":"solid"}" data-save="${o.n}" data-re="p-${pad(o.n)}">${S.saved.includes(o.n)?"★ บันทึกแล้ว":"☆ บันทึกไว้"}</button></div>
+  </div>`;
+  openSheet(html,`Pack ${pad(o.n)} · ${o.st} kW · ${o.o} หัว`);
+  if(G.ok) G.mount($("#shHost"),o,true);
+}
+function modelDetail(key){
+  const m=M[key]; if(!m) return;
+  const used=P.filter(p=>p.parts.some(([k2])=>k2===key));
+  const gal=m.imgs.map((_,i)=>modelStage(key,i));
+  const html=`<div class="gallery">${gal.join("")}</div>${gal.length>1?`<div class="dots">${gal.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div>`:""}
+  <div class="sh-pad">
+    <div class="dhead"><div class="tb-row"><span class="bchip ${m.brand}" style="margin:0">${m.brand==="sc"?"StarCharge":"Sungrow"}</span><span class="small muted">${esc(m.kind)}${m.sub?" · "+esc(m.sub):""}</span></div>
+      <div class="big">${esc(m.name)}</div>
+      <div class="tb-row">${m.chips.map(c=>`<span class="chipf" style="border-style:solid;display:inline-flex;align-items:center">${esc(c)}</span>`).join("")}</div></div>
+    <div class="dprice"><div class="p num"><small>ราคาต่อหน่วย · ${vatLbl()}</small>${pt(baht(m.price))}</div></div>
+    <div class="dsec"><h4>จุดเด่น</h4><ul class="hl">${m.feat.map(h=>`<li>${esc(h)}</li>`).join("")}</ul></div>
+    <div class="dsec"><h4>สเปก</h4><div class="tscroll"><table class="spec"><tbody>${m.spec.map(([a,b])=>`<tr><th>${esc(a)}</th><td>${esc(b)}</td></tr>`).join("")}</tbody></table></div>
+      <div class="note">ที่มา: ${esc(m.src)}${m.ill?" · ภาพเป็นรูปประกอบ รอยืนยันรุ่น":""}</div></div>
+    <div class="dsec"><h4>อยู่ใน ${used.length} แพ็กเกจ</h4><div class="sib">${used.map(s=>`<button data-open="p-${pad(s.n)}"><b>Pack ${pad(s.n)}</b><span>${s.st} kW · ${s.o} หัว<br>${S.showPrice?mil(s.price):""}</span></button>`).join("")}</div></div>
+    <div class="dact"><button class="btn ${S.cmp.model.includes(key)?"green":"line"}" data-cmpm="${key}" data-re="m-${key}">${S.cmp.model.includes(key)?"✓ อยู่ในการเทียบ":"+ เปรียบเทียบรุ่น"}</button>
+      <a class="btn solid" href="#compare" data-cmode-go="model">ไปหน้าเปรียบเทียบ</a></div>
+  </div>`;
+  openSheet(html,m.name);
+}
+
+
+/* ================= COMPANY ================= */
+const SV={mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+ tel:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>',
+ fb:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-7h2.5l.4-3h-2.9V9.2c0-.9.3-1.4 1.5-1.4h1.5V5.2a19 19 0 0 0-2.2-.1c-2.2 0-3.6 1.3-3.6 3.7V11H8.3v3h2.4v7"/></svg>',
+ line:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4C7 4 3 7.2 3 11.1c0 3.5 3.1 6.4 7.4 7l-.5 2.6c-.1.5.4.8.8.5l3.5-2.8c4.4-.6 7.8-3.6 7.8-7.3C21 7.2 17 4 12 4z"/></svg>',
+ pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'};
+function companyBlock(){const c=CFG.company;return `<section class="company" aria-label="ข้อมูลบริษัท">
+  <div style="display:grid;gap:14px"><img src="img/logo-white.webp" alt="Entech Energy" width="260" height="66"><div><h3>${esc(c.th)}</h3><p class="small">${esc(c.en)} · EV &amp; Energy Solutions</p></div>
+    <p style="display:flex;gap:10px;align-items:flex-start">${SV.pin}<span>${esc(c.addr)}</span></p></div>
+  <div class="cl">
+    <div>${SV.mail}<a href="mailto:${c.email}">${esc(c.email)}</a><button class="copy" data-copy="${c.email}">คัดลอก</button></div>
+    ${c.phones.map(ph=>`<div>${SV.tel}<a href="tel:${ph.replace(/-/g,"")}">${esc(ph)}</a><button class="copy" data-copy="${ph}">คัดลอก</button></div>`).join("")}
+    <div>${SV.fb}<span>${esc(c.fb)}</span></div>
+    <div>${SV.line}<span>LINE: ${esc(c.line)}</span><button class="copy" data-copy="${c.line}">คัดลอก</button></div>
+  </div></section>`}
+
+/* ================= 3D STATION (ported from original deck) ================= */
+const G=(function(){
+  const ok=!!(window.THREE&&THREE.WebGLRenderer&&THREE.OrbitControls);
+  let R,scene,cam,ctl,root,dashTex,dashMats=[],ledMats=[],anims=[],t0=0,builtFor=null,hostEl=null,dirL,curOpt=null,heroMode=false;
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const off={ok:false,mount(){},unmount(){}};
+  if(!ok) return off;
+  try{
+    R=new THREE.WebGLRenderer({antialias:true,alpha:true});
+    R.setClearColor(0x000000,0);
+    R.outputEncoding=THREE.sRGBEncoding; R.toneMapping=THREE.ACESFilmicToneMapping; R.toneMappingExposure=1.05;
+    R.shadowMap.enabled=true; R.shadowMap.type=THREE.PCFSoftShadowMap;
+    R.domElement.style.cssText="display:block;width:100%;height:100%;outline:none";
+  }catch(e){return off}
+  scene=new THREE.Scene();
+  cam=new THREE.PerspectiveCamera(36,1,.1,500);
+  ctl=new THREE.OrbitControls(cam,R.domElement);
+  ctl.enableDamping=true; ctl.dampingFactor=.07; ctl.enablePan=false; ctl.maxPolarAngle=1.42; ctl.minPolarAngle=.25;
+  ctl.autoRotate=!reduce; ctl.autoRotateSpeed=.55;
+  ctl.addEventListener("start",()=>{ctl.autoRotate=false});
+  scene.add(new THREE.HemisphereLight(0xdceef5,0x0b0f0d,.62));
+  dirL=new THREE.DirectionalLight(0xffffff,1.05); dirL.position.set(-20,36,24); dirL.castShadow=true;
+  const SM=innerWidth<760?1024:2048; dirL.shadow.mapSize.set(SM,SM); dirL.shadow.bias=-.0004; scene.add(dirL); scene.add(dirL.target);
+  const fill=new THREE.DirectionalLight(0x8cc8ee,.3); fill.position.set(30,12,-30); scene.add(fill);
+  const dc=document.createElement("canvas"); dc.width=128; dc.height=16; const dx=dc.getContext("2d");
+  const gr=dx.createLinearGradient(0,0,128,0); gr.addColorStop(0,"rgba(117,193,136,0)"); gr.addColorStop(.5,"rgba(200,255,215,1)"); gr.addColorStop(.62,"rgba(117,193,136,.95)"); gr.addColorStop(1,"rgba(117,193,136,0)");
+  dx.fillStyle="rgba(117,193,136,.2)"; dx.fillRect(0,0,128,16); dx.fillStyle=gr; dx.fillRect(0,0,128,16);
+  dashTex=new THREE.CanvasTexture(dc); dashTex.wrapS=dashTex.wrapT=THREE.RepeatWrapping;
+  const MC={}; const mat=(k,p)=>MC[k]||(MC[k]=new THREE.MeshStandardMaterial(p));
+  const X={
+    white:mat("white",{color:0xe6eae8,roughness:.42,metalness:.08}), silver:mat("silver",{color:0xc2c8cc,roughness:.32,metalness:.55}),
+    gray:mat("gray",{color:0x6f777c,roughness:.5,metalness:.35}), dark:mat("dark",{color:0x15181a,roughness:.55,metalness:.2}),
+    panel:mat("panel",{color:0x0b0d0e,roughness:.25,metalness:.3}), screen:mat("screen",{color:0x06202b,emissive:0x2aa6d8,emissiveIntensity:.9,roughness:.2}),
+    sgscreen:mat("sgscreen",{color:0x06142b,emissive:0x2f8cff,emissiveIntensity:1.1,roughness:.2}),
+    led:mat("led",{color:0x75c188,emissive:0x75c188,emissiveIntensity:2.2}), sgled:mat("sgled",{color:0x2f8cff,emissive:0x2f8cff,emissiveIntensity:2}),
+    cable:mat("cable",{color:0x0e0f10,roughness:.45,metalness:.1}), bay:mat("bay",{color:0x0c3f63,roughness:.95}),
+    line:mat("line",{color:0xdfe6e2,roughness:.8,emissive:0x222222}), pad:mat("pad",{color:0x2b302e,roughness:.95}), padL:mat("padL",{color:0x1b201e,roughness:.95}),
+    lot:mat("lot",{color:0x232927,roughness:1}),
+    tr:mat("tr",{color:0x5b6b62,roughness:.55,metalness:.45}), trfin:mat("trfin",{color:0x4a5750,roughness:.6,metalness:.4}),
+    canopy:mat("canopy",{color:0x1e2523,roughness:.5,metalness:.4}),
+    glass:new THREE.MeshStandardMaterial({color:0x9fd2ea,roughness:.1,metalness:.2,transparent:true,opacity:.14,depthWrite:false,side:THREE.DoubleSide}),
+    stripe:mat("stripe",{color:0x2b3f48,roughness:.6}), yellow:mat("yellow",{color:0xe8c11c,roughness:.6}),
+    carGlass:mat("cg",{color:0x0b1014,roughness:.12,metalness:.6}), tire:mat("tire",{color:0x0a0a0a,roughness:.9}),
+    head:mat("head",{color:0xffffff,emissive:0xdff6ff,emissiveIntensity:1.4})
+  };
+  ledMats=[X.led,X.sgled];
+  const CARC=[0xd8dcdf,0x2a3036,0x7d1d1d,0x2a4a78,0x6c777e,0xf2f2f2,0x1d3b30,0x9a9a8c].map((c,i)=>mat("car"+i,{color:c,roughness:.3,metalness:.55}));
+  function box(g,w,h,d,m,x,y,z,sh){const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=sh!==false;o.receiveShadow=true;g.add(o);return o}
+  function tube(g,pts,r){const c=new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(...p)));const o=new THREE.Mesh(new THREE.TubeGeometry(c,40,r||.028,6,false),X.cable);o.castShadow=true;g.add(o);return o}
+  function label(text,sub,col){
+    const c=document.createElement("canvas"); c.width=640; c.height=sub?170:110; const x=c.getContext("2d");
+    x.fillStyle="rgba(6,10,12,.88)"; x.strokeStyle=col||"#75c188"; x.lineWidth=4;
+    const r=22,w=c.width-8,h=c.height-8; x.beginPath(); x.moveTo(4+r,4); x.arcTo(4+w,4,4+w,4+h,r); x.arcTo(4+w,4+h,4,4+h,r); x.arcTo(4,4+h,4,4,r); x.arcTo(4,4,4+w,4,r); x.closePath(); x.fill(); x.stroke();
+    x.fillStyle="#eef3f0"; x.font="600 54px 'Chakra Petch','IBM Plex Sans Thai',sans-serif"; x.textAlign="center"; x.textBaseline="middle";
+    x.fillText(text,c.width/2,sub?62:c.height/2+2);
+    if(sub){x.fillStyle=col||"#75c188"; x.font="500 38px 'IBM Plex Sans Thai',sans-serif"; x.fillText(sub,c.width/2,124)}
+    const t=new THREE.CanvasTexture(c); t.encoding=THREE.sRGBEncoding; t.anisotropy=4;
+    const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:false,transparent:true}));
+    const k=.0105; s.scale.set(c.width*k,c.height*k,1); s.renderOrder=10; return s;
+  }
+  function holsterCables(g,w,d,h,armY,armHalf){
+    [-1,1].forEach(s=>{ box(g,.1,.16,.09,X.dark,s*.14,.98,d/2+.05);
+      if(armY) tube(g,[[s*armHalf,armY-.05,0.02],[s*(armHalf+.12),armY-.6,.12],[s*(armHalf+.1),.5,.32],[s*(armHalf*.6),.22,.62],[s*.3,.45,.6],[s*.16,.92,d/2+.1]]);
+      else tube(g,[[s*.16,.92,d/2+.1],[s*.28,.5,d/2+.45],[s*(w/2+.18),.18,d/2+.2],[s*(w/2+.12),.6,0],[s*(w/2+.02),1.15,-.05]]); });
+  }
+  function mTitan(pro){
+    const g=new THREE.Group(),w=.75,h=1.79,d=.72;
+    box(g,w+.04,.1,d+.04,X.gray,0,.05,0); box(g,w,h-.1,d,X.white,0,h/2+.05,0);
+    if(pro){box(g,.07,h-.1,d+.01,X.gray,w/2-.03,h/2+.05,0);box(g,.07,h-.1,d+.01,X.gray,-w/2+.03,h/2+.05,0)}
+    box(g,.52,1.0,.02,X.panel,0,1.18,d/2+.01,false); box(g,.22,.17,.012,X.screen,0,1.34,d/2+.025,false);
+    box(g,.13,.016,.012,X.led,-.13,1.62,d/2+.025,false); box(g,.13,.016,.012,X.led,.13,1.62,d/2+.025,false);
+    box(g,.12,.34,.12,X.gray,0,h+.17,0); box(g,1.95,.1,.18,X.gray,0,h+.36,0);
+    box(g,.08,.06,.05,X.yellow,-.82,h+.36,.1,false); box(g,.08,.06,.05,X.yellow,.82,h+.36,.1,false);
+    holsterCables(g,w,d,h,h+.32,.95); return g;
+  }
+  function mJupiter(){ // with cable-management arm
+    const g=new THREE.Group(),w=.75,h=1.6,d=.6;
+    box(g,w+.04,.1,d+.04,X.gray,0,.05,0); box(g,w,h-.1,d,X.white,0,h/2+.05,0);
+    box(g,.5,.95,.02,X.panel,0,1.05,d/2+.01,false); box(g,.22,.17,.012,X.screen,0,1.22,d/2+.025,false);
+    box(g,.13,.016,.012,X.led,-.12,1.48,d/2+.025,false); box(g,.13,.016,.012,X.led,.12,1.48,d/2+.025,false);
+    box(g,.12,.3,.12,X.gray,0,h+.15,0); box(g,1.8,.1,.18,X.gray,0,h+.32,0);
+    box(g,.08,.06,.05,X.yellow,-.76,h+.32,.1,false); box(g,.08,.06,.05,X.yellow,.76,h+.32,.1,false);
+    holsterCables(g,w,d,h,h+.28,.88); return g;
+  }
+  function mHydrus(){
+    const g=new THREE.Group(),w=.5,h=1.7,d=.25;
+    box(g,w,h,d,X.white,0,h/2,0); box(g,w+.01,.55,d+.01,X.stripe,0,.28,0);
+    box(g,.32,.6,.02,X.panel,0,1.12,d/2+.01,false); box(g,.16,.13,.012,X.screen,0,1.25,d/2+.025,false);
+    box(g,.1,.016,.012,X.led,0,1.48,d/2+.025,false);
+    box(g,.08,.3,.08,X.gray,0,h+.15,0); box(g,1.3,.08,.12,X.gray,0,h+.32,0);
+    [-1,1].forEach(s=>{box(g,.08,.14,.08,X.dark,s*.1,.92,d/2+.05); tube(g,[[s*.62,h+.28,0],[s*.72,h-.4,.08],[s*.68,.45,.3],[s*.38,.2,.55],[s*.2,.5,.42],[s*.11,.9,d/2+.1]])});
+    return g;
+  }
+  function mIDC(){
+    const g=new THREE.Group(),w=.85,h=2.3,d=.95;
+    box(g,w+.04,.14,d+.04,X.dark,0,.07,0); box(g,w,h-.24,d,X.silver,0,h/2-.03,0);
+    box(g,w+.06,.12,d+.06,X.dark,0,h-.05,0); box(g,w*.8,.02,.01,X.sgled,0,h-.05,d/2+.035,false);
+    box(g,.02,1.5,d*.82,X.dark,w/2+.011,1.1,0,false);
+    box(g,.5,.16,.02,X.panel,0,1.32,d/2+.01,false); box(g,.24,.11,.012,X.sgscreen,0,1.32,d/2+.025,false);
+    box(g,.22,.06,.5,X.dark,w/2+.1,h-.35,0);
+    [-1,1].forEach(s=>{box(g,.09,.15,.09,X.dark,s*(w/2+.06),.95,d/2-.15); tube(g,[[w/2+.2,h-.38,0],[w/2+.35,1.3,.25],[s*(w/2+.25),.3,.55],[s*(w/2+.1),.6,d/2],[s*(w/2+.06),.92,d/2-.12]])});
+    return g;
+  }
+  function mSGdisp(){
+    const g=new THREE.Group(),w=.43,h=1.8,d=.33;
+    box(g,w,.12,d,X.dark,0,.06,0); box(g,w,h-.12,d,X.silver,0,h/2+.06,0);
+    box(g,w+.01,h*.55,.04,X.dark,0,h*.6,-d/2,false);
+    box(g,.3,.36,.02,X.panel,0,1.25,d/2+.01,false); box(g,.22,.17,.012,X.sgscreen,0,1.28,d/2+.025,false);
+    box(g,.3,.012,.012,X.sgled,0,1.7,d/2+.02,false); box(g,.1,.1,.34,X.dark,0,h+.05,-.05);
+    [-1,1].forEach(s=>{box(g,.08,.14,.08,X.dark,s*(w/2+.05),.95,0); tube(g,[[0,h+.05,.12],[s*.25,1.4,.4],[s*.4,.3,.55],[s*.32,.6,.15],[s*(w/2+.05),.92,0]])});
+    return g;
+  }
+  function mNova(big){
+    const g=new THREE.Group(),w=big?1.5:1.05,h=big?2.15:1.75,d=big?1.22:1.15;
+    box(g,w+.04,.1,d+.04,X.gray,0,.05,0); box(g,w,h-.1,d,X.white,0,h/2+.05,0);
+    if(big){ box(g,.5,.55,.012,X.dark,-.33,.55,d/2+.01,false); box(g,.5,.55,.012,X.dark,.33,.55,d/2+.01,false); box(g,.01,h-.3,.012,X.gray,0,h/2,d/2+.01,false);}
+    else box(g,.62,.5,.012,X.dark,0,.5,d/2+.01,false);
+    box(g,.012,.16,.012,X.led,-w/2+.18,1.3,d/2+.015,false); return g;
+  }
+  function mTR(){
+    const g=new THREE.Group();
+    box(g,3.0,.2,2.4,X.pad,0,.1,0); box(g,1.9,1.6,1.25,X.tr,0,1.0,0);
+    for(let i=0;i<9;i++){const x=-.8+i*.2; box(g,.04,1.2,.3,X.trfin,x,.95,.78); box(g,.04,1.2,.3,X.trfin,x,.95,-.78)}
+    for(let i=0;i<3;i++){const c=new THREE.Mesh(new THREE.CylinderGeometry(.07,.09,.45,10),X.gray); c.position.set(-.5+i*.5,2.02,0); c.castShadow=true; g.add(c)}
+    box(g,1.95,.06,1.3,X.yellow,0,1.83,0,false); return g;
+  }
+  function mCar(ci){
+    const g=new THREE.Group(), body=CARC[ci%CARC.length];
+    box(g,1.86,.5,4.5,body,0,.55,0); box(g,1.8,.22,4.3,X.dark,0,.3,0);
+    box(g,1.62,.52,2.5,X.carGlass,0,1.05,.25); box(g,1.64,.06,2.3,body,0,1.33,.3);
+    [[.88,1.45],[-.88,1.45],[.88,-1.45],[-.88,-1.45]].forEach(([x,z])=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.34,.34,.24,14),X.tire); w.rotation.z=Math.PI/2; w.position.set(x,.34,z); w.castShadow=true; g.add(w)});
+    box(g,.4,.06,.03,X.head,.6,.62,-2.26,false); box(g,.4,.06,.03,X.head,-.6,.62,-2.26,false); return g;
+  }
+  const MAKE={jv5:()=>mJupiter(),tv5180:()=>mTitan(false),tv5240:()=>mTitan(false),tv5pro:()=>mTitan(true),hydrus:()=>mHydrus(),idc480:()=>mIDC(),idc360:()=>mIDC(),sgdisp:()=>mSGdisp(),novav5:()=>mNova(false),novav4:()=>mNova(true)};
+  function ribbon(pts,wd,op){
+    const pos=[],uv=[],idx=[]; let u=0;
+    for(let i=0;i<pts.length-1;i++){
+      const a=pts[i],b=pts[i+1]; const ddx=b[0]-a[0],dz=b[1]-a[1],L=Math.hypot(ddx,dz); if(L<1e-4) continue;
+      const nx=-dz/L*wd/2,nz=ddx/L*wd/2, ex=ddx/L*wd/2, ez=dz/L*wd/2; const base=pos.length/3;
+      const ax=a[0]-ex,az=a[1]-ez,bx=b[0]+ex,bz=b[1]+ez;
+      pos.push(ax+nx,0,az+nz, ax-nx,0,az-nz, bx+nx,0,bz+nz, bx-nx,0,bz-nz);
+      uv.push(u*.55,0,u*.55,1,(u+L)*.55,0,(u+L)*.55,1); u+=L; idx.push(base,base+1,base+2,base+1,base+3,base+2);
+    }
+    const geo=new THREE.BufferGeometry(); geo.setAttribute("position",new THREE.Float32BufferAttribute(pos,3)); geo.setAttribute("uv",new THREE.Float32BufferAttribute(uv,2)); geo.setIndex(idx);
+    const m=new THREE.MeshBasicMaterial({map:dashTex,color:0xffffff,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false});
+    m.userData.op=op||1; dashMats.push(m);
+    const o=new THREE.Mesh(geo,m); o.position.y=.03; o.renderOrder=2; return o;
+  }
+  function disposeRoot(){
+    if(!root) return;
+    root.traverse(o=>{ if(o.geometry) o.geometry.dispose(); if(o.material&&(o.isSprite||dashMats.includes(o.material))){ if(o.material.map&&o.material.map!==dashTex) o.material.map.dispose(); o.material.dispose(); } });
+    scene.remove(root); root=null; dashMats=[]; anims=[];
+  }
+  function build(opt){
+    disposeRoot(); curOpt=opt;
+    root=new THREE.Group(); scene.add(root);
+    const cabs=[], pts=[]; let cabKey=null;
+    opt.parts.forEach(([k,q])=>{ for(let i=0;i<q;i++) (M[k].role==="cab"?cabs:pts).push({k}) });
+    if(cabs.length) cabKey=cabs[0].k;
+    if(opt.fam==="sgc"){ const idcs=pts.filter(p=>M[p.k].role==="point"), ds=pts.filter(p=>M[p.k].role==="disp"); pts.length=0; idcs.forEach((p,i)=>{pts.push(p); if(ds[i]){ds[i].feed=p; pts.push(ds[i])}}) }
+    else if(cabs.length){ pts.forEach((p,i)=>p.cab=i%cabs.length); pts.sort((a,b)=>a.cab-b.cab) }
+    const n=pts.length, rows=n>6?2:1, per=Math.ceil(n/rows), SP=5.6, BAY=2.8, L=per*SP;
+    const trench = rows===2 ? -.8 : -1.15;
+    const rowGroups=[];
+    for(let r=0;r<rows;r++){ const rg=new THREE.Group(); if(r===1){rg.rotation.y=Math.PI; rg.position.z=-1.6} root.add(rg); rowGroups.push(rg) }
+    let carI=0;
+    pts.forEach((p,i)=>{
+      const r=rows===2?(i<per?0:1):0, j=rows===2?(i<per?i:i-per):i, cnt=rows===2?(r===0?per:n-per):n;
+      const x=(j-(cnt-1)/2)*SP; const rg=rowGroups[r];
+      const u=MAKE[p.k](); u.position.set(x,0,0); rg.add(u);
+      box(rg,1.9,.14,1.25,X.pad,x,.07,0,false);
+      [-1,1].forEach((s,bi)=>{
+        const bx=x+s*BAY/2;
+        const bay=new THREE.Mesh(new THREE.PlaneGeometry(BAY-.25,5.3),X.bay); bay.rotation.x=-Math.PI/2; bay.position.set(bx,.012,.8+2.65); bay.receiveShadow=true; rg.add(bay);
+        const ln=new THREE.Mesh(new THREE.PlaneGeometry(.09,5.5),X.line); ln.rotation.x=-Math.PI/2; ln.position.set(bx+s*BAY/2,.014,.8+2.75); rg.add(ln);
+        box(rg,1.2,.1,.18,X.yellow,bx,.05,1.35,false);
+        const seed=(i*2+bi)*7%10;
+        if(seed<6){ const c=mCar(carI++); c.position.set(bx,0,.8+2.6+.2); rg.add(c); anims.push({o:c,t:"car",d:1.1+carI*.07,b:c.position.z}) }
+      });
+      p.world=new THREE.Vector3(x,0,-.5); rg.updateMatrixWorld(true); p.world.applyMatrix4(rg.matrixWorld);
+      anims.push({o:u,t:"rise",d:.45+i*.06});
+    });
+    rowGroups.forEach((rg,r)=>{
+      const cnt=rows===2?(r===0?per:n-per):n, Lr=cnt*SP, x0=-Lr/2-.4, x1=Lr/2+.4, z0=-.2, z1=6.6, H=5.3;
+      const cg=new THREE.Group(); rg.add(cg);
+      const gl=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,.06,z1-z0),X.glass); gl.position.set(0,H,(z0+z1)/2); cg.add(gl);
+      box(cg,x1-x0,.32,.32,X.canopy,0,H,z1); box(cg,x1-x0,.32,.32,X.canopy,0,H,z0);
+      box(cg,.32,.32,z1-z0,X.canopy,x0,H,(z0+z1)/2); box(cg,.32,.32,z1-z0,X.canopy,x1,H,(z0+z1)/2);
+      box(cg,x1-x0,.06,.04,X.led,0,H-.12,z1+.17,false);
+      for(let k=0;k<=cnt;k++){ const x=-Lr/2+k*SP; if(k%2===0||k===cnt){ box(cg,.26,H,.26,X.canopy,Math.max(x0+.1,Math.min(x1-.1,x)),H/2,z0+.05) } if(k<cnt) box(cg,.24,.24,z1-z0,X.canopy,-Lr/2+(k+.5)*SP,H-.02,(z0+z1)/2,false) }
+      anims.push({o:cg,t:"drop",d:.25});
+    });
+    const minX=-L/2-1.4;
+    const cabX=k=>minX-2.2-k*2.1;
+    const trX=cabs.length? cabX(cabs.length-1)-3.4 : minX-3.2;
+    const yardZ = trench-.2;
+    const tr=mTR(); tr.position.set(trX,0,yardZ); root.add(tr); anims.push({o:tr,t:"rise",d:0});
+    const yardW=Math.abs(trX-minX)+3.4;
+    const yp=new THREE.Mesh(new THREE.PlaneGeometry(yardW,5.2),X.padL); yp.rotation.x=-Math.PI/2; yp.position.set((trX+minX)/2-.2,.006,yardZ); yp.receiveShadow=true; root.add(yp);
+    const fx0=trX-1.9,fx1=minX+.6,fz0=yardZ-2.4,fz1=yardZ+2.4;
+    const fm=new THREE.MeshStandardMaterial({color:0x8a9590,transparent:true,opacity:.18,side:THREE.DoubleSide,depthWrite:false});
+    [[fx0,fz0,fx1,fz0],[fx0,fz1,fx1,fz1],[fx0,fz0,fx0,fz1]].forEach(([a,b,c,d])=>{const L2=Math.hypot(c-a,d-b); const pl=new THREE.Mesh(new THREE.PlaneGeometry(L2,1.8),fm); pl.position.set((a+c)/2,.9,(b+d)/2); pl.rotation.y=-Math.atan2(d-b,c-a); root.add(pl); box(root,.06,1.9,.06,X.gray,a,.95,b,false); box(root,.06,1.9,.06,X.gray,c,.95,d,false)});
+    dashMats.push(fm); fm.userData.op=.18; fm.userData.static=true;
+    cabs.forEach((c,k)=>{const o=MAKE[c.k](); o.position.set(cabX(k),0,yardZ); o.rotation.y=Math.PI/2; root.add(o); anims.push({o,t:"rise",d:.18+k*.08})});
+    const add=(p,w,op)=>{root.add(ribbon(p,w,op))};
+    if(cabs.length){
+      cabs.forEach((c,k)=>add([[trX+1,yardZ],[cabX(k),yardZ]],.34,1));
+      pts.forEach(p=>{ const cx=cabX(p.cab), o2=(p.cab-(cabs.length-1)/2)*.22; add([[cx,yardZ],[cx+.9,trench+o2],[p.world.x,trench+o2],[p.world.x,p.world.z]],.16,.85) });
+    } else {
+      pts.forEach(p=>{ if(p.feed) return; add([[trX+1,yardZ],[trX+2.2,trench],[p.world.x,trench],[p.world.x,p.world.z]],.2,.9) });
+      pts.forEach(p=>{ if(p.feed) add([[p.feed.world.x,p.feed.world.z],[p.feed.world.x,trench+.25],[p.world.x,trench+.25],[p.world.x,p.world.z]],.16,.85) });
+    }
+    const x0=trX-2.5, x1=L/2+1.5, z0=rows===2?-8.5:-3.2, z1=7.2;
+    // asphalt lot under the whole site (reads as a diorama on any page background)
+    const lot=new THREE.Mesh(new THREE.BoxGeometry(x1-x0+3,.3,z1-z0+3),X.lot); lot.position.set((x0+x1)/2,-.155,(z0+z1)/2); lot.receiveShadow=true; root.add(lot);
+    const l1=label(`หม้อแปลง ${opt.tr} kVA`,"ขนาดที่แนะนำ","#3aa6ea"); l1.position.set(trX,3.6,yardZ); root.add(l1);
+    if(cabs.length){ const l2=label(`${M[cabKey].name} × ${cabs.length}`,`ตู้ไฟกลาง ${opt.st} kW`); l2.position.set((cabX(0)+cabX(cabs.length-1))/2,3.6,yardZ); root.add(l2) }
+    const l3=label(`${opt.st} kW · ${opt.o} หัว`,opt.cfg.length>28?ARCH[opt.arch]:opt.cfg); l3.position.set(0,7.3,rows===2?-.8:2.8); root.add(l3);
+    const cx=(x0+x1)/2, cz=(z0+z1)/2, span=Math.max(x1-x0,(z1-z0)*1.25);
+    t0=performance.now(); builtFor=opt.n; root.userData={cx,cz,span};
+    dirL.target.position.set(cx,0,cz); dirL.position.set(cx-22,38,cz+26);
+    const sc=dirL.shadow.camera, ext=span*.75+6; sc.left=-ext; sc.right=ext; sc.top=ext; sc.bottom=-ext; sc.near=1; sc.far=140; sc.updateProjectionMatrix();
+    frame();
+  }
+  function frame(){
+    if(!root) return; const {cx,cz,span}=root.userData; const a=cam.aspect||1.4;
+    const vf=cam.fov*Math.PI/180, hf=2*Math.atan(Math.tan(vf/2)*a);
+    let dist=(span/2)/Math.tan(hf/2)*.7; dist=Math.max(dist,(span*.32)/Math.tan(vf/2)); dist=Math.max(dist,14);
+    ctl.target.set(cx,.6,cz);
+    cam.position.set(cx+dist*.55,dist*.5,cz+dist*.78);
+    ctl.minDistance=8; ctl.maxDistance=dist*1.8; ctl.update();
+  }
+  function resize(){
+    if(!hostEl) return; const w=hostEl.clientWidth||600,h=hostEl.clientHeight||400;
+    R.setPixelRatio(Math.min(2,devicePixelRatio||1)); R.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); frame();
+  }
+  function mount(host,opt,interactive){
+    if(!host) return;
+    hostEl=host; heroMode=!interactive;
+    if(R.domElement.parentNode!==host) host.appendChild(R.domElement);
+    ctl.enabled=!!interactive; R.domElement.style.pointerEvents=interactive?"auto":"none"; R.domElement.style.touchAction=interactive?"none":"auto";
+    ctl.autoRotate=!reduce; ctl.autoRotateSpeed=interactive?.55:.4;
+    if(host.closest(".hero-gl")) host.closest(".hero-gl").classList.add("live");
+    resize();
+    if(builtFor!==opt.n) build(opt); else { t0=performance.now()-3000; frame() }
+  }
+  function unmount(){ if(R.domElement.parentNode) R.domElement.parentNode.removeChild(R.domElement); hostEl=null }
+  addEventListener("resize",()=>resize());
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>{ if(curOpt){ const o=curOpt; builtFor=null; if(hostEl) build(o) } });
+  const ease=k=>1-Math.pow(1-Math.min(1,Math.max(0,k)),3);
+  function loop(now){
+    requestAnimationFrame(loop);
+    if(!hostEl||document.hidden||!hostEl.isConnected||hostEl.offsetParent===null) return;
+    const rc=hostEl.getBoundingClientRect(); if(rc.bottom<0||rc.top>innerHeight) return;
+    const t=(now-t0)/1000;
+    for(const a of anims){
+      const k=reduce?1:ease((t-a.d)/.8);
+      if(a.t==="rise") a.o.position.y=(1-k)*-3; else if(a.t==="drop") a.o.position.y=(1-k)*4; else if(a.t==="car") a.o.position.z=a.b+(1-k)*9;
+    }
+    dashTex.offset.x = reduce?0:-(now/1000)*.9;
+    const fk=reduce?1:ease((t-.9)/1);
+    dashMats.forEach(m=>m.opacity=m.userData.op*(m.userData.static?1:fk));
+    const pulse=1.6+Math.sin(now/420)*.8; ledMats.forEach(m=>m.emissiveIntensity=pulse);
+    ctl.update(); R.render(scene,cam);
+  }
+  requestAnimationFrame(loop);
+  return {ok:true,mount,unmount};
+})();
+function mountHero(){ const h=document.getElementById("heroHost"); if(h&&G.ok&&!$("#sheet").classList.contains("on")) G.mount(h,P[0],false) }
+
+/* ================= ROUTER ================= */
+const R={home:renderHome,stations:renderStations,models:renderModels,compare:renderCompare,finder:renderFinder,saved:renderSaved};
+function route(){
+  const h=(location.hash||"#home").slice(1);
+  if(/^p-\d+$/.test(h)){ if(!document.querySelector(".view.on")) show(lastView); packDetail(+h.slice(2)); return }
+  if(/^m-\w+$/.test(h)){ if(!document.querySelector(".view.on")) show(lastView); modelDetail(h.slice(2)); return }
+  if($("#sheet").classList.contains("on")){$("#sheet").classList.remove("on");$("#scrim").classList.remove("on");document.body.style.overflow="";G.unmount()}
+  show(R[h]?h:"home");
+}
+function show(v){
+  S.view=v; lastView=v;
+  document.querySelectorAll(".view").forEach(el=>el.classList.toggle("on",el.id==="v-"+v));
+  if(v!=="home") G.unmount();
+  R[v](); renderNav(); renderTray(); window.scrollTo(0,0);
+}
+function rerender(){R[S.view]();renderNav();renderTray()}
+function renderTray(){
+  const n=S.cmp.pack.length, t=$("#tray");
+  const on=n>0&&S.view!=="compare"&&S.view!=="home";
+  t.classList.toggle("on",on);
+  $("#trayTxt").textContent=n?`เทียบ ${n}/3: `+S.cmp.pack.map(x=>"Pack "+pad(x)).join(", "):"";
+}
+
+/* ================= EVENTS ================= */
+document.addEventListener("click",e=>{
+  const t=e.target.closest("button,a"); if(!t) return;
+  const d=t.dataset;
+  if(d.open){e.preventDefault();location.hash=d.open;return}
+  if(d.media){const box=$("#shBody .gl-box"),gi=$("#shBody .gimgs");if(box&&gi){box.hidden=d.media!=="3d";gi.hidden=d.media==="3d";
+    $("#shBody .mtabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.media===d.media))}return}
+  if(d.copy){const v=d.copy;try{navigator.clipboard.writeText(v).then(()=>toast("คัดลอกแล้ว: "+v),()=>toast(v))}catch(err){toast(v)}return}
+  if(d.tier){S.tier=d.tier;save()}
+  if(d.tierv){S.tier=d.tierv;save();renderStations();return}
+  if(d.f){S[d.f]=S[d.f]===d.v?"all":d.v;renderStations();return}
+  if(d.cmp){const n=+d.cmp, a=S.cmp.pack;
+    if(a.includes(n)) a.splice(a.indexOf(n),1); else { if(a.length>=3){toast("เปรียบเทียบได้สูงสุด 3 แพ็กเกจ");return} a.push(n); toast(`เพิ่ม Pack ${pad(n)} ในการเปรียบเทียบ`) }
+    S.cmpMode="pack";save(); if(d.re) packDetail(n); rerender(); return}
+  if(d.cmpm){const a=S.cmp.model,key=d.cmpm;
+    if(a.includes(key)) a.splice(a.indexOf(key),1); else { if(a.length>=3){toast("เปรียบเทียบได้สูงสุด 3 รุ่น");return} a.push(key); toast(`เพิ่ม ${M[key].name} ในการเปรียบเทียบ`) }
+    S.cmpMode="model";save(); if(d.re) modelDetail(key); rerender(); return}
+  if(d.cmodeGo){S.cmpMode=d.cmodeGo}
+  if(d.save){const n=+d.save,a=S.saved;
+    if(a.includes(n)){a.splice(a.indexOf(n),1);toast("เอาออกจากรายการที่สนใจแล้ว")}else{a.push(n);toast(`บันทึก Pack ${pad(n)} แล้ว`)}
+    save(); if(d.re) packDetail(n); rerender(); return}
+  if(d.cmode){S.cmpMode=d.cmode;renderCompare();return}
+  if(d.fq){const raw=d.fv, v=isNaN(+raw)?raw:+raw; S.f[d.fq]=S.f[d.fq]===v?null:v; renderFinder(); return}
+});
+$("#shClose").onclick=closeSheet;
+document.addEventListener("click",e=>{if(e.target.closest("#heroGL")) location.hash="p-01"});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&document.activeElement&&document.activeElement.id==="heroGL"){e.preventDefault();location.hash="p-01"}}); $("#scrim").onclick=closeSheet;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#sheet").classList.contains("on")) closeSheet()});
+$("#trayX").onclick=()=>{S.cmp.pack=[];save();renderTray();rerender()};
+// swipe down to close sheet (phone)
+(function(){let y0=null,dy=0;const sh=$("#sheet"),top=sh.querySelector(".sh-top");
+  const st=e=>{y0=e.touches[0].clientY;dy=0}; const mv=e=>{if(y0==null)return;dy=e.touches[0].clientY-y0;if(dy>0&&innerWidth<760){sh.style.transition="none";sh.style.transform=`translateY(${dy}px)`}};
+  const en=()=>{if(y0==null)return;sh.style.transition="";sh.style.transform="";if(dy>90&&innerWidth<760)closeSheet();y0=null};
+  [top,sh.querySelector(".grab")].forEach(el=>{el.addEventListener("touchstart",st,{passive:true});el.addEventListener("touchmove",mv,{passive:true});el.addEventListener("touchend",en)})})();
+// settings
+const pop=$("#pop");
+$("#bSet").onclick=e=>{e.stopPropagation();pop.hidden=!pop.hidden;$("#bSet").setAttribute("aria-expanded",!pop.hidden)};
+document.addEventListener("click",e=>{if(!pop.hidden&&!pop.contains(e.target)&&e.target!==$("#bSet")) {pop.hidden=true;$("#bSet").setAttribute("aria-expanded","false")}});
+$("#optVat").checked=S.vat; $("#optPrice").checked=S.showPrice;
+$("#optVat").onchange=e=>{S.vat=e.target.checked;store.set("vat",S.vat);rerender()};
+$("#optPrice").onchange=e=>{S.showPrice=e.target.checked;store.set("showPrice",S.showPrice);rerender()};
+function applyTheme(){if(S.theme==="system")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",S.theme);
+  $("#themeSeg").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===S.theme))}
+$("#themeSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;S.theme=b.dataset.t;store.set("theme",S.theme);applyTheme()});
+applyTheme();
+window.addEventListener("hashchange",route);
+route();
+})();
+</script>
+
+</body></html>
