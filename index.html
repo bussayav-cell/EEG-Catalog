@@ -1,6 +1,11 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="EV Station PluZ Solution by Entech Energy — แพ็กเกจสถานีชาร์จเร็ว DC พร้อมราคา สเปก และเปรียบเทียบ">
+<meta name="theme-color" content="#0089d1">
+<link rel="icon" href="img/logo.webp">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
 <title>Entech EV Catalog</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -72,8 +77,8 @@ h3{font-size:19px;font-weight:600}
 .badge{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:var(--green);color:var(--green-ink);font:700 11px/19px var(--f-disp);text-align:center}
 .badge:empty,.badge[data-n="0"]{display:none}
 .tabs{position:fixed;left:0;right:0;bottom:0;z-index:55;background:color-mix(in srgb,var(--panel) 94%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);
-  display:grid;grid-template-columns:repeat(5,1fr);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
-.tabs a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border-radius:12px;color:var(--dim);text-decoration:none;font-size:11px;font-weight:500;position:relative;min-height:52px}
+  display:grid;grid-template-columns:repeat(6,1fr);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+.tabs a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;border-radius:12px;color:var(--dim);text-decoration:none;font-size:10.5px;white-space:nowrap;font-weight:500;position:relative;min-height:52px}
 .tabs a svg{width:22px;height:22px}
 .tabs a[aria-current="page"]{color:var(--green)}
 .tabs a[aria-current="page"]::before{content:"";position:absolute;top:-6px;left:30%;right:30%;height:3px;border-radius:0 0 3px 3px;background:var(--green)}
@@ -103,8 +108,15 @@ h3{font-size:19px;font-weight:600}
 .hero .slab i:nth-child(3){right:37%;width:1.4%;opacity:.35}
 .hero-in{position:relative;display:grid;gap:8px;padding-block:28px 26px}
 .hero-type{position:relative;font-family:var(--f-disp);font-weight:700;line-height:.86;letter-spacing:-.03em;margin:4px 0 0}
-.hero-type .ol{display:block;font-size:clamp(92px,23vw,240px);color:transparent;-webkit-text-stroke:2px var(--fg);opacity:.9}
-.hero-type .so{display:block;font-size:clamp(44px,10.5vw,112px);margin-top:-.2em}
+.hero-type .ol{display:block;font-size:clamp(58px,15.5vw,150px);color:transparent;-webkit-text-stroke:2px var(--fg);opacity:.9;white-space:nowrap}
+.hero-type .so{display:block;font-size:clamp(46px,12.5vw,118px);margin-top:.02em;white-space:nowrap}
+.hero-type .by{display:flex;align-items:center;gap:10px;margin-top:14px;font:600 clamp(16px,3.6vw,22px)/1.2 var(--f-disp);letter-spacing:.02em;color:var(--muted)}
+.hero-type .by b{color:var(--ci-blue)}
+.cobrand{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.cobrand .lg{background:#fff;border-radius:12px;padding:8px 12px;display:flex;align-items:center;box-shadow:var(--shadow)}
+.cobrand .lg img{height:40px;width:auto;display:block}
+.cobrand .lg.ev img{height:46px}
+.cobrand .x{font:600 18px var(--f-disp);color:var(--muted)}
 .hero-type .so b{color:var(--green)}
 .hero-art{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:2%;min-height:220px;margin-top:-30px}
 .hero-art::before{content:"";position:absolute;left:4%;right:4%;bottom:4%;height:26%;border:2px solid var(--fg);border-radius:50%;opacity:.55}
@@ -373,7 +385,103 @@ tfoot td{font-weight:700;font-family:var(--f-disp);font-size:16px}
 .hero-gl.live .fallback{display:none}
 .gl-cta{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font:600 13px var(--f-body);white-space:nowrap;box-shadow:var(--shadow)}
 .gl-cta i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
-@media (min-width:900px){.hero-gl{grid-column:2;grid-row:1 / span 2;margin-top:0;height:520px}}
+ .show{display:grid;gap:10px;margin-top:6px}
+.show-tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.show-tabs .ctabs button{font-size:13px}
+.show-tabs .cap{font-size:12px;color:var(--muted)}
+.loc{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:13px;min-width:0}
+.loc svg{width:18px;height:18px;flex:none;color:var(--ci-blue)}
+.loc span{min-width:0;flex:1}
+.loc em{font-style:normal;color:var(--blue);font-weight:600;white-space:nowrap;font-size:12px}
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(92px,24vw,150px);gap:8px}
+.bento button{border:0;padding:0;border-radius:14px;overflow:hidden;background:var(--panel-2);position:relative}
+.bento img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.bento button:hover img{transform:scale(1.04)}
+.bento .b1{grid-column:1 / 4;grid-row:span 2}
+.bento .b2{grid-column:1;grid-row:span 2}
+.bento .b5{grid-column:2 / 4}
+.bento .more{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:4px 10px;border-radius:99px}
+.site3d{position:relative;height:clamp(320px,72vw,470px);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#a9d3f2 0%,#dcecf6 55%,#eef3f0 100%)}
+.site3d .gl-host{position:absolute;inset:0}
+.site3d:not(.live){cursor:pointer}
+.site3d:not(.live) .gl-hint{font-size:0}
+.site3d:not(.live) .gl-hint::before{content:"แตะเพื่อหมุนเอง";font-size:11px}
+.fadein{animation:fadeIn .6s ease both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.autob{margin-left:auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:11px;color:var(--fg)}
+.site3d .gl-hint{color:#33433c;background:rgba(255,255,255,.75);top:auto;bottom:38px}
+.site3d .note3d{position:absolute;left:12px;bottom:10px;z-index:2;font-size:11px;color:#33433c;background:rgba(255,255,255,.78);padding:4px 10px;border-radius:99px;pointer-events:none}
+@media (min-width:900px){.hero-type .ol{font-size:clamp(54px,6.4vw,100px)}.hero-type .so{font-size:clamp(46px,5.7vw,90px)}.hero-in{grid-template-columns:1fr 1.15fr!important}
+.site3d .gl-hint{top:auto;bottom:10px}
+.show{grid-column:2;grid-row:1 / span 2;margin-top:0}.bento{grid-auto-rows:118px}.site3d{height:520px}}
+.lb img{width:100%;height:auto;display:block;border-radius:12px}
+.lb{display:grid;gap:10px;padding-block:14px}
+/* contact */
+.cgrid{display:grid;gap:16px}
+@media (min-width:900px){.cgrid{grid-template-columns:1.25fr 1fr;align-items:start}}
+.dark-card{background:#111614;color:#eef3f0;border-radius:20px;padding:24px 20px;display:grid;gap:14px}
+@media (min-width:760px){.dark-card{padding:32px 36px}}
+.dark-card h2{color:#fff;font-family:var(--f-body);font-weight:600;font-size:clamp(24px,4vw,34px)}
+.dark-card p{margin:0;color:#aebcb5;font-size:15px;max-width:60ch}
+.dark-card .btn.ghost{border-color:#eef3f0;color:#eef3f0}
+.btn.line-g{border-color:#06c755;color:#fff;background:transparent}
+.btn.line-g i{width:10px;height:10px;border-radius:50%;background:#06c755}
+.btn.ci{background:var(--ci-blue);color:#fff}
+.lead{display:grid;gap:14px;margin-top:6px}
+.lead label{font-weight:600;font-size:14px;color:#fff;display:grid;gap:8px}
+.lead label .req{color:#ff6b6b}
+.lead input[type=text],.lead textarea{width:100%;min-height:52px;border-radius:12px;border:1.5px solid #2d3833;background:#fff;color:#0c1512;padding:12px 14px;font:16px var(--f-body)}
+.lead textarea{min-height:120px;resize:vertical}
+.lead input:focus,.lead textarea:focus{outline:none;border-color:var(--ci-blue);box-shadow:0 0 0 3px rgba(0,137,209,.35)}
+.lead .err{border-color:#ff6b6b!important}
+.lead .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:13px;color:#c8d3ce;line-height:1.5}
+.lead .consent input{width:22px;height:22px;flex:none;margin-top:1px;accent-color:#0089d1}
+.lead .pk{display:flex;flex-wrap:wrap;gap:6px}
+.lead .pk button{min-height:34px;border-radius:99px;border:1px solid #3a4741;background:transparent;color:#dfe7e3;font-size:12px;padding:0 10px}
+.lead .pk button[aria-pressed="true"]{background:var(--ci-blue);border-color:var(--ci-blue);color:#fff}
+.lead .msg{font-size:14px;padding:12px 14px;border-radius:12px;background:rgba(117,193,136,.16);color:#d8f0de}
+.lead .msg.bad{background:rgba(255,107,107,.14);color:#ffd2d2}
+.done{display:grid;gap:10px;justify-items:start;padding:18px;border-radius:14px;background:rgba(117,193,136,.14)}
+.partner{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px;display:grid;gap:14px}
+.ptop{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.plist{display:grid;gap:10px}
+.prow{display:grid;grid-template-columns:96px 1fr auto;align-items:center;gap:14px;text-align:left;padding:10px 16px 10px 10px;border-radius:999px;border:2px solid var(--fg);background:var(--panel);min-height:78px;transition:border-color .2s,transform .2s}
+.prow:hover{border-color:var(--pa)}
+.prow:active{transform:scale(.99)}
+.prow .pl{height:58px;border-radius:999px 14px 14px 999px;background:#fff;display:grid;place-items:center;overflow:hidden;padding:4px 8px}
+.prow .pl img{max-height:50px;max-width:100%;width:auto;object-fit:contain;display:block}
+.prow .pt{display:grid;gap:2px;min-width:0}
+.prow .pt b{font:600 16px/1.2 var(--f-disp)}
+.prow .pt small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prow .chev{font-size:26px;line-height:1;color:var(--muted)}
+.pdet{display:grid;gap:14px;padding-block:18px}
+.evo{display:inline-flex;align-items:baseline;gap:6px;font:700 26px/1 var(--f-disp);color:#f5821f;letter-spacing:-.02em}
+.evo small{font:500 12px var(--f-body);color:#333;letter-spacing:0}
+.plogo-lg .evo{font-size:56px}.plogo-lg .evo small{font-size:20px}
+.prow .pl.fill{padding:4px 6px;background:#304ada}
+.prow .pl.fill img{max-height:none;height:100%;width:100%;object-fit:contain}
+.prow .evo small{display:none}
+.plogo-lg.fill{background:radial-gradient(circle at 50% 50%,#2fa9e8,#3a3fe0 70%);border:0}
+.plogo-lg{background:#fff;border-radius:16px;border:1px solid var(--line);height:150px;display:grid;place-items:center;padding:14px}
+.plogo-lg img{max-height:120px;max-width:80%;width:auto;object-fit:contain}
+.pdet .cl{display:grid;gap:10px}
+.pdet .cl div{display:flex;gap:10px;align-items:center;font-size:15px;min-width:0}
+.pdet .cl svg{width:20px;height:20px;flex:none;color:var(--pa)}
+.pdet .cl a{color:var(--fg)}
+.pdet .copy{margin-left:auto;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:99px;font-size:12px;padding:4px 10px;min-height:30px;flex:none}
+.pdet .tagp{font:600 11px var(--f-disp);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--pa);padding:5px 10px;border-radius:99px}
+.partner .tagp{font:600 11px var(--f-disp);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--ci-blue);padding:5px 10px;border-radius:99px}
+.evc{display:inline-flex;align-items:flex-end;font-family:var(--f-disp);line-height:1;background:#fff;border-radius:10px;padding:6px 10px}
+.evc b{font-size:30px;font-weight:700;color:#2f5fc4}.evc i{font-style:normal;font-size:30px;font-weight:700;color:#3aa64a;margin-right:2px}
+.evc em{font-style:normal;font-size:17px;font-weight:600;color:#2b2f33;margin-bottom:2px}
+.partner .cl{display:grid;gap:10px}
+.partner .cl div{display:flex;gap:10px;align-items:center;font-size:14px;min-width:0}
+.partner .cl svg{width:20px;height:20px;flex:none;color:var(--pa,#2f5fc4)}
+.partner .cl a{color:var(--fg)}
+.partner .copy{margin-left:auto;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:99px;font-size:12px;padding:4px 10px;min-height:30px;flex:none}
+.leads-admin{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:10px}
+.leads-admin .row{border-top:1px solid var(--line);padding-top:10px;display:grid;gap:2px;font-size:14px}
+.leads-admin .row:first-of-type{border-top:0}
 .media{position:relative;background:#0a0f0d}
 .media .gl-box{height:340px;position:relative;background:radial-gradient(120% 90% at 50% 20%,#18302a 0%,#0a0f0d 70%)}
 @media (min-width:760px){.media .gl-box{height:420px}}
@@ -419,6 +527,7 @@ footer{padding-block:24px 30px;border-top:1px solid var(--line);color:var(--dim)
   <section class="view" id="v-compare" aria-label="เปรียบเทียบ"></section>
   <section class="view" id="v-finder" aria-label="ช่วยเลือก"></section>
   <section class="view" id="v-saved" aria-label="รายการที่สนใจ"></section>
+  <section class="view" id="v-contact" aria-label="ฝากข้อมูล"></section>
 </main>
 
 <nav class="tabs" id="tabs" aria-label="เมนูหลัก"></nav>
@@ -552,6 +661,14 @@ const P=[
     cfg:parts.map(([k,q])=>q+" × "+M[k].name).join(" + "),
     units:parts.reduce((s,[,q])=>s+q,0)};
 });
+const SITE_LOC={name:"PTT Station โพตลาดแก้ว อ.ท่าวุ้ง จ.ลพบุรี",map:"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("PTT Station โพตลาดแก้ว ท่าวุ้ง ลพบุรี")};
+const SITE=[
+ {f:"site-bays",alt:"สถานีจริง ตู้ชาร์จสีฟ้า 2 ตู้ หน้าช่องจอดชาร์จ 1A 1B 2A 2B"},
+ {f:"site-single",alt:"ตู้ชาร์จสีฟ้าใต้หลังคาเดี่ยว มีเสากันชนสองข้าง"},
+ {f:"site-front",alt:"ตู้ชาร์จ 2 ตู้ใต้หลังคาสีขาว มองจากด้านหน้า"},
+ {f:"site-close",alt:"ภาพใกล้ตู้ชาร์จ หัวชาร์จ A และ B"},
+ {f:"site-car",alt:"รถยนต์ไฟฟ้าจอดหน้าตู้ชาร์จ ข้างตู้ควบคุมไฟฟ้า"}
+];
 const ARCH={aio:"All-in-one",split:"Split · Power Pool",hyb:"Hybrid · ตู้ชาร์จ + Dispenser"};
 const TIERS=[...new Set(P.map(p=>p.st))].sort((a,b)=>b-a); // station kW is the primary grouping
 const trFor=st=>P.find(p=>p.st===st).tr;
@@ -592,10 +709,10 @@ const headroom=o=>(o.fam==="pool"||o.fam==="pool4")?(o.parts[0][1]*12-o.parts[1]
 const store={get(k,d){try{const v=localStorage.getItem("entech:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
   set(k,v){try{localStorage.setItem("entech:"+k,JSON.stringify(v))}catch(e){}}};
 const S={
-  view:"home",tier:store.get("tierKW","all"),brand:"all",arch:"all",sort:store.get("sort","rec"),
+  view:"home",tier:store.get("tierKW","all"),brand:"all",arch:"all",sort:(v=>v==="pk"?"rec":v)(store.get("sort","rec")),
   cmpMode:"pack",cmp:{pack:store.get("cmpP",[]),model:store.get("cmpM",[])},diffOnly:false,
   saved:store.get("saved",[]),vat:store.get("vat",false),showPrice:store.get("showPrice",true),
-  theme:store.get("theme","system"),
+  theme:store.get("theme","system"),show:"photo",showAuto:true,
   f:{st:null,cars:null,pri:null,bud:null}
 };
 const save=()=>{store.set("cmpP",S.cmp.pack);store.set("cmpM",S.cmp.model);store.set("saved",S.saved);store.set("tierKW",S.tier);store.set("sort",S.sort)};
@@ -618,10 +735,11 @@ const ICON={
   models:'<path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/>',
   compare:'<rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/><path d="M6.5 8v8M17.5 11v5"/>',
   finder:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/>',
+  contact:'<path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/>',
   saved:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'
 };
 const ic=(n,sw=1.8)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round">${ICON[n]}</svg>`;
-const NAV=[["home","หน้าแรก"],["stations","แพ็กเกจ"],["models","อุปกรณ์"],["compare","เปรียบเทียบ"],["finder","ช่วยเลือก"],["saved","ที่สนใจ"]];
+const NAV=[["home","หน้าแรก"],["stations","แพ็กเกจ"],["models","อุปกรณ์"],["compare","เปรียบเทียบ"],["finder","ช่วยเลือก"],["saved","ที่สนใจ"],["contact","ฝากข้อมูล"]];
 
 /* visual for a package */
 function packStage(o,opts={}){
@@ -655,7 +773,7 @@ function packCard(o){
         <div><small>เฉลี่ยเมื่อเต็ม</small><b class="num">${Math.round(o.st/o.o)}<em>kW</em></b></div>
       </div>
       <div class="price"><div class="p num"><small>ราคาแพ็กเกจ · ${vatLbl()}</small>${pt(mil(o.price))}</div>
-        <div class="pu">${S.showPrice?`<b>${k(o.price/o.o)}</b> / หัว<br><b>${k(o.price/o.st)}</b> / kW`:""}</div></div>
+        <div class="pu">${S.showPrice?`งบลงทุนต่อหัว<br><b>${k(o.price/o.o)}</b>`:""}</div></div>
     </div>
     <div class="pcard-f">
       <button class="btn solid sm" data-open="p-${pad(o.n)}">ดูรายละเอียด</button>
@@ -695,20 +813,26 @@ function renderHome(){
   $("#v-home").innerHTML=`
   <div class="hero"><div class="slab" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap hero-in">
-      <div class="hero-type"><div class="eyebrow">DC Fast Charging · StarCharge × Sungrow</div>
-        <span class="ol num" aria-hidden="true">960</span><span class="so">kW <b>STATION</b></span></div>
-      <div class="hero-gl" id="heroGL" role="button" tabindex="0" aria-label="เปิดสถานีจำลอง 3D ของ Pack 01">
-        <div class="fallback"><img src="${img("nova-v5-left")}" alt="ตู้ไฟ Nova V5"><img src="${img("hydrus-angle")}" alt="Dispenser Hydrus Pro" style="height:66%"></div>
-        <div class="gl-host" id="heroHost"></div>
-        <span class="gl-cta"><i></i>Pack 01 · 960 kW · 24 หัว — แตะเพื่อหมุนดู 3D</span></div>
+      <div class="hero-type">
+        <div class="cobrand"><span class="lg ev"><img src="img/evpluz.webp" alt="EV Station PluZ" width="80" height="46"></span><span class="x">×</span><span class="lg"><img src="img/logo.webp" alt="Entech Energy" width="158" height="40"></span></div>
+        <h1 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">EV Station PluZ Solution by Entech Energy</h1>
+        <span class="ol" aria-hidden="true">EV STATION</span><span class="so" aria-hidden="true">PluZ <b>Solution</b></span>
+        <span class="by" aria-hidden="true">by <b>Entech Energy</b> · DC Fast Charging</span></div>
+      <div class="show" id="show">
+        <div class="show-tabs"><div class="ctabs" role="group" aria-label="มุมมองสถานี"><button data-show="photo" aria-pressed="${S.show!=="3d"}">ภาพสถานีจริง</button><button data-show="3d" aria-pressed="${S.show==="3d"}">โมเดลสถานี 3D</button></div>
+          <span class="cap">Titan V5 180 kW × 2 ตู้ · 4 ช่องจอด</span><button class="autob" id="autoB" aria-label="หยุดสลับอัตโนมัติ">${S.showAuto?"❚❚":"▶"}</button></div>
+        <div class="bento" ${S.show==="3d"?"hidden":""}>${SITE.map((p,i)=>`<button class="b${i+1}" data-photo="${i}" aria-label="ดูภาพขยาย: ${esc(p.alt)}"><img src="img/${p.f}.webp" alt="${esc(p.alt)}" loading="${i?"lazy":"eager"}">${i===0?`<span class="more">ดูทั้งหมด ${SITE.length} ภาพ</span>`:""}</button>`).join("")}</div>
+        <a class="loc" href="${SITE_LOC.map}" target="_blank" rel="noopener">${SV.pin}<span><b>สถานีจริง:</b> ${esc(SITE_LOC.name)}</span><em>เปิดแผนที่ ↗</em></a>
+        <div class="site3d" ${S.show==="3d"?"":"hidden"}><div class="gl-host" id="siteHost"></div><div class="gl-hint">ลากเพื่อหมุน · บีบเพื่อซูม</div><div class="note3d">โมเดลจำลองจากสถานีจริง</div></div>
+      </div>
       <div class="hero-copy">
-        <p>23 แพ็กเกจสถานีชาร์จเร็ว ขนาด 240–960 kW พร้อมขนาดหม้อแปลงที่แนะนำ ดูสถานีจำลอง 3D สเปก ราคา และเทียบแต่ละแบบได้ในที่เดียว</p>
+        <p>ออกแบบ จัดหา และติดตั้งสถานีชาร์จเร็ว DC สำหรับเครือข่าย EV Station PluZ เลือกได้ 23 แพ็กเกจ ขนาด 240–960 kW พร้อมขนาดหม้อแปลงที่แนะนำ ดูสถานีจำลอง 3D สเปก ราคา และเทียบแต่ละแบบได้ในที่เดียว</p>
         <div class="statrow">
           <div class="stat"><small>แพ็กเกจ</small><b class="num">23</b><div class="bar"><i style="width:100%"></i></div></div>
           <div class="stat"><small>สูงสุดต่อหัว</small><b class="num">480 kW</b><div class="bar"><i style="width:80%"></i></div></div>
           <div class="stat"><small>เริ่มต้น</small><b class="num">${S.showPrice?mil(minP):"—"}</b><div class="bar"><i style="width:35%"></i></div></div>
         </div>
-        <div class="cta"><a class="btn solid" href="#finder">ช่วยเลือกให้</a><a class="btn ghost" href="#stations">ดูทุกแพ็กเกจ</a></div>
+        <div class="cta"><a class="btn solid" href="#finder">ช่วยเลือกให้</a><a class="btn ghost" href="#stations">ดูทุกแพ็กเกจ</a><a class="btn ci" href="#contact">ฝากข้อมูลติดต่อ</a></div>
       </div>
     </div></div>
   <div class="wrap">
@@ -729,12 +853,12 @@ function renderHome(){
     ${companyBlock()}
   </div>
   <footer><div class="wrap">${esc(CFG.priceNote)} · ภาพสินค้าใช้เพื่อประกอบการนำเสนอ · © ${esc(CFG.company.en)}</div></footer>`;
-  mountHero();
+  showAt=Date.now(); mountHero();
 }
 
 function filtered(){
   let r=P.filter(p=>(S.tier==="all"||p.st===+S.tier)&&(S.brand==="all"||p.brand===S.brand)&&(S.arch==="all"||p.arch===S.arch));
-  const s={rec:(a,b)=>b.st-a.st||a.n-b.n,low:(a,b)=>a.price-b.price,high:(a,b)=>b.price-a.price,po:(a,b)=>a.price/a.o-b.price/b.o,pk:(a,b)=>a.price/a.st-b.price/b.st,out:(a,b)=>b.o-a.o||a.price-b.price,max:(a,b)=>b.max-a.max||a.price-b.price}[S.sort];
+  const s={rec:(a,b)=>b.st-a.st||a.n-b.n,low:(a,b)=>a.price-b.price,high:(a,b)=>b.price-a.price,po:(a,b)=>a.price/a.o-b.price/b.o,out:(a,b)=>b.o-a.o||a.price-b.price,max:(a,b)=>b.max-a.max||a.price-b.price}[S.sort];
   return r.sort(s);
 }
 function renderStations(){
@@ -754,7 +878,7 @@ function renderStations(){
           <label class="count" for="sortSel">เรียง</label>
           <select class="sel" id="sortSel">
             <option value="rec">Station kW มาก → น้อย</option><option value="low">ราคาต่ำ → สูง</option><option value="high">ราคาสูง → ต่ำ</option>
-            <option value="po">ราคาต่อหัวถูกสุด</option><option value="pk">ราคาต่อ kW ถูกสุด</option><option value="out">หัวชาร์จมากสุด</option><option value="max">kW ต่อหัวสูงสุด</option></select>
+            <option value="po">งบลงทุนต่อหัวต่ำสุด</option><option value="out">หัวชาร์จมากสุด</option><option value="max">kW ต่อหัวสูงสุด</option></select>
         </div>
       </div>
       <div class="count" id="stCount" style="margin-bottom:10px"></div>
@@ -791,8 +915,7 @@ function packRows(list){
   return [
    ["g","ราคา"],
    ["ราคาแพ็กเกจ",o=>S.showPrice?baht(o.price):"—",o=>o.price,"low"],
-   ["ราคาต่อหัว",o=>S.showPrice?k(o.price/o.o):"—",o=>o.price/o.o,"low"],
-   ["ราคาต่อ kW",o=>S.showPrice?k(o.price/o.st):"—",o=>o.price/o.st,"low"],
+   ["งบลงทุนต่อหัว",o=>S.showPrice?k(o.price/o.o):"—",o=>o.price/o.o,"low"],
    ["g","กำลังไฟ"],
    ["Station kW",o=>o.st+" kW",o=>o.st,"high"],
    ["หม้อแปลงที่แนะนำ",o=>o.tr+" kVA",o=>o.tr],
@@ -876,7 +999,7 @@ function renderCompare(){
 const FQ=[
  ["st","ขนาดสถานีที่ต้องการ (Station kW)",TIERS.slice().reverse().map(t=>[t,t+" kW","หม้อแปลง "+trFor(t)+" kVA"]).concat([[0,"ยังไม่ทราบ","ให้ระบบแนะนำ"]])],
  ["cars","อยากรับรถพร้อมกันกี่คัน",[[2,"2 คัน"],[4,"4 คัน"],[6,"6–8 คัน"],[12,"12 คันขึ้นไป"]]],
- ["pri","ให้ความสำคัญกับอะไรที่สุด",[["fast","ชาร์จเร็วที่สุด","kW ต่อหัวสูง"],["cheap","งบต่ำ คุ้มค่า","ราคาต่อหัวต่ำ"],["tough","ทนสภาพหนัก","ใกล้ทะเล ฝุ่นเยอะ"],["grow","ขยายได้ภายหลัง","เพิ่มหัวทีหลัง"]]],
+ ["pri","ให้ความสำคัญกับอะไรที่สุด",[["fast","ชาร์จเร็วที่สุด","kW ต่อหัวสูง"],["cheap","งบต่ำ คุ้มค่า","งบลงทุนต่อหัวต่ำ"],["tough","ทนสภาพหนัก","ใกล้ทะเล ฝุ่นเยอะ"],["grow","ขยายได้ภายหลัง","เพิ่มหัวทีหลัง"]]],
  ["bud","งบประมาณอุปกรณ์",[[1500000,"ไม่เกิน 1.5 ล้าน"],[3000000,"ไม่เกิน 3 ล้าน"],[5000000,"ไม่เกิน 5 ล้าน"],[0,"ไม่จำกัด"]]]
 ];
 function recommend(){
@@ -888,7 +1011,7 @@ function recommend(){
     if(f.bud){ if(vat(o.price)<=f.bud){s+=18} else s-=50; }
     const ppo=o.price/o.o;
     if(f.pri==="fast"){s+=o.max/480*30;if(o.max>=360)why.push(`สูงสุด ${o.max} kW ต่อหัว`)}
-    if(f.pri==="cheap"){s+=(1-(ppo-280000)/280000)*30;why.push(`${k(ppo)} ต่อหัว`)}
+    if(f.pri==="cheap"){s+=(1-(ppo-280000)/280000)*30;why.push(`งบลงทุน ${k(ppo)} ต่อหัว`)}
     if(f.pri==="tough"){if(o.brand==="sg"){s+=30;why.push("IP65 + กันกัดกร่อน C5")}}
     if(f.pri==="grow"){const h=headroom(o);if(h>0){s+=Math.min(30,10+h*2);why.push(`เพิ่มได้อีก ${h} หัวโดยไม่เพิ่มตู้ไฟ`)}else if(o.fam==="jup"){s+=20;why.push("เพิ่มตู้ทีละตู้ได้")}}
     return {o,s,why:why.slice(0,3)};
@@ -965,7 +1088,7 @@ function packDetail(n){
       <div class="stat"><small>สูงสุด/หัว</small><b class="num">${o.max} kW</b>${bar(o.max,480)}</div>
     </div>
     <div class="dprice"><div class="p num"><small>ราคาแพ็กเกจ · ${vatLbl()}</small>${pt(baht(o.price))}</div>
-      ${S.showPrice?`<div class="pu"><span><b>${k(o.price/o.o)}</b> ต่อหัว</span><span><b>${k(o.price/o.st)}</b> ต่อ kW</span></div>`:""}</div>
+      ${S.showPrice?`<div class="pu"><span>งบลงทุนต่อหัว</span><span><b>${k(o.price/o.o)}</b></span></div>`:""}</div>
     <div class="note">${esc(CFG.priceNote)}</div>
     <div class="dsec"><h4>จุดเด่น</h4><ul class="hl">${highlights(o).map(h=>`<li>${esc(h)}</li>`).join("")}</ul>
       <div class="fit"><b>เหมาะกับ</b> ${esc(fitFor(o))}</div></div>
@@ -1193,8 +1316,6 @@ const G=(function(){
         const bay=new THREE.Mesh(new THREE.PlaneGeometry(BAY-.25,5.3),X.bay); bay.rotation.x=-Math.PI/2; bay.position.set(bx,.012,.8+2.65); bay.receiveShadow=true; rg.add(bay);
         const ln=new THREE.Mesh(new THREE.PlaneGeometry(.09,5.5),X.line); ln.rotation.x=-Math.PI/2; ln.position.set(bx+s*BAY/2,.014,.8+2.75); rg.add(ln);
         box(rg,1.2,.1,.18,X.yellow,bx,.05,1.35,false);
-        const seed=(i*2+bi)*7%10;
-        if(seed<6){ const c=mCar(carI++); c.position.set(bx,0,.8+2.6+.2); rg.add(c); anims.push({o:c,t:"car",d:1.1+carI*.07,b:c.position.z}) }
       });
       p.world=new THREE.Vector3(x,0,-.5); rg.updateMatrixWorld(true); p.world.applyMatrix4(rg.matrixWorld);
       anims.push({o:u,t:"rise",d:.45+i*.06});
@@ -1241,6 +1362,80 @@ const G=(function(){
     const sc=dirL.shadow.camera, ext=span*.75+6; sc.left=-ext; sc.right=ext; sc.top=ext; sc.bottom=-ext; sc.near=1; sc.far=140; sc.updateProjectionMatrix();
     frame();
   }
+
+  /* ---- replica of the real EV Station PluZ site (2 blue chargers, 4 bays) ---- */
+  const SX={conc:mat("conc",{color:0xc9ccc8,roughness:.95}),plat:mat("plat",{color:0xdadcd8,roughness:.9}),wall:mat("wall",{color:0xf1f2ef,roughness:.8}),
+    orBlue:mat("orBlue",{color:0x1d8fe6,roughness:.35,metalness:.1,emissive:0x05244a,emissiveIntensity:.35}),canW:mat("canW",{color:0xf4f5f3,roughness:.45,metalness:.1}),
+    blueLine:mat("blueLine",{color:0x1b5fd4,roughness:.7}),pot:mat("pot",{color:0xc2622f,roughness:.8}),leaf:mat("leaf",{color:0x3f8a3a,roughness:.9}),
+    leaf2:mat("leaf2",{color:0x5ea84a,roughness:.9}),steel:mat("steel",{color:0xb9bfc3,roughness:.3,metalness:.7}),band:mat("band",{color:0xffffff,roughness:.4}),
+    mdb:mat("mdb",{color:0xe9e8e1,roughness:.6}),black:mat("black",{color:0x111314,roughness:.5}),pole:mat("pole",{color:0x8d918d,roughness:.8})};
+  function mOR(){ // Titan V5 180 with the blue EV Station PluZ front
+    const g=new THREE.Group(),w=.75,h=1.79,d=.72;
+    box(g,w+.04,.12,d+.04,X.dark,0,.06,0); box(g,w,h-.12,d,X.white,0,h/2+.06,0);
+    box(g,w-.02,h-.2,.02,SX.orBlue,0,h/2+.08,d/2+.005,false);
+    box(g,.44,.86,.02,X.panel,0,1.16,d/2+.02,false); box(g,.2,.16,.012,X.screen,0,1.3,d/2+.032,false);
+    box(g,.11,.016,.012,X.led,-.12,1.54,d/2+.032,false); box(g,.11,.016,.012,X.led,.12,1.54,d/2+.032,false);
+    box(g,.14,.3,.14,X.black,0,h+.15,0); box(g,1.7,.12,.2,X.black,0,h+.34,0);
+    box(g,.08,.06,.05,X.yellow,-.72,h+.34,.12,false); box(g,.08,.06,.05,X.yellow,.72,h+.34,.12,false);
+    holsterCables(g,w,d,h,h+.3,.82); return g;
+  }
+  function canopy(g,x){
+    const c=new THREE.Group(); c.position.x=x; g.add(c);
+    [-.95,.95].forEach(px=>{ box(c,.12,2.85,.12,SX.canW,px,1.42,-.95); box(c,.12,.12,.5,SX.canW,px,2.83,-.72) });
+    box(c,2.1,.1,1.75,SX.canW,0,2.92,-.12); box(c,2.1,.16,.05,SX.canW,0,2.86,.75); return c;
+  }
+  function bollard(g,x,z){ const b=new THREE.Mesh(new THREE.CylinderGeometry(.07,.07,1.0,14),SX.steel); b.position.set(x,.5,z); b.castShadow=true; g.add(b);
+    [.55,.75].forEach(y=>{const r=new THREE.Mesh(new THREE.CylinderGeometry(.072,.072,.06,14),SX.band); r.position.set(x,y,z); g.add(r)}) }
+  function plant(g,x,z,s){ const p=new THREE.Mesh(new THREE.CylinderGeometry(.2*s,.14*s,.32*s,12),SX.pot); p.position.set(x,.16*s+.3,z); p.castShadow=true; g.add(p);
+    const l=new THREE.Mesh(new THREE.ConeGeometry(.22*s,.6*s,7),SX.leaf2); l.position.set(x,.3+.32*s+.3*s,z); l.castShadow=true; g.add(l) }
+  function bayLabel(text){
+    const c=document.createElement("canvas"); c.width=512; c.height=160; const x=c.getContext("2d");
+    x.fillStyle="#1b5fd4"; x.fillRect(0,0,512,160); x.fillStyle="#fff"; x.textAlign="center";
+    x.font="600 44px 'IBM Plex Sans Thai',sans-serif"; x.fillText("ช่องจอดชาร์จ",256,62); x.font="700 64px 'Chakra Petch',sans-serif"; x.fillText(text,256,134);
+    const t=new THREE.CanvasTexture(c); t.encoding=THREE.sRGBEncoding; t.anisotropy=4;
+    const m=new THREE.Mesh(new THREE.PlaneGeometry(2.3,.72),new THREE.MeshStandardMaterial({map:t,roughness:.8})); m.rotation.x=-Math.PI/2; m.receiveShadow=true; return m;
+  }
+  function buildSite(){
+    disposeRoot(); curOpt="site"; root=new THREE.Group(); scene.add(root);
+    const BAY=2.9, CH=[-3.2,3.2];
+    // ground + raised island + low planter wall
+    const lot=new THREE.Mesh(new THREE.BoxGeometry(22,.3,15),SX.conc); lot.position.set(.6,-.15,2.6); lot.receiveShadow=true; root.add(lot);
+    box(root,15.5,.3,2.2,SX.plat,.4,.15,-.4); box(root,15.5,.9,.25,SX.wall,.4,.6,-1.55);
+    for(let i=0;i<26;i++){ const x=-7+i*.6; const b=new THREE.Mesh(new THREE.SphereGeometry(.34+((i*37)%5)*.04,8,6),i%3?SX.leaf:SX.leaf2); b.position.set(x,1.25+((i*13)%4)*.08,-1.95); b.castShadow=true; root.add(b) }
+    CH.forEach((x,ci)=>{
+      const u=mOR(); u.position.set(x,.3,-.35); root.add(u); anims.push({o:u,t:"rise",d:.4+ci*.12});
+      const c=canopy(root,x); c.position.y=.3; anims.push({o:c,t:"drop",d:.2+ci*.1});
+      bollard(root,x-1.25,.55); bollard(root,x+1.25,.55);
+      ["A","B"].forEach((ab,bi)=>{
+        const bx=x+(bi?1:-1)*BAY/2;
+        box(root,1.3,.1,.16,X.yellow,bx,.05,1.4,false);
+        const lb=bayLabel((ci+1)+ab); lb.position.set(bx,.012,6.3); root.add(lb);
+      });
+    });
+    // blue bay lines
+    [-3.2-BAY,-3.2,-3.2+BAY,3.2-BAY,3.2,3.2+BAY].forEach(x=>{ const ln=new THREE.Mesh(new THREE.PlaneGeometry(.12,5.6),SX.blueLine); ln.rotation.x=-Math.PI/2; ln.position.set(x,.013,3.9); root.add(ln) });
+    const st=new THREE.Mesh(new THREE.PlaneGeometry(4*BAY+6.4-2*BAY,.12),SX.blueLine); st.rotation.x=-Math.PI/2; st.position.set(0,.013,6.75); root.add(st);
+    // pots between chargers
+    for(let i=0;i<5;i++) plant(root,-1.5+i*.75,.15,1);
+    // MDB cabinet + pole transformer + lamps
+    const mdb=new THREE.Group(); box(mdb,1.25,1.85,.65,SX.mdb,0,.93,0); box(mdb,.5,.45,.02,X.panel,.15,1.3,.33,false); box(mdb,.1,.1,.02,X.led,-.35,1.5,.33,false);
+    mdb.position.set(6.6,.3,-.3); root.add(mdb); anims.push({o:mdb,t:"rise",d:.6});
+    const pl=new THREE.Mesh(new THREE.CylinderGeometry(.13,.17,9,10),SX.pole); pl.position.set(7.9,4.5,-2.6); pl.castShadow=true; root.add(pl);
+    box(root,1.1,.9,.8,X.tr,7.9,6.4,-2.15); box(root,1.8,.1,.1,SX.pole,7.9,7.6,-2.6);
+    [[-6.3,.3],[0,.15],[6.6,1.25]].slice(0,2).forEach(([x,z])=>{ const lp=new THREE.Mesh(new THREE.CylinderGeometry(.05,.06,4,8),X.black); lp.position.set(x+(x===0?0:0),2.3,-1.2); lp.castShadow=true; root.add(lp);
+      const disc=new THREE.Mesh(new THREE.CylinderGeometry(.42,.42,.06,20),X.black); disc.position.set(x,4.3,-1.2); root.add(disc) });
+    // energy ribbons MDB -> chargers
+    const add=(p,w,op)=>{root.add(ribbon(p,w,op))};
+    add([[7.9,-2.4],[7.9,-.9],[6.6,-.9]],.26,1);
+    CH.forEach(x=>add([[6.0,-.9],[x,-.9],[x,-.35]],.18,.9));
+    dashMats.forEach(m=>{}); root.children.forEach(o=>{ if(o.material&&dashMats.includes(o.material)) o.position.y=.32 });
+    const l1=label("EV Station PluZ","Titan V5 180 kW × 2 · 4 ช่องจอด","#0089d1"); l1.position.set(0,5.0,.3); root.add(l1);
+    const l2=label("ตู้ MDB","ระบบไฟฟ้า"); l2.position.set(6.6,3.2,-.3); l2.scale.multiplyScalar(.75); root.add(l2);
+    const cx=.6,cz=2.4,span=17; t0=performance.now(); builtFor="site"; root.userData={cx,cz,span};
+    dirL.target.position.set(cx,0,cz); dirL.position.set(cx-14,26,cz+18);
+    const sc=dirL.shadow.camera; sc.left=-16; sc.right=16; sc.top=16; sc.bottom=-16; sc.near=1; sc.far=90; sc.updateProjectionMatrix();
+    frame();
+  }
   function frame(){
     if(!root) return; const {cx,cz,span}=root.userData; const a=cam.aspect||1.4;
     const vf=cam.fov*Math.PI/180, hf=2*Math.atan(Math.tan(vf/2)*a);
@@ -1261,11 +1456,12 @@ const G=(function(){
     ctl.autoRotate=!reduce; ctl.autoRotateSpeed=interactive?.55:.4;
     if(host.closest(".hero-gl")) host.closest(".hero-gl").classList.add("live");
     resize();
-    if(builtFor!==opt.n) build(opt); else { t0=performance.now()-3000; frame() }
+    const key=opt==='site'?'site':opt.n;
+    if(builtFor!==key){ opt==='site'?buildSite():build(opt) } else { t0=performance.now()-3000; frame() }
   }
   function unmount(){ if(R.domElement.parentNode) R.domElement.parentNode.removeChild(R.domElement); hostEl=null }
   addEventListener("resize",()=>resize());
-  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>{ if(curOpt){ const o=curOpt; builtFor=null; if(hostEl) build(o) } });
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>{ if(curOpt){ const o=curOpt; builtFor=null; if(hostEl) (o==='site'?buildSite():build(o)) } });
   const ease=k=>1-Math.pow(1-Math.min(1,Math.max(0,k)),3);
   function loop(now){
     requestAnimationFrame(loop);
@@ -1285,10 +1481,152 @@ const G=(function(){
   requestAnimationFrame(loop);
   return {ok:true,mount,unmount};
 })();
-function mountHero(){ const h=document.getElementById("heroHost"); if(h&&G.ok&&!$("#sheet").classList.contains("on")) G.mount(h,P[0],false) }
+function mountHero(){ const h=document.getElementById("siteHost"); if(h&&G.ok&&S.show==="3d"&&!$("#sheet").classList.contains("on")) G.mount(h,"site",!S.showAuto); else if(S.view==="home") G.unmount() }
+function setShow(v,manual){
+  const sh=document.getElementById("show"); if(!sh) return;
+  if(v==="3d"&&!G.ok) v="photo";
+  S.show=v; if(manual) S.showAuto=false;
+  const bn=sh.querySelector(".bento"), s3=sh.querySelector(".site3d");
+  bn.hidden=v==="3d"; s3.hidden=v!=="3d"; (v==="3d"?s3:bn).classList.remove("fadein"); void sh.offsetWidth; (v==="3d"?s3:bn).classList.add("fadein");
+  s3.classList.toggle("live",!S.showAuto);
+  sh.querySelectorAll("[data-show]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.show===v));
+  const ab=document.getElementById("autoB"); if(ab){ab.textContent=S.showAuto?"❚❚":"▶";ab.setAttribute("aria-label",S.showAuto?"หยุดสลับอัตโนมัติ":"เล่นสลับอัตโนมัติ")}
+  mountHero();
+}
+let showT=null, showAt=0;
+function tickShow(){
+  if(S.view!=="home"||!S.showAuto||document.hidden||$("#sheet").classList.contains("on")) return;
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  if(Date.now()-showAt<(S.show==="3d"?9000:7000)) return;
+  showAt=Date.now(); setShow(S.show==="3d"?"photo":"3d",false);
+}
+setInterval(tickShow,1000);
+
+
+/* ================= CONTACT / LEAD FORM ================= */
+const LINE_URL="https://line.me/ti/p/DlLWG-6fpl";
+const LEAD={pk:[],sent:false};
+/* ===== ตั้งค่าการส่งฟอร์มเข้าอีเมล (แก้ตรงนี้ที่เดียว) =====
+   แบบ A (ค่าเริ่มต้น): FormSubmit.co ส่งเข้า email ด้านล่าง
+     - ครั้งแรกที่มีคนกดส่ง FormSubmit จะส่งอีเมล "Activate Form" ไปที่กล่องนี้ ต้องกดยืนยัน 1 ครั้ง
+     - หลังยืนยัน จะได้รหัสสุ่ม เอามาใส่ตรง formsubmitId เพื่อซ่อนอีเมลจากโค้ด
+   แบบ B: Web3Forms ใส่ web3formsKey ที่ได้จาก web3forms.com แล้วระบบจะใช้แบบ B แทน */
+const FORM={email:"bussaya.v@gmail.com",formsubmitId:"",web3formsKey:""};
+function leadText(v){return ["ฝากข้อมูลติดต่อ · EV Station PluZ by Entech Energy","ชื่อ: "+v.name,"ติดต่อ: "+v.contact,v.place?"ทำเล: "+v.place:"",v.pk.length?"แพ็กที่สนใจ: "+v.pk.map(n=>"Pack "+pad(n)).join(", "):"",v.note?"รายละเอียด: "+v.note:""].filter(Boolean).join("\n")}
+function renderContact(){
+  if(!LEAD.pk.length&&S.saved.length&&!LEAD.sent) LEAD.pk=S.saved.slice(0,6);
+  $("#v-contact").innerHTML=`<div class="wrap">
+   <div class="vhead"><div><div class="eyebrow">Contact</div><h2>ฝากข้อมูลติดต่อ</h2><p>บอกเราว่าทำเลอยู่ที่ไหนและสนใจสถานีแบบใด ทีม Entech Energy จะติดต่อกลับพร้อมข้อเสนอสำหรับทำเลของคุณโดยเฉพาะ</p></div></div>
+   <div class="cgrid">
+    <div class="dark-card" id="leadCard">
+     ${LEAD.sent?`<div class="done"><h2 style="font-size:24px">ได้รับข้อมูลแล้ว ขอบคุณครับ</h2><p>ทีม Entech Energy จะติดต่อกลับโดยเร็ว ถ้าต้องการคุยทันที กดคุยทาง LINE ได้เลย</p>
+        <div class="cta"><a class="btn line-g" href="${LINE_URL}" target="_blank" rel="noopener"><i></i>คุยกับเราทาง LINE</a><button class="btn ghost" id="leadAgain">ฝากข้อมูลเพิ่ม</button></div></div>`:`
+     <h2>คุยกับเราเรื่องทำเลของคุณ</h2>
+     <p>ฝากข้อมูลติดต่อไว้ แล้วทีม Entech Energy จะติดต่อกลับพร้อมตัวเลขสำหรับทำเลของคุณ</p>
+     <form class="lead" id="leadForm" novalidate>
+      <label for="lName"><span>ชื่อของคุณ <span class="req">*</span></span><input type="text" id="lName" autocomplete="name" maxlength="120"></label>
+      <label for="lContact"><span>เบอร์โทร LINE ID หรืออีเมล <span class="req">*</span></span><input type="text" id="lContact" autocomplete="tel" maxlength="160"></label>
+      <label for="lPlace"><span>ทำเลหรือพื้นที่ (ถ้ามี)</span><input type="text" id="lPlace" maxlength="200" placeholder="เช่น อ.ท่าวุ้ง จ.ลพบุรี · ปั๊มน้ำมันริมถนนสายหลัก"></label>
+      <div style="display:grid;gap:8px"><span style="font-weight:600;font-size:14px;color:#fff">แพ็กเกจที่สนใจ (ถ้ามี)</span>
+        <div class="pk">${P.slice().sort((a,b)=>b.st-a.st||a.n-b.n).map(o=>`<button type="button" data-lpk="${o.n}" aria-pressed="${LEAD.pk.includes(o.n)}">${pad(o.n)} · ${o.st} kW · ${o.o} หัว</button>`).join("")}</div></div>
+      <label for="lNote"><span>รายละเอียดเพิ่มเติม (ถ้ามี)</span><textarea id="lNote" maxlength="1500" placeholder="เช่น ขนาดหม้อแปลงที่มี จำนวนช่องจอด ช่วงเวลาที่สะดวกให้ติดต่อ"></textarea></label>
+      <label class="consent" for="lOk"><input type="checkbox" id="lOk"><span>ข้าพเจ้ายินยอมให้ ${esc(CFG.company.th)} เก็บข้อมูลนี้ไว้และติดต่อกลับเรื่องสถานีชาร์จ EV และสามารถขอให้ลบข้อมูลได้ทุกเมื่อ</span></label>
+      <div id="leadMsg"></div>
+      <div class="cta"><button class="btn ci" type="submit" id="leadBtn">ส่งข้อมูล</button><a class="btn line-g" href="${LINE_URL}" target="_blank" rel="noopener"><i></i>คุยกับเราทาง LINE</a></div>
+      <input type="text" id="lHoney" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+     </form>`}
+    </div>
+    <div style="display:grid;gap:16px">
+     <div class="dark-card"><h2 style="font-size:24px">ยังไม่แน่ใจว่าแพ็กไหนเหมาะกับทำเลของคุณ?</h2>
+      <p>บอกขนาดสถานีและจำนวนรถที่อยากรับ แล้วระบบจะช่วยไล่ดูทางเลือก หรือเทียบแพ็กเกจที่สนใจแบบเคียงกัน</p>
+      <div class="cta"><a class="btn ci" href="#finder">ช่วยเลือกแพ็กเกจ</a><a class="btn ghost" href="#compare">เปรียบเทียบ</a></div></div>
+     <div class="dark-card"><h2 style="font-size:24px">คุยกับเราทาง LINE</h2><p>ส่งรูปพื้นที่ ถามเรื่องหม้อแปลง หรือขอใบเสนอราคาได้ทันที</p>
+      <div class="cta"><a class="btn line-g" href="${LINE_URL}" target="_blank" rel="noopener"><i></i>เพิ่มเพื่อน LINE</a></div></div>
+     ${partnerCard()}
+     <div id="leadsAdmin"></div>
+    </div>
+   </div>
+   ${companyBlock()}
+  </div>`;
+  const f=$("#leadForm"); if(f) f.addEventListener("submit",submitLead);
+  const ag=$("#leadAgain"); if(ag) ag.onclick=()=>{LEAD.sent=false;renderContact()};
+  renderLeadsAdmin();
+}
+const PARTNERS=[
+ {key:"evc",brand:"EV Carfé",co:"บริษัท ซิกซ์ พลัส วัน จำกัด",sub:"Six Plus One Co., Ltd.",person:"คุณสมยศ ตะเคียนเกลี้ยง",personSub:"Somyot Takhienklieng · Sales Manager",
+  phones:["062-869-5595"],line:"0628695595",email:"somyot.evcarfe@gmail.com",addr:"36/98 หมู่ 9 ถ.ติวานนท์ ต.บางพูด อ.ปากเกร็ด จ.นนทบุรี 11120",
+  logo:"img/p-evcarfe.webp",accent:"#2f5fc4",desc:"สอบถามและนัดสำรวจหน้างานติดตั้งสถานีชาร์จ"},
+ {key:"rc",brand:"Recharger Energy",co:"บริษัท รีชาร์จเจอร์ เอเนอร์จี้ จำกัด",sub:"Recharger Energy",
+  phones:["095-958-7635","063-776-6637"],line:"@recharger",web:"rechargerenergy.com",addr:"42/29 หมู่ 3 ต.ห้วยกะปิ อ.เมืองชลบุรี จ.ชลบุรี",
+  logo:"img/p-recharger-wide.webp",accent:"#3a4fe0",desc:"รับติดตั้งสถานีชาร์จ DC Fast Charge สำหรับปั๊มน้ำมัน โรงแรม ร้านอาหาร และถนนสายหลัก พร้อมวิเคราะห์พื้นที่และความคุ้มค่า"},
+ {key:"ev",brand:"Evolt",co:"บริษัท อีโวลท์ เทคโนโลยี จำกัด",sub:"Evolt Technology",
+  phones:["02-114-7343"],line:"@evolt_th",web:"evolt.co.th",addr:"926 โครงการ Block 28 อาคาร C ชั้น 2 ห้อง C201-202 ซอยจุฬา 7 แขวงวังใหม่ เขตปทุมวัน กรุงเทพฯ 10330",
+  logo:null,accent:"#f5821f",desc:"ผู้ให้บริการสถานีชาร์จรถยนต์ไฟฟ้าแบบครบวงจร ติดตั้งและบริการหลังการติดตั้ง"},
+ {key:"a9",brand:"A9 Amity Nine Plus",co:"บริษัท แอมิตี้ ไนน์ พลัส จำกัด",sub:"AMITY NINE PLUS CO., LTD.",
+  phones:["065-361-4695"],logo:"img/p-a9.webp",accent:"#1f8fd6",desc:"พาร์ทเนอร์งานติดตั้งสถานีชาร์จ"}
+];
+const plogo=c=>c.logo?`<img src="${c.logo}" alt="${esc(c.brand)}" loading="lazy">`:`<span class="evo">evolt<small>อีโวลท์</small></span>`;
+function partnerBody(c){return `<div class="sh-pad pdet" style="--pa:${c.accent}">
+  <div class="plogo-lg${c.key==="rc"?" fill":""}">${plogo(c)}</div>
+  <div><span class="tagp">พาร์ทเนอร์งานติดตั้ง</span><h2 style="font-size:24px;margin-top:10px">${esc(c.co)}</h2><div class="small muted">${esc(c.sub)}</div></div>
+  <p style="margin:0">${esc(c.desc)}</p>
+  ${c.person?`<div class="small"><b>${esc(c.person)}</b> · <span class="muted">${esc(c.personSub)}</span></div>`:""}
+  <div class="cl">
+    ${c.phones.map(ph=>`<div>${SV.tel}<a href="tel:${ph.replace(/-/g,"")}">${esc(ph)}</a><button class="copy" data-copy="${ph}">คัดลอก</button></div>`).join("")}
+    ${c.line?`<div>${SV.line}<span>LINE: ${esc(c.line)}</span><button class="copy" data-copy="${c.line}">คัดลอก</button></div>`:""}
+    ${c.email?`<div>${SV.mail}<a href="mailto:${c.email}">${esc(c.email)}</a><button class="copy" data-copy="${c.email}">คัดลอก</button></div>`:""}
+    ${c.web?`<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><a href="https://${c.web}" target="_blank" rel="noopener">${esc(c.web)} ↗</a></div>`:""}
+    ${c.addr?`<div style="align-items:flex-start">${SV.pin}<span class="small">${esc(c.addr)}</span></div>`:""}
+  </div></div>`}
+function partnerCard(){return `<section class="partner" aria-label="พาร์ทเนอร์งานติดตั้ง">
+  <div class="ptop"><span class="tagp">พาร์ทเนอร์งานติดตั้ง</span><span class="small muted">อีกช่องทางสำหรับงานติดตั้ง แตะเพื่อดูข้อมูลติดต่อ</span></div>
+  <div class="plist">${PARTNERS.map((c,i)=>`<button class="prow" data-partner="${i}" style="--pa:${c.accent}"><span class="pl${c.key==="rc"?" fill":""}">${plogo(c)}</span>
+    <span class="pt"><b>${esc(c.brand)}</b><small>${esc(c.co)}</small></span><span class="chev" aria-hidden="true">›</span></button>`).join("")}</div></section>`}
+function renderLeadsAdmin(){
+  const el=$("#leadsAdmin"); if(!el) return; el.innerHTML=""; return;
+  if(!LEAD.owner){el.innerHTML="";return}
+  const L=LEAD.admin;
+  el.innerHTML=`<div class="leads-admin"><h3>ข้อมูลที่ลูกค้าฝากไว้ <span class="small muted">(${L.length}) · เห็นเฉพาะเจ้าของหน้า</span></h3>
+   ${L.length?L.map(d=>{const e=(d.entries||[]).slice(-1)[0]||{};return `<div class="row"><b>${esc(e.name||"—")}</b><span>${esc(e.contact||"")}</span>
+     ${e.place?`<span class="muted small">ทำเล: ${esc(e.place)}</span>`:""}${e.pk&&e.pk.length?`<span class="muted small">สนใจ: ${e.pk.map(n=>"Pack "+pad(n)).join(", ")}</span>`:""}
+     ${e.note?`<span class="muted small">${esc(e.note)}</span>`:""}<span class="small" style="color:var(--dim)">${d.updatedAt?new Date(d.updatedAt).toLocaleString("th-TH"):""}${(d.entries||[]).length>1?` · ส่ง ${(d.entries||[]).length} ครั้ง`:""}</span></div>`}).join(""):`<p class="muted small" style="margin:0">ยังไม่มีข้อมูลที่ฝากเข้ามา</p>`}</div>`;
+}
+async function submitLead(e){
+  e.preventDefault();
+  const g=id=>$(id).value.trim(), msg=$("#leadMsg");
+  const v={name:g("#lName"),contact:g("#lContact"),place:g("#lPlace"),note:g("#lNote"),pk:LEAD.pk.slice(),at:Date.now()};
+  ["#lName","#lContact"].forEach(id=>$(id).classList.toggle("err",!g(id)));
+  if(!v.name||!v.contact){msg.innerHTML='<div class="msg bad">กรอกชื่อ และเบอร์โทร LINE ID หรืออีเมล ก่อนส่ง</div>';return}
+  if(!$("#lOk").checked){msg.innerHTML='<div class="msg bad">กรุณาติ๊กยินยอมให้เก็บข้อมูลเพื่อติดต่อกลับ</div>';return}
+  const btn=$("#leadBtn"); btn.disabled=true; btn.textContent="กำลังส่ง…";
+  const fallback=async(reason)=>{
+    const t=leadText(v); let copied=false;
+    try{await navigator.clipboard.writeText(t);copied=true}catch(err){}
+    msg.innerHTML=`<div class="msg bad">${reason} ${copied?"คัดลอกข้อมูลให้แล้ว กดปุ่มด้านล่างแล้ววางในแชต LINE ได้เลย":"กดค้างที่ข้อความด้านล่างเพื่อคัดลอก แล้วส่งทาง LINE"}</div>
+      <textarea readonly style="min-height:110px;margin-top:8px">${esc(t)}</textarea><div class="cta"><a class="btn line-g" href="${LINE_URL}" target="_blank" rel="noopener"><i></i>เปิด LINE เพื่อส่งข้อมูล</a></div>`;
+    btn.disabled=false; btn.textContent="ส่งข้อมูล";
+  };
+  if($("#lHoney").value) return;
+  const pkTxt=v.pk.length?v.pk.map(n=>{const o=byN(n);return `Pack ${pad(n)} (${o.st} kW · ${o.o} หัว · ${o.cfg})`}).join(" | "):"-";
+  const body={"ชื่อ":v.name,"ติดต่อกลับ":v.contact,"ทำเล/พื้นที่":v.place||"-","แพ็กเกจที่สนใจ":pkTxt,"รายละเอียด":v.note||"-","ส่งเมื่อ":new Date(v.at).toLocaleString("th-TH")};
+  try{
+    let ok=false;
+    if(FORM.web3formsKey){
+      const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+        body:JSON.stringify(Object.assign({access_key:FORM.web3formsKey,subject:"ลูกค้าฝากข้อมูล: "+v.name,from_name:"EV Station PluZ Catalog"},body))});
+      const j=await r.json().catch(()=>({})); ok=r.ok&&j.success!==false;
+    }else{
+      const r=await fetch("https://formsubmit.co/ajax/"+(FORM.formsubmitId||FORM.email),{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+        body:JSON.stringify(Object.assign({_subject:"ลูกค้าฝากข้อมูล: "+v.name,_template:"table",_captcha:"false"},body))});
+      const j=await r.json().catch(()=>({})); ok=r.ok&&String(j.success)==="true";
+    }
+    if(!ok) throw new Error("send failed");
+    LEAD.sent=true; renderContact(); window.scrollTo(0,0); toast("ส่งข้อมูลแล้ว");
+  }catch(err){ fallback("ส่งข้อมูลไม่สำเร็จ") }
+}
 
 /* ================= ROUTER ================= */
-const R={home:renderHome,stations:renderStations,models:renderModels,compare:renderCompare,finder:renderFinder,saved:renderSaved};
+const R={contact:renderContact,home:renderHome,stations:renderStations,models:renderModels,compare:renderCompare,finder:renderFinder,saved:renderSaved};
 function route(){
   const h=(location.hash||"#home").slice(1);
   if(/^p-\d+$/.test(h)){ if(!document.querySelector(".view.on")) show(lastView); packDetail(+h.slice(2)); return }
@@ -1315,6 +1653,12 @@ document.addEventListener("click",e=>{
   const t=e.target.closest("button,a"); if(!t) return;
   const d=t.dataset;
   if(d.open){e.preventDefault();location.hash=d.open;return}
+  if(d.show){ if(d.show==="3d"&&!G.ok){toast("อุปกรณ์นี้ไม่รองรับการแสดงผล 3D");return} setShow(d.show,true); return}
+  if(t.id==="autoB"){ S.showAuto=!S.showAuto; showAt=Date.now(); setShow(S.show,false); return}
+  if(d.photo!=null){ const i=+d.photo; const order=SITE.slice(i).concat(SITE.slice(0,i));
+    openSheet(`<div class="sh-pad lb">${order.map(p=>`<img src="img/${p.f}.webp" alt="${esc(p.alt)}" loading="lazy">`).join("")}<p class="small muted">${esc(SITE_LOC.name)} · ติดตั้งโดย ${esc(CFG.company.th)}</p></div>`,"ภาพสถานีจริง"); return}
+  if(d.partner!=null){ const c=PARTNERS[+d.partner]; openSheet(partnerBody(c),c.brand); return}
+  if(d.lpk){ const n=+d.lpk,a=LEAD.pk; a.includes(n)?a.splice(a.indexOf(n),1):a.push(n); t.setAttribute("aria-pressed",a.includes(n)); return}
   if(d.media){const box=$("#shBody .gl-box"),gi=$("#shBody .gimgs");if(box&&gi){box.hidden=d.media!=="3d";gi.hidden=d.media==="3d";
     $("#shBody .mtabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.media===d.media))}return}
   if(d.copy){const v=d.copy;try{navigator.clipboard.writeText(v).then(()=>toast("คัดลอกแล้ว: "+v),()=>toast(v))}catch(err){toast(v)}return}
@@ -1335,8 +1679,8 @@ document.addEventListener("click",e=>{
   if(d.fq){const raw=d.fv, v=isNaN(+raw)?raw:+raw; S.f[d.fq]=S.f[d.fq]===v?null:v; renderFinder(); return}
 });
 $("#shClose").onclick=closeSheet;
-document.addEventListener("click",e=>{if(e.target.closest("#heroGL")) location.hash="p-01"});
-document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&document.activeElement&&document.activeElement.id==="heroGL"){e.preventDefault();location.hash="p-01"}}); $("#scrim").onclick=closeSheet;
+document.addEventListener("click",e=>{const s3=e.target.closest(".site3d"); if(s3&&S.showAuto){S.showAuto=false;setShow("3d",false);toast("หยุดสลับอัตโนมัติ · ลากเพื่อหมุนได้เลย")}});
+ $("#scrim").onclick=closeSheet;
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#sheet").classList.contains("on")) closeSheet()});
 $("#trayX").onclick=()=>{S.cmp.pack=[];save();renderTray();rerender()};
 // swipe down to close sheet (phone)
