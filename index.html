@@ -5,7 +5,7 @@
 <link rel="icon" href="img/logo.webp">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
-<title>Entech EV Showcase</title>
+<title>Entech EV Catalog</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -540,6 +540,9 @@ footer{padding-block:24px 30px;border-top:1px solid var(--line);color:var(--dim)
   <div class="sh-body" id="shBody"></div>
 </aside>
 <div class="pop" id="pop" hidden>
+  <h4>การแสดงผล</h4>
+  <label class="row switch" for="optVat">แสดงราคารวม VAT 7%<input type="checkbox" id="optVat"></label>
+  <label class="row switch" for="optPrice">แสดงราคา<input type="checkbox" id="optPrice" checked></label>
   <h4>ธีม</h4>
   <div class="seg" id="themeSeg"><button data-t="system">ตามเครื่อง</button><button data-t="dark">มืด</button><button data-t="light">สว่าง</button></div>
 </div>
@@ -553,68 +556,68 @@ footer{padding-block:24px 30px;border-top:1px solid var(--line);color:var(--dim)
 /* ================= CONFIG ================= */
 const CFG={
   vatRate:0.07,
-  priceNote:"ภาพสินค้าใช้เพื่อประกอบการนำเสนอ · สอบถามราคาและข้อเสนอได้ที่ทีม Entech Energy",
+  priceNote:"ราคาอุปกรณ์ ยังไม่รวมงานติดตั้ง หม้อแปลง และงานโยธา · อ้างอิงตารางราคา 28 ต.ค.",
   company:{th:"บริษัท เอ็นเทค เอเนอร์จี จำกัด",en:"Entech Energy Co., Ltd.",addr:"17/121 ซอยงามวงศ์วาน 47 แยก 48 แขวงทุ่งสองห้อง เขตหลักสี่ กรุงเทพฯ 10210",email:"info@entechenergy.co.th",phones:["02-779-8877","061-498-7000"],fb:"Entech Energy - EV & Energy Solutions",line:"entechenergy"}
 };
 
 /* ================= DATA ================= */
-// equipment specs
+// specs from index.html (MACH) · unit prices from pttor_28_oct.xlsx
 const M={
-  jv5:{role:"point",name:"Jupiter V5 120",sub:"PowerLink",brand:"sc",group:"aio",kind:"All-in-one",kw:120,out:2,price:0,imgs:["jupiter"],
+  jv5:{role:"point",name:"Jupiter V5 120",sub:"PowerLink",brand:"sc",group:"aio",kind:"All-in-one",kw:120,out:2,price:579000,imgs:["jupiter"],
     chips:["120 kW/ตู้","2 หัว CCS2","IP55"],
     feat:["PowerLink เชื่อมกำลังข้ามตู้ หัวเดียวรับได้ถึง 240 kW","แรงดัน 150–1000 Vdc รองรับรถ 400V และ 800V","IP55 · กันกัดกร่อน C3-M","OCPP 1.6J / 2.0.1 · อยู่ในรายชื่อ PEA"],
     spec:[["กำลังไฟออก","120 kW สูงสุด · 300 A rated"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2"],["ประสิทธิภาพสูงสุด","95%"],["ไฟเข้า","400 V 3P+N+PE · 185 A"],["หน้าจอ","ทัชสกรีน 10.4 นิ้ว"],["ยืนยันตัวตน","RFID, App (optional)"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J / 2.0.1"],["ตัวตู้","IP55 / IK10 · กันกัดกร่อน C3-M · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","750 × 1600 × 600 mm · ~260 kg"],["มาตรฐาน","CE-RED, CB, NBTC, PTEC, PEA list"]],
     c:{kw:"120 kW",v:"150–1000 Vdc",a:"300 A",eff:95,ip:"IP55 · C3-M",dim:"750×1600×600",wt:260,screen:"10.4 นิ้ว",comm:"OCPP 1.6J / 2.0.1",cert:"CE, CB, NBTC, PTEC, PEA"},
     src:"Datasheet Jupiter V5 120kW PowerLink (StarCharge, 2024-09)"},
-  tv5180:{role:"point",name:"Titan V5 180",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:180,out:2,price:0,imgs:["titan-angle","titan-front"],
+  tv5180:{role:"point",name:"Titan V5 180",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:180,out:2,price:669000,imgs:["titan-angle","titan-front"],
     chips:["180 kW/ตู้","2 หัว CCS2","Swing-arm"],
     feat:["Swing-arm ยกสาย ไม่ลากพื้น","แรงดัน 150–1000 Vdc","ประสิทธิภาพสูงสุด 95%","OCPP 1.6J / 2.0.1"],
     spec:[["กำลังไฟออก","180 kW สูงสุด · 300 A rated"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2"],["ประสิทธิภาพสูงสุด","95%"],["ไฟเข้า","400 V 3P+N+PE · 277 A"],["หน้าจอ","ทัชสกรีน 10.4 นิ้ว"],["ระบบจัดการสาย","Swing-arm (optional) · สาย 5 m ระยะใช้งาน ~3.8 m"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J / 2.0.1"],["ตัวตู้","IP55 / IK10 · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","750 × 1790 × 720 mm · ~463 kg"],["มาตรฐาน","CE, CB, NBTC, PTEC"]],
     c:{kw:"180 kW",v:"150–1000 Vdc",a:"300 A",eff:95,ip:"IP55",dim:"750×1790×720",wt:463,screen:"10.4 นิ้ว",comm:"OCPP 1.6J / 2.0.1",cert:"CE, CB, NBTC, PTEC"},
     src:"Datasheet Titan V5 180kW (StarCharge)"},
-  tv5240:{role:"point",name:"Titan V5 240",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:240,out:2,price:0,imgs:["titan-angle","titan-front"],
+  tv5240:{role:"point",name:"Titan V5 240",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:240,out:2,price:820000,imgs:["titan-angle","titan-front"],
     chips:["240 kW/ตู้","2 หัว CCS2","Swing-arm"],
     feat:["240 kW ต่อตู้ ตู้เดียวจบ","ชาร์จพร้อมกัน 2 หัว","Swing-arm สายไม่ลากพื้น","แรงดัน 150–1000 Vdc"],
     spec:[["กำลังไฟออก","240 kW ต่อตู้"],["หัวชาร์จ","CCS2 + CCS2 ชาร์จพร้อมกัน"],["แรงดันออก","150–1000 Vdc (ตระกูล Titan V5)"],["ระบบจัดการสาย","Swing-arm"],["หมายเหตุ","ยังไม่มีดาต้าชีตรุ่นนี้ สเปกละเอียดอ้างอิงตระกูล Titan V5"]],
     c:{kw:"240 kW",v:"150–1000 Vdc",a:"—",eff:null,ip:"IP55",dim:"750×1790×720",wt:null,screen:"10.4 นิ้ว",comm:"OCPP 1.6J",cert:"—"},
-    src:"ตระกูล Titan V5"},
-  tv5pro:{role:"point",name:"Titan V5 Pro 240",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:240,out:2,price:0,imgs:["titan-front","titan-angle"],
+    src:"ตารางราคา pttor_28_oct + ตระกูล Titan V5"},
+  tv5pro:{role:"point",name:"Titan V5 Pro 240",sub:"",brand:"sc",group:"aio",kind:"All-in-one",kw:240,out:2,price:870000,imgs:["titan-front","titan-angle"],
     chips:["240 kW/ตู้","400 A/หัว","96.5%"],
     feat:["กระแส 400 A ต่อหัว","ประสิทธิภาพ 96.5% ที่โหลดเต็ม","RFID · QR Code · App","ได้รับรอง PEA"],
     spec:[["กำลังไฟออก","240 kW · 400 A ต่อหัว"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2 ชาร์จพร้อมกัน"],["ประสิทธิภาพ","96.5% @ full load"],["ไฟเข้า","400 V 3P+N+PE · 361 A"],["หน้าจอ","ทัชสกรีน 10.4 นิ้ว"],["ยืนยันตัวตน","RFID card, QR code, App (optional)"],["ระบบจัดการสาย","Swing-arm · สาย 5 m ระยะใช้งาน ~3.8 m"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J"],["ตัวตู้","IP55 / IK10 · โมดูลกำลัง ~17 kg/โมดูล"],["ขนาด (W×H×D)","750 × 1790 × 720 mm · ~316 kg (ไม่รวมโมดูล)"],["มาตรฐาน","CE, CB, WPC, NBTC, PTEC, PEA, NTC"]],
     c:{kw:"240 kW",v:"150–1000 Vdc",a:"400 A",eff:96.5,ip:"IP55",dim:"750×1790×720",wt:316,screen:"10.4 นิ้ว",comm:"OCPP 1.6J",cert:"CE, CB, NBTC, PTEC, PEA"},
     src:"Datasheet Titan V5 240kW PRO (StarCharge)"},
-  novav5:{role:"cab",name:"Nova V5 480",sub:"Power Cabinet",brand:"sc",group:"split",kind:"ตู้ไฟกลาง",kw:480,out:0,cap:12,price:0,imgs:["nova-v5-left","nova-v5-front","nova-v5-right"],
+  novav5:{role:"cab",name:"Nova V5 480",sub:"Power Cabinet",brand:"sc",group:"split",kind:"ตู้ไฟกลาง",kw:480,out:0,cap:12,price:1390000,imgs:["nova-v5-1door"],
     chips:["480 kW/ตู้","1600 A","12 หัว/ตู้"],
     feat:["Smart power pool จ่ายกำลังให้หัวที่ต้องการ","รองรับ Dispenser สูงสุด 12 หัวต่อตู้","ประสิทธิภาพสูงสุด 96.5%","ฐานตู้เล็ก วางในลานไฟได้ง่าย"],
     spec:[["กำลังไฟออกรวม","480 kW · 1600 A max"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จที่รองรับ","สูงสุด 12 หัวต่อตู้"],["ประสิทธิภาพสูงสุด","96.5%"],["ไฟเข้า","400 Vac ±15% · 730 A"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J / 2.0.1"],["ตัวตู้","IP55 / IK10 · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","1050 × 1750 × 1150 mm · ~615 kg"],["มาตรฐาน","CE-RED, CB, NBTC (ongoing), PTEC (ongoing)"]],
     c:{kw:"480 kW",v:"150–1000 Vdc",a:"1600 A",eff:96.5,ip:"IP55",dim:"1050×1750×1150",wt:615,screen:"—",comm:"OCPP 1.6J / 2.0.1",cert:"CE, CB"},
     src:"Datasheet Nova V5 Power Cabinet (StarCharge)"},
-  novav4:{role:"cab",name:"Nova V4 720",sub:"Power Cabinet",brand:"sc",group:"split",kind:"ตู้ไฟกลาง",kw:720,out:0,cap:12,price:0,imgs:["nova-v4"],ill:true,
+  novav4:{role:"cab",name:"Nova V4 720",sub:"Power Cabinet",brand:"sc",group:"split",kind:"ตู้ไฟกลาง",kw:720,out:0,cap:12,price:2200000,imgs:["nova-v4-left","nova-v4-front","nova-v4-right"],
     chips:["720 kW/ตู้","2400 A","97%"],
     feat:["720 kW ในตู้เดียว","ประสิทธิภาพสูงสุด 97%","กระแสรวม 2400 A","รองรับ 12 หัวต่อตู้"],
     spec:[["กำลังไฟออกรวม","720 kW · 2400 A max"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จที่รองรับ","สูงสุด 12 หัวต่อตู้"],["ประสิทธิภาพสูงสุด","97%"],["ไฟเข้า","400 Vac ±15% · 1100 A"],["การสื่อสาร","4G, Wi-Fi, Ethernet · OCPP 1.6J"],["ตัวตู้","IP55 / IK10 · ระบายความร้อนด้วยลม"],["ขนาด (W×H×D)","1503 × 2149 × 1220 mm · ~880 kg"],["มาตรฐาน","CE, CB, NBTC, PTEC"]],
     c:{kw:"720 kW",v:"150–1000 Vdc",a:"2400 A",eff:97,ip:"IP55",dim:"1503×2149×1220",wt:880,screen:"—",comm:"OCPP 1.6J",cert:"CE, CB, NBTC, PTEC"},
     src:"Datasheet Nova V4 720kW Power Cabinet (StarCharge)"},
-  hydrus:{role:"disp",name:"Hydrus Pro",sub:"Dispenser",brand:"sc",group:"split",kind:"ตู้จ่าย (Dispenser)",kw:null,kwTxt:"600 A",out:2,price:0,imgs:["hydrus-angle","hydrus-front"],
+  hydrus:{role:"disp",name:"Hydrus Pro",sub:"Dispenser",brand:"sc",group:"split",kind:"ตู้จ่าย (Dispenser)",kw:null,kwTxt:"600 A",out:2,price:350000,imgs:["hydrus-angle","hydrus-front"],
     chips:["400 A (600 A max)","2 หัว CCS2","หนา 25 cm"],
     feat:["ตัวตู้หนาเพียง 25 cm","กระแสสูงสุด 600 A","ระบบจัดการสาย CMS ใช้งานง่าย","ทัชสกรีน 7 นิ้ว"],
     spec:[["กระแสออก","400 A rated (600 A max)"],["แรงดันออก","150–1000 Vdc"],["หัวชาร์จ","CCS2 + CCS2"],["หน้าจอ","ทัชสกรีน 7 นิ้ว · LED indicator"],["ยืนยันตัวตน","RFID, QR code, App, Free charging, MAC"],["การสื่อสาร","Ethernet · DIN 70121, ISO 15118"],["ตัวตู้","IP55 / IK10 · Natural/forced air"],["ขนาด (W×H×D)","500 × 1700 × 250 mm (1842 mm รวม CMS) · ~130 kg"],["มาตรฐาน","CE-RED, CB, NBTC, PTEC"]],
     c:{kw:"≤ 480 kW/หัว",v:"150–1000 Vdc",a:"400 A (600 max)",eff:null,ip:"IP55",dim:"500×1700×250",wt:130,screen:"7 นิ้ว",comm:"ISO 15118",cert:"CE, CB, NBTC, PTEC"},
     src:"Datasheet Hydrus Pro Dispenser (StarCharge)"},
-  idc480:{role:"point",name:"IDC480E-C",sub:"ตู้ชาร์จ + พอร์ตต่อ Dispenser",brand:"sg",group:"hyb",kind:"ตู้ชาร์จ + ตู้ไฟ",kw:480,out:2,price:0,imgs:["sg-idc","sg-set"],
+  idc480:{role:"point",name:"IDC480E-C",sub:"ตู้ชาร์จ + พอร์ตต่อ Dispenser",brand:"sg",group:"hyb",kind:"ตู้ชาร์จ + ตู้ไฟ",kw:480,out:2,price:1450000,imgs:["sg-idc","sg-set"],
     chips:["480 kW","IP65 · C5","97%"],
     feat:["IP65 + กันกัดกร่อน C5","Isolated air-cooling ไม่ต้องเปลี่ยนแผ่นกรองฝุ่น","ประสิทธิภาพสูงสุด 97%","จัดสรรกำลังละเอียดทีละ 40 kW"],
     spec:[["กำลังไฟออก","ตั้งค่าได้ 240 / 320 / 360 / 400 / 480 kW"],["กำลังต่อพอร์ต","สูงสุด 480 kW · แบ่งกำลังทีละ 40 kW"],["แรงดันออก","150–1000 Vdc"],["กระแสออก","2 × 400 A boost 600 A"],["จำนวนรถ","สูงสุด 4 คัน (รวม Dispenser)"],["ประสิทธิภาพสูงสุด","97%"],["ไฟเข้า","380/400 Vac · 770 A @ 480 kW · PF ≥ 0.99"],["หน้าจอ","ทัชสกรีน 10 นิ้ว · Arm CMS"],["ตัวตู้","IP65 · C5 · IK10 · −35 ถึง 55 °C"],["ขนาด (W×H×D)","850 × 2300 × 950 mm · ≤ 950 kg"],["มาตรฐาน","CE, CB, UKCA, RCM, ADQCC, MoIAT, PEA · รับประกัน 3 ปี"]],
     c:{kw:"480 kW",v:"150–1000 Vdc",a:"2×400 A (600 boost)",eff:97,ip:"IP65 · C5",dim:"850×2300×950",wt:950,screen:"10 นิ้ว",comm:"OCPP",cert:"CE, CB, UKCA, PEA"},
     src:"Datasheet IDC480E-C (Sungrow, V4)"},
-  idc360:{role:"point",name:"IDC360E-C",sub:"ตั้งค่า 360 kW",brand:"sg",group:"hyb",kind:"ตู้ชาร์จ + ตู้ไฟ",kw:360,out:2,price:0,imgs:["sg-idc","sg-set"],
+  idc360:{role:"point",name:"IDC360E-C",sub:"ตั้งค่า 360 kW",brand:"sg",group:"hyb",kind:"ตู้ชาร์จ + ตู้ไฟ",kw:360,out:2,price:1175000,imgs:["sg-idc","sg-set"],
     chips:["360 kW","IP65 · C5","97%"],
     feat:["ตัวตู้เดียวกับ IDC480E-C ตั้งค่า 360 kW","IP65 + กันกัดกร่อน C5","ประสิทธิภาพสูงสุด 97%","จัดสรรกำลังทีละ 40 kW"],
     spec:[["กำลังไฟออก","360 kW (ตั้งค่าที่ระดับโมดูล)"],["แรงดันออก","150–1000 Vdc"],["กระแสออก","2 × 400 A boost 600 A"],["จำนวนรถ","สูงสุด 4 คัน (รวม Dispenser)"],["ประสิทธิภาพสูงสุด","97%"],["ตัวตู้","IP65 · C5 · IK10 · −35 ถึง 55 °C"],["ขนาด (W×H×D)","850 × 2300 × 950 mm"],["มาตรฐาน","CE, CB, UKCA, RCM, PEA"]],
     c:{kw:"360 kW",v:"150–1000 Vdc",a:"2×400 A (600 boost)",eff:97,ip:"IP65 · C5",dim:"850×2300×950",wt:950,screen:"10 นิ้ว",comm:"OCPP",cert:"CE, CB, UKCA, PEA"},
     src:"Datasheet IDC480E-C (Sungrow) — รุ่นเดียวกัน ตั้งค่า 360 kW"},
-  sgdisp:{role:"disp",name:"Sungrow Dispenser",sub:"Air-cooled",brand:"sg",group:"hyb",kind:"ตู้จ่าย (Dispenser)",kw:null,kwTxt:"600 A",out:2,price:0,imgs:["sg-disp","sg-disp-pair"],
+  sgdisp:{role:"disp",name:"Sungrow Dispenser",sub:"Air-cooled",brand:"sg",group:"hyb",kind:"ตู้จ่าย (Dispenser)",kw:null,kwTxt:"600 A",out:2,price:425000,imgs:["sg-disp","sg-disp-pair"],
     chips:["400 A + 400 A","IP65 · C5","≤ 60 dB"],
     feat:["สายคู่ 400 A + 400 A (boost 600 A)","IP65 · C5 · IK10","เงียบ ≤ 60 dB(A) ที่ 1 m","ทัชสกรีน 10 นิ้ว · รองรับ Plug & Charge"],
     spec:[["สาย/กระแส","Dual cable 400 A + 400 A (600 A boost)"],["แรงดันออก","200–1000 Vdc"],["หัวชาร์จ","CCS2 · DIN 70121, ISO 15118"],["หน้าจอ","ทัชสกรีน 10 นิ้ว · LED display"],["ยืนยันตัวตน","RFID, Plug & play, Auto-charge, Plug & charge, Payment (optional)"],["เสียง","≤ 60 dB(A) ที่ 1 m"],["ตัวตู้","IP65 · C5 · IK10"],["ขนาด (W×H×D)","430 × 1800 × 330 mm · 140 kg · สาย 5/7 m"]],
@@ -623,33 +626,34 @@ const M={
 };
 const GROUPS=[["aio","StarCharge","All-in-one","ตู้เดียวมีทั้งโมดูลกำลังและหัวชาร์จ"],["split","StarCharge","Split · Power Pool","ตู้ไฟกลาง + Dispenser บาง"],["hyb","Sungrow","Hybrid","ตู้ชาร์จที่ต่อ Dispenser เพิ่มได้"]];
 
-// packages
+// packages from pttor_28_oct.xlsx (sheet "by Power")
 const P=[
- [1,1250,960,24,480,[["novav5",2],["hydrus",12]],0],
- [2,1250,960,16,240,[["jv5",8]],0],
- [3,1250,960,16,480,[["novav5",2],["hydrus",8]],0],
- [4,1250,960,12,480,[["novav5",2],["hydrus",6]],0],
- [5,1250,960,8,480,[["novav5",2],["hydrus",4]],0],
- [6,1250,960,8,480,[["idc480",2],["sgdisp",2]],0],
- [7,1250,960,8,240,[["tv5pro",4]],0],
- [8,1250,960,8,240,[["tv5240",4]],0],
- [9,1000,720,12,480,[["novav4",1],["hydrus",6]],0],
- [10,1000,720,12,240,[["jv5",6]],0],
- [11,1000,720,8,360,[["idc360",2],["sgdisp",2]],0],
- [12,750,540,6,180,[["tv5180",3]],0],
- [13,630,480,8,480,[["novav5",1],["hydrus",4]],0],
- [14,630,480,8,240,[["jv5",4]],0],
- [15,630,480,6,480,[["novav5",1],["hydrus",3]],0],
- [16,630,480,4,480,[["idc480",1],["sgdisp",1]],0],
- [17,630,480,4,240,[["tv5pro",2]],0],
- [18,500,360,6,240,[["jv5",3]],0],
- [19,500,360,4,360,[["idc360",1],["sgdisp",1]],0],
- [20,500,360,4,180,[["tv5180",2]],0],
- [21,315,240,4,240,[["jv5",2]],0],
- [22,315,240,2,240,[["tv5pro",1]],0],
- [23,315,240,2,240,[["tv5240",1]],0]
+ [1,1250,960,24,480,[["novav5",2],["hydrus",12]],6980000],
+ [2,1250,960,16,240,[["jv5",8]],4632000],
+ [3,1250,960,16,480,[["novav5",2],["hydrus",8]],5580000],
+ [4,1250,960,12,480,[["novav5",2],["hydrus",6]],4880000],
+ [5,1250,960,8,480,[["novav5",2],["hydrus",4]],4180000],
+ [6,1250,960,8,480,[["idc480",2],["sgdisp",2]],3750000],
+ [7,1250,960,8,240,[["tv5pro",4]],3480000],
+ [8,1250,960,8,240,[["tv5240",4]],3280000],
+ [9,1000,720,12,480,[["novav4",1],["hydrus",6]],4300000],
+ [10,1000,720,12,240,[["jv5",6]],3474000],
+ [11,1000,720,8,360,[["idc360",2],["sgdisp",2]],3200000],
+ [12,750,540,6,180,[["tv5180",3]],2007000],
+ [13,630,480,8,480,[["novav5",1],["hydrus",4]],2790000],
+ [14,630,480,8,240,[["jv5",4]],2316000],
+ [15,630,480,6,480,[["novav5",1],["hydrus",3]],2440000],
+ [16,630,480,4,480,[["idc480",1],["sgdisp",1]],1875000],
+ [17,630,480,4,240,[["tv5pro",2]],1740000],
+ [18,500,360,6,240,[["jv5",3]],1737000],
+ [19,500,360,4,360,[["idc360",1],["sgdisp",1]],1600000],
+ [20,500,360,4,180,[["tv5180",2]],1338000],
+ [21,315,240,4,240,[["jv5",2]],1158000],
+ [22,315,240,2,240,[["tv5pro",1]],870000],
+ [23,315,240,2,240,[["tv5240",1]],820000]
 ].map(([n,tr,st,o,max,parts,xls])=>{
   const price=parts.reduce((s,[k,q])=>s+q*M[k].price,0);
+  if(price!==xls) console.warn("Price mismatch pack",n,price,xls);
   const k0=parts[0][0];
   const fam=k0==="novav5"?"pool":k0==="novav4"?"pool4":k0==="jv5"?"jup":k0==="tv5pro"?"pro":k0==="tv5240"?"t240":k0==="tv5180"?"t180":"sgc";
   const arch=(fam==="pool"||fam==="pool4")?"split":fam==="sgc"?"hyb":"aio";
@@ -705,11 +709,11 @@ const headroom=o=>(o.fam==="pool"||o.fam==="pool4")?(o.parts[0][1]*12-o.parts[1]
 const store={get(k,d){try{const v=localStorage.getItem("entech:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
   set(k,v){try{localStorage.setItem("entech:"+k,JSON.stringify(v))}catch(e){}}};
 const S={
-  view:"home",tier:store.get("tierKW","all"),brand:"all",arch:"all",sort:(v=>["pk","low","high","po"].includes(v)?"rec":v)(store.get("sort","rec")),
+  view:"home",tier:store.get("tierKW","all"),brand:"all",arch:"all",sort:(v=>v==="pk"?"rec":v)(store.get("sort","rec")),
   cmpMode:"pack",cmp:{pack:store.get("cmpP",[]),model:store.get("cmpM",[])},diffOnly:false,
-  saved:store.get("saved",[]),vat:false,showPrice:false,
+  saved:store.get("saved",[]),vat:store.get("vat",false),showPrice:store.get("showPrice",true),
   theme:store.get("theme","system"),show:"photo",showAuto:true,
-  f:{st:null,cars:null,pri:null}
+  f:{st:null,cars:null,pri:null,bud:null}
 };
 const save=()=>{store.set("cmpP",S.cmp.pack);store.set("cmpM",S.cmp.model);store.set("saved",S.saved);store.set("tierKW",S.tier);store.set("sort",S.sort)};
 
@@ -720,7 +724,7 @@ const vat=n=>S.vat?Math.round(n*(1+CFG.vatRate)):n;
 const baht=n=>"฿"+vat(n).toLocaleString("th-TH");
 const mil=n=>{const v=vat(n)/1e6;return "฿"+(v>=1?v.toFixed(2).replace(/\.?0+$/,"")+" ล้าน":Math.round(vat(n)/1000).toLocaleString("th-TH")+"K")};
 const k=n=>"฿"+Math.round(vat(n)).toLocaleString("th-TH");
-const pt=t=>'';
+const pt=t=>S.showPrice?t:'<span class="muted">สอบถามราคา</span>';
 const vatLbl=()=>S.vat?"รวม VAT 7%":"ไม่รวม VAT";
 const img=(name)=>`img/${name}.webp`;
 let toastT;
@@ -768,6 +772,8 @@ function packCard(o){
         <div><small>สูงสุด/หัว</small><b class="num">${o.max}<em>kW</em></b></div>
         <div><small>เฉลี่ยเมื่อเต็ม</small><b class="num">${Math.round(o.st/o.o)}<em>kW</em></b></div>
       </div>
+      <div class="price"><div class="p num"><small>ราคาแพ็กเกจ · ${vatLbl()}</small>${pt(mil(o.price))}</div>
+        <div class="pu">${S.showPrice?`งบลงทุนต่อหัว<br><b>${k(o.price/o.o)}</b>`:""}</div></div>
     </div>
     <div class="pcard-f">
       <button class="btn solid sm" data-open="p-${pad(o.n)}">ดูรายละเอียด</button>
@@ -820,11 +826,11 @@ function renderHome(){
         <div class="site3d" ${S.show==="3d"?"":"hidden"}><div class="gl-host" id="siteHost"></div><div class="gl-hint">ลากเพื่อหมุน · บีบเพื่อซูม</div><div class="note3d">โมเดลจำลองจากสถานีจริง</div></div>
       </div>
       <div class="hero-copy">
-        <p>ออกแบบ จัดหา และติดตั้งสถานีชาร์จเร็ว DC สำหรับเครือข่าย EV Station PluZ เลือกได้ 23 แพ็กเกจ ขนาด 240–960 kW พร้อมขนาดหม้อแปลงที่แนะนำ ดูสถานีจำลอง 3D สเปก และเทียบแต่ละแบบได้ในที่เดียว</p>
+        <p>ออกแบบ จัดหา และติดตั้งสถานีชาร์จเร็ว DC สำหรับเครือข่าย EV Station PluZ เลือกได้ 23 แพ็กเกจ ขนาด 240–960 kW พร้อมขนาดหม้อแปลงที่แนะนำ ดูสถานีจำลอง 3D สเปก ราคา และเทียบแต่ละแบบได้ในที่เดียว</p>
         <div class="statrow">
           <div class="stat"><small>แพ็กเกจ</small><b class="num">23</b><div class="bar"><i style="width:100%"></i></div></div>
           <div class="stat"><small>สูงสุดต่อหัว</small><b class="num">480 kW</b><div class="bar"><i style="width:80%"></i></div></div>
-          <div class="stat"><small>ขนาดสถานี</small><b class="num">240–960 kW</b><div class="bar"><i style="width:35%"></i></div></div>
+          <div class="stat"><small>เริ่มต้น</small><b class="num">${S.showPrice?mil(minP):"—"}</b><div class="bar"><i style="width:35%"></i></div></div>
         </div>
         <div class="cta"><a class="btn solid" href="#finder">ช่วยเลือกให้</a><a class="btn ghost" href="#stations">ดูทุกแพ็กเกจ</a><a class="btn ci" href="#contact">ฝากข้อมูลติดต่อ</a></div>
       </div>
@@ -834,7 +840,7 @@ function renderHome(){
       <div class="tierlad">${TIERS.map(t=>{const os=P.filter(p=>p.st===t);const mn=Math.min(...os.map(p=>p.price));const mo=Math.max(...os.map(p=>p.o));
         return `<a class="rung" href="#stations" data-tier="${t}"><div class="kw num">${t}<small>kW</small></div>
           <div class="meta">${os.length} แพ็กเกจ · สูงสุด ${mo} หัว<br>แนะนำหม้อแปลง <b>${os[0].tr} kVA</b></div>
-          <div class="from"><b class="num" style="font-size:22px">›</b></div></a>`}).join("")}</div></div>
+          <div class="from">เริ่ม<b class="num">${S.showPrice?mil(mn):"—"}</b></div></a>`}).join("")}</div></div>
     <div class="section"><div class="eyebrow">Architecture</div><h2>ทุกแพ็กเกจอยู่ใน 3 รูปแบบ</h2>
       <div class="archs">
         <div class="arch">${svgAIO()}<h3>All-in-one</h3><div class="who">Jupiter V5 · Titan V5 · Titan V5 Pro</div>
@@ -846,7 +852,7 @@ function renderHome(){
       </div></div>
     ${companyBlock()}
   </div>
-  <footer><div class="wrap">${esc(CFG.priceNote)} · © ${esc(CFG.company.en)}</div></footer>`;
+  <footer><div class="wrap">${esc(CFG.priceNote)} · ภาพสินค้าใช้เพื่อประกอบการนำเสนอ · © ${esc(CFG.company.en)}</div></footer>`;
   showAt=Date.now(); mountHero();
 }
 
@@ -871,13 +877,13 @@ function renderStations(){
           <span class="grow"></span>
           <label class="count" for="sortSel">เรียง</label>
           <select class="sel" id="sortSel">
-            <option value="rec">Station kW มาก → น้อย</option>
-            <option value="out">หัวชาร์จมากสุด</option><option value="max">kW ต่อหัวสูงสุด</option></select>
+            <option value="rec">Station kW มาก → น้อย</option><option value="low">ราคาต่ำ → สูง</option><option value="high">ราคาสูง → ต่ำ</option>
+            <option value="po">งบลงทุนต่อหัวต่ำสุด</option><option value="out">หัวชาร์จมากสุด</option><option value="max">kW ต่อหัวสูงสุด</option></select>
         </div>
       </div>
       <div class="count" id="stCount" style="margin-bottom:10px"></div>
       <div class="grid" id="stGrid"></div>
-      <p class="note">${esc(CFG.priceNote)}</p>
+      <p class="note">${esc(CFG.priceNote)} · Pack 7 และ 22: ตาราง Excel ระบุ max 400 kW/หัว แสดงที่ 240 kW ตามกำลังตู้ (รอยืนยัน)</p>
     </div>`;
     el.dataset.built=1;
     $("#sortSel").addEventListener("change",e=>{S.sort=e.target.value;save();renderStationsList()});
@@ -900,13 +906,16 @@ function renderModels(){
       <div class="mgrid">${Object.entries(M).filter(([,m])=>m.group===g).map(([key,m])=>`<button class="mcard" data-open="m-${key}">
         ${modelStage(key)}<div class="bd"><div class="nm">${esc(m.name)}</div><div class="ty">${esc(m.kind)}${m.sub?" · "+esc(m.sub):""}</div>
         <div class="pw"><b class="num">${m.kw?m.kw+'<small style="font-size:12px"> kW</small>':m.kwTxt}</b><span>${S.showPrice?mil(m.price):""}</span></div></div></button>`).join("")}</div></div>`).join("")}
-    <p class="note">${esc(CFG.priceNote)}</p></div>`;
+    <p class="note">ราคาต่อหน่วย ${vatLbl()} · ${esc(CFG.priceNote)}</p></div>`;
 }
 
 /* ---------- compare ---------- */
 function packRows(list){
   const min=f=>Math.min(...list.map(f)), max=f=>Math.max(...list.map(f));
   return [
+   ["g","ราคา"],
+   ["ราคาแพ็กเกจ",o=>S.showPrice?baht(o.price):"—",o=>o.price,"low"],
+   ["งบลงทุนต่อหัว",o=>S.showPrice?k(o.price/o.o):"—",o=>o.price/o.o,"low"],
    ["g","กำลังไฟ"],
    ["Station kW",o=>o.st+" kW",o=>o.st,"high"],
    ["หม้อแปลงที่แนะนำ",o=>o.tr+" kVA",o=>o.tr],
@@ -925,6 +934,8 @@ function packRows(list){
 }
 function modelRows(){
   return [
+   ["g","ราคา"],
+   ["ราคาต่อหน่วย",m=>S.showPrice?baht(m.price):"—",m=>m.price,"low"],
    ["g","กำลังไฟ"],
    ["ประเภท",m=>m.kind,m=>m.kind],
    ["กำลังไฟ",m=>m.c.kw,m=>m.kw||0],
@@ -980,7 +991,7 @@ function renderCompare(){
       <span class="grow"></span>
       ${list.length>=2?`<label class="switch" for="diffSw"><input type="checkbox" id="diffSw" ${S.diffOnly?"checked":""}>เฉพาะที่ต่างกัน</label>`:""}
     </div>${body}
-    <p class="note">${esc(CFG.priceNote)}</p></div>`;
+    <p class="note">ราคา ${vatLbl()} · ${esc(CFG.priceNote)}</p></div>`;
   const sw=$("#diffSw"); if(sw) sw.addEventListener("change",e=>{S.diffOnly=e.target.checked;renderCompare()});
 }
 
@@ -988,7 +999,8 @@ function renderCompare(){
 const FQ=[
  ["st","ขนาดสถานีที่ต้องการ (Station kW)",TIERS.slice().reverse().map(t=>[t,t+" kW","หม้อแปลง "+trFor(t)+" kVA"]).concat([[0,"ยังไม่ทราบ","ให้ระบบแนะนำ"]])],
  ["cars","อยากรับรถพร้อมกันกี่คัน",[[2,"2 คัน"],[4,"4 คัน"],[6,"6–8 คัน"],[12,"12 คันขึ้นไป"]]],
- ["pri","ให้ความสำคัญกับอะไรที่สุด",[["fast","ชาร์จเร็วที่สุด","kW ต่อหัวสูง"],["tough","ทนสภาพหนัก","ใกล้ทะเล ฝุ่นเยอะ"],["grow","ขยายได้ภายหลัง","เพิ่มหัวทีหลัง"]]],
+ ["pri","ให้ความสำคัญกับอะไรที่สุด",[["fast","ชาร์จเร็วที่สุด","kW ต่อหัวสูง"],["cheap","งบต่ำ คุ้มค่า","งบลงทุนต่อหัวต่ำ"],["tough","ทนสภาพหนัก","ใกล้ทะเล ฝุ่นเยอะ"],["grow","ขยายได้ภายหลัง","เพิ่มหัวทีหลัง"]]],
+ ["bud","งบประมาณอุปกรณ์",[[1500000,"ไม่เกิน 1.5 ล้าน"],[3000000,"ไม่เกิน 3 ล้าน"],[5000000,"ไม่เกิน 5 ล้าน"],[0,"ไม่จำกัด"]]]
 ];
 function recommend(){
   const f=S.f;
@@ -1009,7 +1021,7 @@ function renderFinder(){
   const f=S.f, done=Object.values(f).filter(v=>v!==null).length;
   const res=done?recommend():[];
   $("#v-finder").innerHTML=`<div class="wrap">
-    <div class="vhead"><div><div class="eyebrow">Station finder</div><h2>ช่วยเลือกแพ็กเกจ</h2><p>ตอบ 3 ข้อ ระบบจะแนะนำ 3 แพ็กเกจที่ตรงที่สุด ตอบไม่ครบก็ได้ ผลลัพธ์จะอัปเดตทันที</p></div>
+    <div class="vhead"><div><div class="eyebrow">Station finder</div><h2>ช่วยเลือกแพ็กเกจ</h2><p>ตอบ 4 ข้อ ระบบจะแนะนำ 3 แพ็กเกจที่ตรงที่สุด ตอบไม่ครบก็ได้ ผลลัพธ์จะอัปเดตทันที</p></div>
       ${done?`<button class="btn line sm" id="fReset">เริ่มใหม่</button>`:""}</div>
     ${FQ.map(([key,q,opts],i)=>`<div class="fq"><h3><span>${pad(i+1)}</span>${q}</h3><div class="opts">${opts.map(([v,t,s])=>`<button data-fq="${key}" data-fv="${v}" aria-pressed="${f[key]===v}">${t}${s?`<small>${s}</small>`:""}</button>`).join("")}</div></div>`).join("")}
     ${res.length?`<div class="vhead" style="margin:26px 0 0"><div><div class="eyebrow">Recommended</div><h2>แนะนำสำหรับคุณ</h2></div>
@@ -1019,7 +1031,7 @@ function renderFinder(){
         <div class="why">${r.why.length?r.why.map(esc).join(" · "):`${r.o.st} kW · ${r.o.o} หัว`}</div><div class="pp num">${pt(mil(r.o.price))}</div></div></button>`).join("")}</div>`:""}
   </div>`;
   if(res.length) $("#fCmp").onclick=()=>{S.cmp.pack=res.map(r=>r.o.n);S.cmpMode="pack";save();location.hash="compare"};
-  const rs=$("#fReset"); if(rs) rs.onclick=()=>{S.f={st:null,cars:null,pri:null};renderFinder()};
+  const rs=$("#fReset"); if(rs) rs.onclick=()=>{S.f={st:null,cars:null,pri:null,bud:null};renderFinder()};
 }
 
 /* ---------- saved ---------- */
@@ -1075,6 +1087,9 @@ function packDetail(n){
       <div class="stat"><small>หัวชาร์จ</small><b class="num">${o.o} หัว</b>${bar(o.o,24)}</div>
       <div class="stat"><small>สูงสุด/หัว</small><b class="num">${o.max} kW</b>${bar(o.max,480)}</div>
     </div>
+    <div class="dprice"><div class="p num"><small>ราคาแพ็กเกจ · ${vatLbl()}</small>${pt(baht(o.price))}</div>
+      ${S.showPrice?`<div class="pu"><span>งบลงทุนต่อหัว</span><span><b>${k(o.price/o.o)}</b></span></div>`:""}</div>
+    <div class="note">${esc(CFG.priceNote)}</div>
     <div class="dsec"><h4>จุดเด่น</h4><ul class="hl">${highlights(o).map(h=>`<li>${esc(h)}</li>`).join("")}</ul>
       <div class="fit"><b>เหมาะกับ</b> ${esc(fitFor(o))}</div></div>
     <div class="dsec"><h4>รายการอุปกรณ์</h4><div class="tscroll"><table><thead><tr><th>รุ่น</th><th class="r">จำนวน</th>${S.showPrice?'<th class="r">ต่อหน่วย</th><th class="r">รวม</th>':""}</tr></thead>
@@ -1097,6 +1112,7 @@ function modelDetail(key){
     <div class="dhead"><div class="tb-row"><span class="bchip ${m.brand}" style="margin:0">${m.brand==="sc"?"StarCharge":"Sungrow"}</span><span class="small muted">${esc(m.kind)}${m.sub?" · "+esc(m.sub):""}</span></div>
       <div class="big">${esc(m.name)}</div>
       <div class="tb-row">${m.chips.map(c=>`<span class="chipf" style="border-style:solid;display:inline-flex;align-items:center">${esc(c)}</span>`).join("")}</div></div>
+    <div class="dprice"><div class="p num"><small>ราคาต่อหน่วย · ${vatLbl()}</small>${pt(baht(m.price))}</div></div>
     <div class="dsec"><h4>จุดเด่น</h4><ul class="hl">${m.feat.map(h=>`<li>${esc(h)}</li>`).join("")}</ul></div>
     <div class="dsec"><h4>สเปก</h4><div class="tscroll"><table class="spec"><tbody>${m.spec.map(([a,b])=>`<tr><th>${esc(a)}</th><td>${esc(b)}</td></tr>`).join("")}</tbody></table></div>
       <div class="note">ที่มา: ${esc(m.src)}${m.ill?" · ภาพเป็นรูปประกอบ รอยืนยันรุ่น":""}</div></div>
@@ -1678,7 +1694,9 @@ $("#trayX").onclick=()=>{S.cmp.pack=[];save();renderTray();rerender()};
 const pop=$("#pop");
 $("#bSet").onclick=e=>{e.stopPropagation();pop.hidden=!pop.hidden;$("#bSet").setAttribute("aria-expanded",!pop.hidden)};
 document.addEventListener("click",e=>{if(!pop.hidden&&!pop.contains(e.target)&&e.target!==$("#bSet")) {pop.hidden=true;$("#bSet").setAttribute("aria-expanded","false")}});
-
+$("#optVat").checked=S.vat; $("#optPrice").checked=S.showPrice;
+$("#optVat").onchange=e=>{S.vat=e.target.checked;store.set("vat",S.vat);rerender()};
+$("#optPrice").onchange=e=>{S.showPrice=e.target.checked;store.set("showPrice",S.showPrice);rerender()};
 function applyTheme(){if(S.theme==="system")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",S.theme);
   $("#themeSeg").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===S.theme))}
 $("#themeSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;S.theme=b.dataset.t;store.set("theme",S.theme);applyTheme()});
